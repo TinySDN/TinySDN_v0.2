@@ -6,13 +6,13 @@ Instalation
 
 
 
-Executing String Network Test Example:	
+Executing String Network Test Example:
+	
     $ cd StringNetworkTest
     $ ./compileString.sh
-	then run StringTopology.csc on cooja
-	You can add a extra SecundaryControllerNode to network, place it near to node 5
-	
-	It includes just hardcoded controllers, so topology is spefic and static
+    then run StringTopology.csc on cooja
+    You can add a extra SecundaryControllerNode to network, place it near to node 5
+    It includes just hardcoded controllers, so topology is spefic and static
 
 TinySDN Usage
 
