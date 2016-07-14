@@ -1,0 +1,8 @@
+digraph "AlarmMultiplexC" {
+  n0x2b61065457f0 [shape=ellipse, style=filled, label="Init", fontsize=12];
+  "AlarmMultiplexC.Alarm" [fontsize=12, shape=box,peripheries=2, style=dashed, label="HplCC2420AlarmC\n(Alarm)", URL="../chtml/HplCC2420AlarmC.html"];
+  n0x2b6106542220 [shape=ellipse, style=filled, label="Alarm32khz32", fontsize=12];
+  "AlarmMultiplexC.Alarm" [fontsize=12, shape=box,peripheries=2, style=dashed, label="HplCC2420AlarmC\n(Alarm)", URL="../chtml/HplCC2420AlarmC.html"];
+  "n0x2b61065457f0" -> "AlarmMultiplexC.Alarm" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+  "n0x2b6106542220" -> "AlarmMultiplexC.Alarm" [label="Alarm<T32khz, uint32_t>", URL="../ihtml/Alarm.html", fontsize=10];
+}

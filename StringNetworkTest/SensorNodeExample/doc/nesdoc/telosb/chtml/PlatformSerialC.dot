@@ -1,0 +1,17 @@
+digraph "PlatformSerialC" {
+  n0x2b610726cd50 [shape=ellipse, style=filled, label="UartByte", fontsize=12];
+  "PlatformSerialC.UartC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="Msp430Uart1C\n(UartC)", URL="../chtml/Msp430Uart1C.html"];
+  n0x2b61072718d0 [shape=ellipse, style=filled, label="UartStream", fontsize=12];
+  "PlatformSerialC.UartC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="Msp430Uart1C\n(UartC)", URL="../chtml/Msp430Uart1C.html"];
+  n0x2b61072710c0 [shape=ellipse, style=filled, label="StdControl", fontsize=12];
+  "TelosSerialP" [fontsize=12, shape=box, URL="../chtml/TelosSerialP.html"];
+  "PlatformSerialC.UartC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="Msp430Uart1C\n(UartC)", URL="../chtml/Msp430Uart1C.html"];
+  "TelosSerialP" [fontsize=12, shape=box, URL="../chtml/TelosSerialP.html"];
+  "TelosSerialP" [fontsize=12, shape=box, URL="../chtml/TelosSerialP.html"];
+  "PlatformSerialC.UartC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="Msp430Uart1C\n(UartC)", URL="../chtml/Msp430Uart1C.html"];
+  "n0x2b610726cd50" -> "PlatformSerialC.UartC" [label="UartByte", URL="../ihtml/UartByte.html", fontsize=10];
+  "n0x2b61072718d0" -> "PlatformSerialC.UartC" [label="UartStream", URL="../ihtml/UartStream.html", fontsize=10];
+  "n0x2b61072710c0" -> "TelosSerialP" [label="StdControl", URL="../ihtml/StdControl.html", fontsize=10];
+  "PlatformSerialC.UartC" -> "TelosSerialP" [label="Msp430UartConfigure", URL="../ihtml/Msp430UartConfigure.html", fontsize=10];
+  "TelosSerialP" -> "PlatformSerialC.UartC" [label="Resource", URL="../ihtml/Resource.html", fontsize=10];
+}

@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Interface: Putchar</title>
+  </head>
+  <body>
+    <h2>Interface: Putchar</h2>
+    <b>interface Putchar</b><p> Interface to be implemented by any low-level component that
+ provides character output for libc-based printf in TinyOS.  The
+ component providing this interface should be wired to PutcharC from
+ $(TOSDIR)/lib/printf.
+
+ 
+    <p>
+    <dl>
+      <dt><b>Note:</b>
+      <dd>
+        On some platforms inclusion of <stdio.h> may define putchar
+ as a macro.  Any need for this should be eliminated by the
+ implementation in PutcharP.nc, so "#undef putchar" prior to your
+ use of this identifier when implementing this interface.
+
+ 
+      </dd>
+      <dt><b>Author:</b>
+      <dd>
+        Peter A. Bigot &lt;pabigot@users.sourceforge.net&gt;
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Commands</div><div id=funcsig><span id=funcnameshort>command int <a href="#putchar">putchar</a>(int c)
+      </span><menu> Send the unsigned char represented by c to the output.
+      </menu>
+    </div><p><div id=heading>Commands - Details</div>
+    <a name="putchar"></a>
+    <h4>putchar
+    </h4>
+    <span id=funcnameshort>command int <b>putchar</b>(int c)
+    </span>
+    <p>
+    <menu>
+       Send the unsigned char represented by c to the output.  Return
+ -1 on error, and c if successful. *
+    </menu>
+  </body>
+</html>

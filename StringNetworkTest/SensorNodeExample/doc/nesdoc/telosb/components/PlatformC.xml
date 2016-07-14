@@ -1,0 +1,98 @@
+<?xml version="1.0" ?><component loc="40:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformC.nc" nicename="PlatformC" qname="PlatformC">
+      <documentation loc="34:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformC.nc">
+        <short>
+ </short>
+        <long>
+ @author Joe Polastre and Cory Sharp
+ @version $Revision: 1.6 $ $Date: 2010-06-29 22:07:55 $
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="48:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformC.nc">
+          <from><interface-ref name="Init" ref="0x2b6105d63190" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b6105d603a0" scoped=""/></to>
+        </wire>
+        <wire loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformC.nc">
+          <from><interface-ref name="MoteClockInit" ref="0x2b6105d60ab0" scoped=""/></from>
+          <to><interface-ref name="MoteClockInit" ref="0x2b6105d62920" scoped=""/></to>
+        </wire>
+        <wire loc="50:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformC.nc">
+          <from><interface-ref name="MoteInit" ref="0x2b6105d5f1f0" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b6105d79550" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="42:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformC.nc" name="Init" provided="1" ref="0x2b6105d63190">
+      <component-ref nicename="PlatformC" qname="PlatformC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Init" ref="0x2b6105d63190" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105d63510" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="6:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformP.nc" name="MoteInit" provided="0" ref="0x2b6105d5f1f0">
+      <component-ref nicename="PlatformP" qname="PlatformP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="MoteInit" ref="0x2b6105d5f1f0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105d5f570" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="2:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosb/MotePlatformC.nc" name="Init" provided="1" ref="0x2b6105d79550">
+      <component-ref nicename="MotePlatformC" qname="MotePlatformC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Init" ref="0x2b6105d79550" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105d798d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="39:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosb/MoteClockC.nc" name="MoteClockInit" provided="1" ref="0x2b6105d62920">
+      <component-ref nicename="MoteClockC" qname="MoteClockC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="MoteClockInit" ref="0x2b6105d62920" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105d62ca0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="5:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformP.nc" name="MoteClockInit" provided="0" ref="0x2b6105d60ab0">
+      <component-ref nicename="PlatformP" qname="PlatformP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="MoteClockInit" ref="0x2b6105d60ab0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105d60e30" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="4:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformP.nc" name="Init" provided="1" ref="0x2b6105d603a0">
+      <component-ref nicename="PlatformP" qname="PlatformP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Init" ref="0x2b6105d603a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105d60720" scoped=""/>
+      </interface-functions>
+    </interface><component loc="3:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformP.nc" nicename="PlatformP" qname="PlatformP" safe="">
+      <module/>
+    </component><component loc="1:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosb/MotePlatformC.nc" nicename="MotePlatformC" qname="MotePlatformC" safe="">
+      <module/>
+    </component><component loc="37:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosb/MoteClockC.nc" nicename="MoteClockC" qname="MoteClockC">
+      <documentation loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosb/MoteClockC.nc">
+        <short>
+ </short>
+        <long>
+ @author Vlado Handziski &lt;handzisk@tkn.tu-berlind.de&gt;
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosb/MoteClockC.nc">
+          <from><interface-ref name="MoteClockInit" ref="0x2b6105d62920" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b6105d81860" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component></referenced></component>

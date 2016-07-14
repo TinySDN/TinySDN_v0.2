@@ -1,0 +1,11 @@
+digraph "Msp430ClockC" {
+  n0x2b6105d99de0 [shape=ellipse, style=filled, label="Msp430ClockInit", fontsize=12];
+  "Msp430ClockP" [fontsize=12, shape=box, URL="../chtml/Msp430ClockP.html"];
+  n0x2b6105d81860 [shape=ellipse, style=filled, label="Init", fontsize=12];
+  "Msp430ClockP" [fontsize=12, shape=box, URL="../chtml/Msp430ClockP.html"];
+  "McuSleepC" [fontsize=12, shape=box, URL="../chtml/McuSleepC.html"];
+  "Msp430ClockP" [fontsize=12, shape=box, URL="../chtml/Msp430ClockP.html"];
+  "n0x2b6105d99de0" -> "Msp430ClockP" [label="Msp430ClockInit", URL="../ihtml/Msp430ClockInit.html", fontsize=10];
+  "n0x2b6105d81860" -> "Msp430ClockP" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+  "McuSleepC" -> "Msp430ClockP" [label="McuPowerOverride", URL="../ihtml/McuPowerOverride.html", fontsize=10];
+}

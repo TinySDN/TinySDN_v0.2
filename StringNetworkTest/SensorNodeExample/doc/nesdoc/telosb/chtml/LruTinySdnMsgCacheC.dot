@@ -1,0 +1,11 @@
+digraph "LruTinySdnMsgCacheC" {
+  n0x2b61078601a0 [shape=ellipse, style=filled, label="Cache", fontsize=12];
+  "LruTinySdnMsgCacheC.CacheP" [fontsize=12, shape=box, style=dashed, label="LruTinySdnMsgCacheP\n(CacheP)", URL="../chtml/LruTinySdnMsgCacheP.html"];
+  "LruTinySdnMsgCacheC.CacheP" [fontsize=12, shape=box, style=dashed, label="LruTinySdnMsgCacheP\n(CacheP)", URL="../chtml/LruTinySdnMsgCacheP.html"];
+  "TinySdnP" [fontsize=12, shape=box,peripheries=2, URL="../chtml/TinySdnP.html"];
+  "MainC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/MainC.html"];
+  "LruTinySdnMsgCacheC.CacheP" [fontsize=12, shape=box, style=dashed, label="LruTinySdnMsgCacheP\n(CacheP)", URL="../chtml/LruTinySdnMsgCacheP.html"];
+  "n0x2b61078601a0" -> "LruTinySdnMsgCacheC.CacheP" [label="Cache<message_t *>", URL="../ihtml/Cache.html", fontsize=10];
+  "LruTinySdnMsgCacheC.CacheP" -> "TinySdnP" [label="TinySdnPacket", URL="../ihtml/TinySdnPacket.html", fontsize=10];
+  "MainC" -> "LruTinySdnMsgCacheC.CacheP" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+}

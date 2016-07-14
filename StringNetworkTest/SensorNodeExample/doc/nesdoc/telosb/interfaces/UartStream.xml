@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="utf-8"?><interfacedef loc="37:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" nicename="UartStream" qname="UartStream">
+      <documentation loc="32:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc">
+        <short>
+ </short>
+        <long>
+ @author Jonathan Hui &lt;jhui@archedrock.com&gt;
+ @version $Revision: 1.5 $ $Date: 2008-06-04 03:00:35 $
+</long>
+      </documentation>
+      <function command="" loc="48:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="send" provided="0" ref="0x2b6107298de0">
+        <documentation loc="39:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc">
+          <short>
+ Begin transmission of a UART stream.</short>
+          <long>
+ Begin transmission of a UART stream. If SUCCESS is returned,
+ &lt;code&gt;sendDone&lt;/code&gt; will be signalled when transmission is
+ complete.
+
+ @param 'uint8_t* COUNT(len) buf' Buffer for bytes to send.
+ @param len Number of bytes to send.
+ @return SUCCESS if request was accepted, FAIL otherwise.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="UartStream" qname="UartStream"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="48:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="buf" ref="0x2b6107298810">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable loc="48:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="len" ref="0x2b6107298b50">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function event="" loc="79:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="receivedByte" provided="0" ref="0x2b6107291ac0">
+        <documentation loc="74:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc">
+          <short>
+ Signals the receipt of a byte.</short>
+          <long>
+ Signals the receipt of a byte.
+
+ @param byte The byte received.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="UartStream" qname="UartStream"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="79:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="byte" ref="0x2b6107291840">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="90:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="receive" provided="0" ref="0x2b6107290930">
+        <documentation loc="81:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc">
+          <short>
+ Begin reception of a UART stream.</short>
+          <long>
+ Begin reception of a UART stream. If SUCCESS is returned,
+ &lt;code&gt;receiveDone&lt;/code&gt; will be signalled when reception is
+ complete.
+
+ @param 'uint8_t* COUNT(len) buf' Buffer for received bytes.
+ @param len Number of bytes to receive.
+ @return SUCCESS if request was accepted, FAIL otherwise.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="UartStream" qname="UartStream"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="90:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="buf" ref="0x2b6107290360">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable loc="90:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="len" ref="0x2b61072906a0">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="65:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="enableReceiveInterrupt" provided="0" ref="0x2b6107292740">
+        <documentation loc="59:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc">
+          <short>
+ Enable the receive byte interrupt.</short>
+          <long>
+ Enable the receive byte interrupt. The &lt;code&gt;receive&lt;/code&gt; event
+ is signalled each time a byte is received.
+
+ @return SUCCESS if interrupt was enabled, FAIL otherwise.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="UartStream" qname="UartStream"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function event="" loc="99:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="receiveDone" provided="0" ref="0x2b610728f2c0">
+        <documentation loc="92:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc">
+          <short>
+ Signal completion of receiving a stream.</short>
+          <long>
+ Signal completion of receiving a stream.
+
+ @param 'uint8_t* COUNT(len) buf' Buffer for bytes received.
+ @param len Number of bytes received.
+ @param error SUCCESS if the reception was successful, FAIL otherwise.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="UartStream" qname="UartStream"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="99:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="buf" ref="0x2b610728e920">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable loc="99:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="len" ref="0x2b610728ec60">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="99:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="error" ref="0x2b610728f020">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="72:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="disableReceiveInterrupt" provided="0" ref="0x2b6107291070">
+        <documentation loc="67:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc">
+          <short>
+ Disable the receive byte interrupt.</short>
+          <long>
+ Disable the receive byte interrupt.
+
+ @return SUCCESS if interrupt was disabled, FAIL otherwise.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="UartStream" qname="UartStream"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function event="" loc="57:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="sendDone" provided="0" ref="0x2b6107294720">
+        <documentation loc="50:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc">
+          <short>
+ Signal completion of sending a stream.</short>
+          <long>
+ Signal completion of sending a stream.
+
+ @param 'uint8_t* COUNT(len) buf' Bytes sent.
+ @param len Number of bytes sent.
+ @param error SUCCESS if the transmission was successful, FAIL otherwise.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="UartStream" qname="UartStream"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="57:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="buf" ref="0x2b6107295db0">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable loc="57:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="len" ref="0x2b6107294130">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="57:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartStream.nc" name="error" ref="0x2b6107294480">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>

@@ -1,0 +1,101 @@
+<?xml version="1.0" ?><component abstract="" loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/TransformAlarmC.nc" nicename="TransformAlarmC" qname="TransformAlarmC" safe="">
+      <documentation loc="34:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/TransformAlarmC.nc">
+        <short>
+ TransformAlarmC decreases precision and/or widens an Alarm.</short>
+        <long>
+ TransformAlarmC decreases precision and/or widens an Alarm.  An already
+ widened Counter component is used to help.
+
+ &lt;p&gt;See TEP102 for more details.
+ @param to_precision_tag A type indicating the precision of the transformed
+   Alarm.
+ @param to_size_type The type for the width of the transformed Alarm.
+ @param from_precision_tag A type indicating the precision of the original
+   Alarm.
+ @param from_size_type The type for the width of the original Alarm.
+ @param bit_shift_right Original time units will be 2 to the power 
+   &lt;code&gt;bit_shift_right&lt;/code&gt; larger than transformed time units.
+
+ @author Cory Sharp &lt;cssharp@eecs.berkeley.edu&gt;
+</long>
+      </documentation>
+      <parameters>
+        <typedef loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/TransformAlarmC.nc" name="to_precision_tag" ref="0x2b6106278ae0">
+          <component-ref nicename="TransformAlarmC" qname="TransformAlarmC"/>
+          <type-var alignment="U:" size="U:"><typedef-ref name="to_precision_tag" ref="0x2b6106278ae0" scoped=""/></type-var>
+        </typedef>
+        <typedef loc="53:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/TransformAlarmC.nc" name="to_size_type" ref="0x2b61062ce2d0">
+          <component-ref nicename="TransformAlarmC" qname="TransformAlarmC"/>
+          <type-var alignment="U:" size="U:"><typedef-ref name="to_size_type" ref="0x2b61062ce2d0" scoped=""/></type-var>
+        </typedef>
+        <typedef loc="54:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/TransformAlarmC.nc" name="from_precision_tag" ref="0x2b61062ce6c0">
+          <component-ref nicename="TransformAlarmC" qname="TransformAlarmC"/>
+          <type-var alignment="U:" size="U:"><typedef-ref name="from_precision_tag" ref="0x2b61062ce6c0" scoped=""/></type-var>
+        </typedef>
+        <typedef loc="55:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/TransformAlarmC.nc" name="from_size_type" ref="0x2b61062cd020">
+          <component-ref nicename="TransformAlarmC" qname="TransformAlarmC"/>
+          <type-var alignment="U:" size="U:"><typedef-ref name="from_size_type" ref="0x2b61062cd020" scoped=""/></type-var>
+        </typedef>
+        <constant loc="56:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/TransformAlarmC.nc" name="bit_shift_right" ref="0x2b61062cd3f0">
+          <component-ref nicename="TransformAlarmC" qname="TransformAlarmC"/>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+          </type-int>
+        </constant>
+      </parameters>
+      <module/>
+    <specification><interface loc="61:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/TransformAlarmC.nc" name="Alarm" provided="1" ref="0x2b61062cc080">
+      <component-ref nicename="TransformAlarmC" qname="TransformAlarmC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Alarm" ref="0x2b61062cc080" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Alarm" qname="Alarm"/>
+        <arguments>
+          <type-var alignment="U:" size="U:"><typedef-ref name="to_precision_tag" ref="0x2b6106278ae0" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="to_size_type" ref="0x2b61062ce2d0" scoped=""/></type-var>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b61062cab30" scoped=""/>
+        <function-ref name="fired" ref="0x2b61062cb9f0" scoped=""/>
+        <function-ref name="startAt" ref="0x2b61062ca4e0" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b61062ca020" scoped=""/>
+        <function-ref name="getAlarm" ref="0x2b61062c8020" scoped=""/>
+        <function-ref name="start" ref="0x2b61062cb020" scoped=""/>
+        <function-ref name="stop" ref="0x2b61062cb530" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="73:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/TransformAlarmC.nc" name="AlarmFrom" provided="0" ref="0x2b61062c6e10">
+      <component-ref nicename="TransformAlarmC" qname="TransformAlarmC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AlarmFrom" ref="0x2b61062c6e10" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Alarm" qname="Alarm"/>
+        <arguments>
+          <type-var alignment="U:" size="U:"><typedef-ref name="from_precision_tag" ref="0x2b61062ce6c0" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="from_size_type" ref="0x2b61062cd020" scoped=""/></type-var>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b61062f86e0" scoped=""/>
+        <function-ref name="fired" ref="0x2b61062f96b0" scoped=""/>
+        <function-ref name="startAt" ref="0x2b61062f8090" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b61062f9b70" scoped=""/>
+        <function-ref name="getAlarm" ref="0x2b61062f8ba0" scoped=""/>
+        <function-ref name="start" ref="0x2b61062faca0" scoped=""/>
+        <function-ref name="stop" ref="0x2b61062f91f0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="68:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/TransformAlarmC.nc" name="Counter" provided="0" ref="0x2b61062c8830">
+      <component-ref nicename="TransformAlarmC" qname="TransformAlarmC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Counter" ref="0x2b61062c8830" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Counter" qname="Counter"/>
+        <arguments>
+          <type-var alignment="U:" size="U:"><typedef-ref name="to_precision_tag" ref="0x2b6106278ae0" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="to_size_type" ref="0x2b61062ce2d0" scoped=""/></type-var>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b61062c76a0" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b61062c6090" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b61062c7b60" scoped=""/>
+        <function-ref name="overflow" ref="0x2b61062c6550" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

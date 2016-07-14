@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?><interfacedef loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialFlush.nc" nicename="SerialFlush" qname="SerialFlush">
+      <documentation loc="34:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialFlush.nc">
+        <short>
+ A basic interface to flush the serial port.</short>
+        <long>
+ A basic interface to flush the serial port.
+
+ @author Ben Greenstein
+ @author Philip Levis
+ @date January 23 2006
+
+</long>
+      </documentation>
+      <function event="" loc="54:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialFlush.nc" name="flushDone" provided="0" ref="0x2b6107115900">
+        <documentation loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialFlush.nc">
+          <short> 
+ Split phase event to indicate that the serial hardware is now idle.</short>
+        </documentation>
+        <interfacedef-ref nicename="SerialFlush" qname="SerialFlush"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialFlush.nc" name="flush" provided="0" ref="0x2b6107115190">
+        <documentation loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialFlush.nc">
+          <short> 
+ Request that the serial device signal when no more transmissions
+ are pending (i.e., when the device is idle)
+</short>
+        </documentation>
+        <interfacedef-ref nicename="SerialFlush" qname="SerialFlush"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>

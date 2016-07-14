@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?><interfacedef loc="41:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/interfaces/CC2420Ram.nc" nicename="CC2420Ram" qname="CC2420Ram">
+      <documentation loc="32:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/interfaces/CC2420Ram.nc">
+        <short>
+ HAL abstraction for accessing theRAM of a ChipCon CC2420 radio.</short>
+        <long>
+ HAL abstraction for accessing theRAM of a ChipCon CC2420 radio.
+
+ @author Jonathan Hui &lt;jhui@archrock.com&gt;
+ @version $Revision: 1.2 $ $Date: 2008-06-03 04:43:03 $
+</long>
+      </documentation>
+      <function command="" loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/interfaces/CC2420Ram.nc" name="read" provided="0" ref="0x2b61064db840">
+        <documentation loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/interfaces/CC2420Ram.nc">
+          <short>
+ Read data from a RAM.</short>
+          <long>
+ Read data from a RAM. This operation is sychronous.
+
+ @param offset within the field.
+ @param data a pointer to the receive buffer.
+ @param length number of bytes to read.
+ @return status byte returned when sending the last byte
+ of the SPI transaction.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="CC2420Ram" qname="CC2420Ram"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="cc2420_status_t" ref="0x2b6105cfc170"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/interfaces/CC2420Ram.nc" name="offset" ref="0x2b61064e49c0">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/interfaces/CC2420Ram.nc" name="data" ref="0x2b61064db250">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/interfaces/CC2420Ram.nc" name="length" ref="0x2b61064db5a0">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="63:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/interfaces/CC2420Ram.nc" name="write" provided="0" ref="0x2b61064d8020">
+        <documentation loc="54:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/interfaces/CC2420Ram.nc">
+          <short>
+ Write data to RAM.</short>
+          <long>
+ Write data to RAM. This operation is sychronous.
+
+ @param offset within the field.
+ @param data a pointer to the send buffer.
+ @param length number of bytes to write.
+ @return status byte returned when sending the last address byte
+ of the SPI transaction.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="CC2420Ram" qname="CC2420Ram"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="cc2420_status_t" ref="0x2b6105cfc170"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="63:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/interfaces/CC2420Ram.nc" name="offset" ref="0x2b61064da150">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="63:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/interfaces/CC2420Ram.nc" name="data" ref="0x2b61064da9c0">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable loc="63:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/interfaces/CC2420Ram.nc" name="length" ref="0x2b61064dad10">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>

@@ -1,0 +1,31 @@
+<?xml version="1.0" ?><component loc="37:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/SerialStartP.nc" nicename="SerialStartP" qname="SerialStartP">
+      <documentation loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/SerialStartP.nc">
+        <short>
+ </short>
+        <long>
+ @author Thomas Schmid
+</long>
+      </documentation>
+      <module/>
+    <specification><interface loc="39:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/SerialStartP.nc" name="Boot" provided="0" ref="0x2b6107496440">
+      <component-ref nicename="SerialStartP" qname="SerialStartP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Boot" ref="0x2b6107496440" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Boot" qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" ref="0x2b61074967c0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="40:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/SerialStartP.nc" name="SerialControl" provided="0" ref="0x2b6107496b60">
+      <component-ref nicename="SerialStartP" qname="SerialStartP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SerialControl" ref="0x2b6107496b60" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x2b6107493020" scoped=""/>
+        <function-ref name="stopDone" ref="0x2b61074931b0" scoped=""/>
+        <function-ref name="start" ref="0x2b6107493340" scoped=""/>
+        <function-ref name="stop" ref="0x2b61074934d0" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

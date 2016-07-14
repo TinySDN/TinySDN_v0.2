@@ -1,0 +1,7 @@
+<area shape="rect" id="node1" href="../chtml/SerialStartP.html" title="SerialStartP" alt="" coords="76,5,172,53">
+<area shape="rect" id="node2" href="../chtml/MainC.html" title="MainC" alt="" coords="5,117,87,176">
+<area shape="poly" id="edge1" href="../ihtml/Boot.html" title="Boot" alt="" coords="111,55,76,107,71,104,106,52">
+<area shape="rect" id="edge1-label" href="../ihtml/Boot.html" title="Boot" alt="" coords="93,78,121,93">
+<area shape="rect" id="node3" href="../chtml/SerialActiveMessageC.html" title="SerialActiveMessageC" alt="" coords="113,117,289,176">
+<area shape="poly" id="edge2" href="../ihtml/SplitControl.html" title="SplitControl" alt="" coords="142,52,177,104,172,107,137,55">
+<area shape="rect" id="edge2-label" href="../ihtml/SplitControl.html" title="SplitControl" alt="" coords="165,78,235,93">

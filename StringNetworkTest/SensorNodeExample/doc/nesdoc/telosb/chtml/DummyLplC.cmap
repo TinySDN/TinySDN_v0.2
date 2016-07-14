@@ -1,0 +1,12 @@
+<area shape="poly" id="edge1" href="../ihtml/SplitControl.html" title="SplitControl" alt="" coords="68,54,68,109,63,109,63,54">
+<area shape="rect" id="edge1-label" href="../ihtml/SplitControl.html" title="SplitControl" alt="" coords="65,78,135,93">
+<area shape="poly" id="edge2" href="../ihtml/Send.html" title="Send" alt="" coords="199,54,199,109,193,109,193,54">
+<area shape="rect" id="edge2-label" href="../ihtml/Send.html" title="Send" alt="" coords="196,78,224,93">
+<area shape="rect" id="node6" href="../chtml/DummyLplP.html" title="DummyLplP" alt="" coords="297,123,401,171">
+<area shape="poly" id="edge3" href="../ihtml/LowPowerListening.html" title="LowPowerListening" alt="" coords="352,54,352,109,347,109,347,54">
+<area shape="rect" id="edge3-label" href="../ihtml/LowPowerListening.html" title="LowPowerListening" alt="" coords="349,78,461,93">
+<area shape="rect" id="node8" href="../chtml/StateC.html" title="StateC" alt="" coords="479,117,560,176">
+<area shape="poly" id="edge4" href="../ihtml/State.html" title="State" alt="" coords="523,54,523,104,517,104,517,54">
+<area shape="rect" id="edge4-label" href="../ihtml/State.html" title="State" alt="" coords="520,78,548,93">
+<area shape="poly" id="edge5" href="../ihtml/Receive.html" title="Receive" alt="" coords="649,54,649,109,644,109,644,54">
+<area shape="rect" id="edge5-label" href="../ihtml/Receive.html" title="Receive" alt="" coords="647,78,692,93">

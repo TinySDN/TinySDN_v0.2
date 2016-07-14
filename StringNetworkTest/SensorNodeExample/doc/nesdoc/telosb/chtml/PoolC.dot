@@ -1,0 +1,8 @@
+digraph "PoolC" {
+  n0x2b6107812c20 [shape=ellipse, style=filled, label="Pool", fontsize=12];
+  "PoolC.PoolP" [fontsize=12, shape=box, style=dashed, label="PoolP", URL="../chtml/PoolP.html"];
+  "MainC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/MainC.html"];
+  "PoolC.PoolP" [fontsize=12, shape=box, style=dashed, label="PoolP", URL="../chtml/PoolP.html"];
+  "n0x2b6107812c20" -> "PoolC.PoolP" [label="Pool<pool_t>", URL="../ihtml/Pool.html", fontsize=10];
+  "MainC" -> "PoolC.PoolP" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+}

@@ -1,0 +1,35 @@
+digraph "SerialActiveMessageC" {
+  n0x2b61070c2140 [shape=ellipse, style=filled, label="SplitControl", fontsize=12];
+  "SerialDispatcherC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/SerialDispatcherC.html"];
+  n0x2b61070c11d0 [shape=ellipse, style=filled, label="AMSend", fontsize=12];
+  "SerialActiveMessageC.AM" [fontsize=12, shape=box, style=dashed, label="SerialActiveMessageP\n(AM)", URL="../chtml/SerialActiveMessageP.html"];
+  n0x2b61070c0a00 [shape=ellipse, style=filled, label="Packet", fontsize=12];
+  "SerialActiveMessageC.AM" [fontsize=12, shape=box, style=dashed, label="SerialActiveMessageP\n(AM)", URL="../chtml/SerialActiveMessageP.html"];
+  n0x2b61070c03f0 [shape=ellipse, style=filled, label="Receive", fontsize=12];
+  "SerialActiveMessageC.AM" [fontsize=12, shape=box, style=dashed, label="SerialActiveMessageP\n(AM)", URL="../chtml/SerialActiveMessageP.html"];
+  n0x2b61070bde40 [shape=ellipse, style=filled, label="PacketAcknowledgements", fontsize=12];
+  "SerialActiveMessageC.AM" [fontsize=12, shape=box, style=dashed, label="SerialActiveMessageP\n(AM)", URL="../chtml/SerialActiveMessageP.html"];
+  n0x2b61070be780 [shape=ellipse, style=filled, label="AMPacket", fontsize=12];
+  "SerialActiveMessageC.AM" [fontsize=12, shape=box, style=dashed, label="SerialActiveMessageP\n(AM)", URL="../chtml/SerialActiveMessageP.html"];
+  "MainC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/MainC.html"];
+  "SerialDispatcherC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/SerialDispatcherC.html"];
+  "SerialDispatcherC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/SerialDispatcherC.html"];
+  n0x2b61070bc7e0 [shape=ellipse, style=filled, label="Leds", fontsize=12];
+  "SerialActiveMessageC.AM" [fontsize=12, shape=box, style=dashed, label="SerialActiveMessageP\n(AM)", URL="../chtml/SerialActiveMessageP.html"];
+  "SerialDispatcherC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/SerialDispatcherC.html"];
+  "SerialActiveMessageC.AM" [fontsize=12, shape=box, style=dashed, label="SerialActiveMessageP\n(AM)", URL="../chtml/SerialActiveMessageP.html"];
+  "SerialDispatcherC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/SerialDispatcherC.html"];
+  "SerialDispatcherC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/SerialDispatcherC.html"];
+  "SerialPacketInfoActiveMessageP" [fontsize=12, shape=box, URL="../chtml/SerialPacketInfoActiveMessageP.html"];
+  "n0x2b61070c2140" -> "SerialDispatcherC" [label="SplitControl", URL="../ihtml/SplitControl.html", fontsize=10];
+  "n0x2b61070c11d0" -> "SerialActiveMessageC.AM" [label="AMSend[am_id_t]", style=bold, URL="../ihtml/AMSend.html", fontsize=10];
+  "n0x2b61070c0a00" -> "SerialActiveMessageC.AM" [label="Packet", URL="../ihtml/Packet.html", fontsize=10];
+  "n0x2b61070c03f0" -> "SerialActiveMessageC.AM" [label="Receive[am_id_t]", style=bold, URL="../ihtml/Receive.html", fontsize=10];
+  "n0x2b61070bde40" -> "SerialActiveMessageC.AM" [label="PacketAcknowledgements", URL="../ihtml/PacketAcknowledgements.html", fontsize=10];
+  "n0x2b61070be780" -> "SerialActiveMessageC.AM" [label="AMPacket", URL="../ihtml/AMPacket.html", fontsize=10];
+  "MainC" -> "SerialDispatcherC" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+  "SerialDispatcherC" -> "n0x2b61070bc7e0" [label="Leds", URL="../ihtml/Leds.html", fontsize=10];
+  "SerialActiveMessageC.AM" -> "SerialDispatcherC" [label="Send", URL="../ihtml/Send.html", fontsize=10];
+  "SerialActiveMessageC.AM" -> "SerialDispatcherC" [label="Receive", URL="../ihtml/Receive.html", fontsize=10];
+  "SerialDispatcherC" -> "SerialPacketInfoActiveMessageP" [label="SerialPacketInfo[uart_id_t]", style=bold, URL="../ihtml/SerialPacketInfo.html", fontsize=10];
+}

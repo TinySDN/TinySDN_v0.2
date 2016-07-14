@@ -1,0 +1,114 @@
+<?xml version="1.0" ?><component loc="42:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PutcharC.nc" nicename="PutcharC" qname="PutcharC">
+      <documentation loc="32:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PutcharC.nc">
+        <short>
+ This component provides a TinyOS-compatible bridge to the
+ system-specific mechanism of providing single-character output to
+ the environment's printf(3c) infrastructure.</short>
+        <long>
+ This component provides a TinyOS-compatible bridge to the
+ system-specific mechanism of providing single-character output to
+ the environment's printf(3c) infrastructure.  Components that
+ provide a libc-based printf facility in TinyOS should implement the
+ Putchar interface and connect it to this module.
+
+ @author Peter A. Bigot &lt;pabigot@users.sourceforge.net&gt;
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PutcharC.nc">
+          <from><interface-ref name="SoftwareInit" ref="0x2b6105d641b0" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b610749c020" scoped=""/></to>
+        </wire>
+        <wire loc="50:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PutcharC.nc">
+          <from><interface-ref name="Putchar" ref="0x2b610749c680" scoped=""/></from>
+          <to><interface-ref name="Putchar" ref="0x2b61074a2b80" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PutcharC.nc" name="Putchar" provided="0" ref="0x2b61074a2b80">
+      <component-ref nicename="PutcharC" qname="PutcharC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Putchar" ref="0x2b61074a2b80" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Putchar" qname="Putchar"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="putchar" ref="0x2b610749f020" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="58:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc" name="SoftwareInit" provided="0" ref="0x2b6105d641b0">
+      <component-ref nicename="MainC" qname="MainC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SoftwareInit" ref="0x2b6105d641b0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105d64530" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="94:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PutcharP.nc" name="Init" provided="1" ref="0x2b610749c020">
+      <component-ref nicename="PutcharP" qname="PutcharP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Init" ref="0x2b610749c020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b610749c3a0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="95:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PutcharP.nc" name="Putchar" provided="0" ref="0x2b610749c680">
+      <component-ref nicename="PutcharP" qname="PutcharP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Putchar" ref="0x2b610749c680" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Putchar" qname="Putchar"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="putchar" ref="0x2b610749ca00" scoped=""/>
+      </interface-functions>
+    </interface><component loc="93:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PutcharP.nc" nicename="PutcharP" qname="PutcharP">
+      <documentation loc="64:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PutcharP.nc">
+        <short>
+ This component provides a TinyOS-compatible bridge to the
+ system-specific mechanism of providing single-character output to
+ the environment's printf(3c) infrastructure.</short>
+        <long>
+ This component provides a TinyOS-compatible bridge to the
+ system-specific mechanism of providing single-character output to
+ the environment's printf(3c) infrastructure.  Components that
+ provide a libc-based printf facility in TinyOS should implement the
+ Putchar interface and connect it to this module.
+
+ @author Kevin Klues &lt;klueska@cs.stanford.edu&gt;
+ @author Peter A. Bigot &lt;pabigot@users.sourceforge.net&gt;
+</long>
+      </documentation>
+      <module/>
+    </component><component loc="56:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc" nicename="MainC" qname="MainC">
+      <documentation loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc">
+        <short>
+ MainC is the system interface the TinyOS boot sequence.</short>
+        <long>
+ MainC is the system interface the TinyOS boot sequence. It wires the
+ boot sequence implementation to the scheduler and hardware resources.
+
+ @author Philip Levis
+ @date   August 6 2005
+ @see    TEP 107: Boot Sequence
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="72:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc">
+          <from><interface-ref name="Boot" ref="0x2b6105d69c20" scoped=""/></from>
+          <to><interface-ref name="Boot" ref="0x2b6105f1a590" scoped=""/></to>
+        </wire>
+        <wire loc="67:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc">
+          <from><interface-ref name="Scheduler" ref="0x2b6105f1ac00" scoped=""/></from>
+          <to><interface-ref name="Scheduler" ref="0x2b61058673a0" scoped=""/></to>
+        </wire>
+        <wire loc="68:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc">
+          <from><interface-ref name="PlatformInit" ref="0x2b6105f336c0" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b6105d63190" scoped=""/></to>
+        </wire>
+        <wire loc="71:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc">
+          <from><interface-ref name="SoftwareInit" ref="0x2b6105f33dc0" scoped=""/></from>
+          <to><interface-ref name="SoftwareInit" ref="0x2b6105d641b0" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component></referenced></component>

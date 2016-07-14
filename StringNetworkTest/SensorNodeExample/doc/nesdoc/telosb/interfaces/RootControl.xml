@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?><interfacedef loc="40:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/RootControl.nc" nicename="RootControl" qname="RootControl">
+      <documentation loc="35:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/RootControl.nc">
+        <short> Controls whether the current node is a root of the tree
+  </short>
+        <long> Controls whether the current node is a root of the tree
+  @author Rodrigo Fonseca
+  @date   $Date: 2006-12-12 18:23:29 $
+</long>
+      </documentation>
+      <function command="" loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/RootControl.nc" name="isRoot" provided="0" ref="0x2b6107535b00">
+        <interfacedef-ref nicename="RootControl" qname="RootControl"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="bool" ref="0x2b610586b090"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="41:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/RootControl.nc" name="setRoot" provided="0" ref="0x2b61074bbca0">
+        <interfacedef-ref nicename="RootControl" qname="RootControl"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="42:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/RootControl.nc" name="unsetRoot" provided="0" ref="0x2b6107535420">
+        <interfacedef-ref nicename="RootControl" qname="RootControl"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>

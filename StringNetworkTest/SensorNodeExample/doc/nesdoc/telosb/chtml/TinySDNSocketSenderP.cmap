@@ -1,0 +1,11 @@
+<area shape="rect" id="node2" href="../chtml/TinySDNSocketC.html" title="TinySDNSocketC" alt="" coords="95,117,243,176">
+<area shape="poly" id="edge1" href="../ihtml/Packet.html" title="Packet" alt="" coords="132,52,154,104,150,106,127,54">
+<area shape="rect" id="edge1-label" href="../ihtml/Packet.html" title="Packet" alt="" coords="147,78,184,93">
+<area shape="rect" id="node4" href="../chtml/TinySDNSocketIdP.html" title="TinySDNSocketIdP" alt="" coords="5,240,155,288">
+<area shape="poly" id="edge3" href="../ihtml/TinySDNSocketId.html" title="TinySDNSocketId[uint8_t]" alt="" coords="105,178,84,201,77,227,72,225,79,199,102,174">
+<area shape="rect" id="edge3-label" href="../ihtml/TinySDNSocketId.html" title="TinySDNSocketId[uint8_t]" alt="" coords="81,201,231,215">
+<area shape="rect" id="node5" href="../chtml/CollectionIdP.html" title="CollectionIdP" alt="" coords="205,240,315,288">
+<area shape="poly" id="edge4" href="../ihtml/CollectionId.html" title="CollectionId[uint8_t]" alt="" coords="210,175,233,198,249,226,244,229,229,202,206,178">
+<area shape="rect" id="edge4-label" href="../ihtml/CollectionId.html" title="CollectionId[uint8_t]" alt="" coords="241,201,359,215">
+<area shape="poly" id="edge2" href="../ihtml/AMSend.html" title="AMSend" alt="" coords="213,54,190,106,185,104,208,52">
+<area shape="rect" id="edge2-label" href="../ihtml/AMSend.html" title="AMSend" alt="" coords="200,78,249,93">

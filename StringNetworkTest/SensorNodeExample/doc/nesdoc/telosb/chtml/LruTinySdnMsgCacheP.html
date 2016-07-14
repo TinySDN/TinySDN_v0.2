@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: LruTinySdnMsgCacheP</title>
+  </head>
+  <body>
+    <h2>Component: LruTinySdnMsgCacheP
+    </h2>
+    <b>generic module LruTinySdnMsgCacheP(uint8_t size)</b>
+    <p>
+ An LRU cache that stores the signature of a CTP packet instance.
+ An insert operation indicates "use".  Inserting an element not in
+ the cache will replace the oldest, and inserting an element already
+ in the cache will refresh its age.
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Philip Levis 
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/Cache.html">Cache</a>&lt;message_t *&gt;</div><div id=funcsig>interface <a href="../ihtml/Init.html">Init</a></div><p><div id=heading>Uses</div><div id=funcsig>interface <a href="../ihtml/TinySdnPacket.html">TinySdnPacket</a></div>
+  </body>
+</html>

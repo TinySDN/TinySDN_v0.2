@@ -1,0 +1,8 @@
+digraph "PutcharC" {
+  "MainC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/MainC.html"];
+  "PutcharP" [fontsize=12, shape=box, URL="../chtml/PutcharP.html"];
+  "PutcharP" [fontsize=12, shape=box, URL="../chtml/PutcharP.html"];
+  n0x2b61074a2b80 [shape=ellipse, style=filled, label="Putchar", fontsize=12];
+  "MainC" -> "PutcharP" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+  "PutcharP" -> "n0x2b61074a2b80" [label="Putchar", URL="../ihtml/Putchar.html", fontsize=10];
+}

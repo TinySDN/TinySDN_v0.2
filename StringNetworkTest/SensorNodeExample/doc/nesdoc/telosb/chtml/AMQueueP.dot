@@ -1,0 +1,14 @@
+digraph "AMQueueP" {
+  n0x2b6107777470 [shape=ellipse, style=filled, label="Send", fontsize=12];
+  "AMQueueP.AMQueueImplP" [fontsize=12, shape=box, style=dashed, label="AMQueueImplP", URL="../chtml/AMQueueImplP.html"];
+  "AMQueueP.AMQueueImplP" [fontsize=12, shape=box, style=dashed, label="AMQueueImplP", URL="../chtml/AMQueueImplP.html"];
+  "ActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/ActiveMessageC.html"];
+  "AMQueueP.AMQueueImplP" [fontsize=12, shape=box, style=dashed, label="AMQueueImplP", URL="../chtml/AMQueueImplP.html"];
+  "ActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/ActiveMessageC.html"];
+  "AMQueueP.AMQueueImplP" [fontsize=12, shape=box, style=dashed, label="AMQueueImplP", URL="../chtml/AMQueueImplP.html"];
+  "ActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/ActiveMessageC.html"];
+  "n0x2b6107777470" -> "AMQueueP.AMQueueImplP" [label="Send[uint8_t]", style=bold, URL="../ihtml/Send.html", fontsize=10];
+  "AMQueueP.AMQueueImplP" -> "ActiveMessageC" [label="AMSend[am_id_t]", style=bold, URL="../ihtml/AMSend.html", fontsize=10];
+  "AMQueueP.AMQueueImplP" -> "ActiveMessageC" [label="AMPacket", URL="../ihtml/AMPacket.html", fontsize=10];
+  "AMQueueP.AMQueueImplP" -> "ActiveMessageC" [label="Packet", URL="../ihtml/Packet.html", fontsize=10];
+}

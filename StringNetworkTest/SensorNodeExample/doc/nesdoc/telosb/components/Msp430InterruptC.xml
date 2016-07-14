@@ -1,0 +1,45 @@
+<?xml version="1.0" ?><component abstract="" loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/pins/Msp430InterruptC.nc" nicename="Msp430InterruptC" qname="Msp430InterruptC" safe="">
+      <documentation loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/pins/Msp430InterruptC.nc">
+        <short>
+ Implementation of the GPIO interrupt abstraction for
+ the TI MSP430 microcontroller.</short>
+        <long>
+ Implementation of the GPIO interrupt abstraction for
+ the TI MSP430 microcontroller.
+
+ @author Jonathan Hui
+ @author Joe Polastre
+ @see  Please refer to TEP 117 for more information about this component and its
+          intended use.
+</long>
+      </documentation>
+      <parameters>
+      </parameters>
+      <module/>
+    <specification><interface loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/pins/Msp430InterruptC.nc" name="HplInterrupt" provided="0" ref="0x2b6106704e30">
+      <component-ref nicename="Msp430InterruptC" qname="Msp430InterruptC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="HplInterrupt" ref="0x2b6106704e30" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="HplMsp430Interrupt" qname="HplMsp430Interrupt"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b61067031e0" scoped=""/>
+        <function-ref name="fired" ref="0x2b6106703370" scoped=""/>
+        <function-ref name="disable" ref="0x2b6106703500" scoped=""/>
+        <function-ref name="edge" ref="0x2b6106703690" scoped=""/>
+        <function-ref name="enable" ref="0x2b6106703820" scoped=""/>
+        <function-ref name="getValue" ref="0x2b61067039b0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/pins/Msp430InterruptC.nc" name="Interrupt" provided="1" ref="0x2b61067041f0">
+      <component-ref nicename="Msp430InterruptC" qname="Msp430InterruptC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Interrupt" ref="0x2b61067041f0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="GpioInterrupt" qname="GpioInterrupt"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fired" ref="0x2b6106704570" scoped=""/>
+        <function-ref name="disable" ref="0x2b6106704700" scoped=""/>
+        <function-ref name="enableFallingEdge" ref="0x2b6106704890" scoped=""/>
+        <function-ref name="enableRisingEdge" ref="0x2b6106704a20" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

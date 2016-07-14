@@ -1,0 +1,5 @@
+18/08 -> no CTPRoutingEngineP : CollectionDebug foi removido pois não é necessário no momento; 21/08-> voltei ao original. Não é mais necessário excluir o CollectionDebug
+
+20/08-> LinkEstimatorP.nc e LinkEstimator.nc: foram alterados para possibilitar a recuperação da tabela de vizinhos (neighborTable).
+21/08-> Novo link Estimator foi validado com uma aplicação CTP comum. Funcionou sem apresentar nenhuma anomalia.
+

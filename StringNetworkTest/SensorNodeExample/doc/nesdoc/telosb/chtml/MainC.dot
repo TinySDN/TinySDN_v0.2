@@ -1,0 +1,14 @@
+digraph "MainC" {
+  n0x2b6105d69c20 [shape=ellipse, style=filled, label="Boot", fontsize=12];
+  "RealMainP" [fontsize=12, shape=box, URL="../chtml/RealMainP.html"];
+  "RealMainP" [fontsize=12, shape=box, URL="../chtml/RealMainP.html"];
+  "TinySchedulerC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/TinySchedulerC.html"];
+  "RealMainP" [fontsize=12, shape=box, URL="../chtml/RealMainP.html"];
+  "PlatformC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/PlatformC.html"];
+  "RealMainP" [fontsize=12, shape=box, URL="../chtml/RealMainP.html"];
+  n0x2b6105d641b0 [shape=ellipse, style=filled, label="SoftwareInit", fontsize=12];
+  "n0x2b6105d69c20" -> "RealMainP" [label="Boot", URL="../ihtml/Boot.html", fontsize=10];
+  "RealMainP" -> "TinySchedulerC" [label="Scheduler", URL="../ihtml/Scheduler.html", fontsize=10];
+  "RealMainP" -> "PlatformC" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+  "RealMainP" -> "n0x2b6105d641b0" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+}

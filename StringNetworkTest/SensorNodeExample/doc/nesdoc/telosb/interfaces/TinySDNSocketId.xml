@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?><interfacedef loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketId.nc" nicename="TinySDNSocketId" qname="TinySDNSocketId">
+      <documentation loc="35:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketId.nc">
+        <short>
+  Interface for fetching the collection ID associated with a
+  collection sender instance.</short>
+        <long>
+  Interface for fetching the collection ID associated with a
+  collection sender instance.
+
+  @author Kyle Jamieson
+  @date   $Date: 2006-12-12 18:23:28 $
+</long>
+      </documentation>
+      <function command="" loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketId.nc" name="fetch" provided="0" ref="0x2b61074d9660">
+        <interfacedef-ref nicename="TinySDNSocketId" qname="TinySDNSocketId"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="tinysdnsocket_id_t" ref="0x2b6105f59830"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>

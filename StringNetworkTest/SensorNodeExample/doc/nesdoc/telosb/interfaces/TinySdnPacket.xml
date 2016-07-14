@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?><interfacedef loc="41:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" nicename="TinySdnPacket" qname="TinySdnPacket">
+      <documentation loc="29:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc">
+        <short>
+ TinySDN
+
+ </short>
+        <long>
+ TinySDN
+
+ @author Bruno Trevizan de Oliveira
+ @author Lucas Gabriel Batista
+ @date   $Date: 2014-03-01
+
+</long>
+      </documentation>
+      <function command="" loc="64:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="setSequenceNumber" provided="0" ref="0x2b61074e0360">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="64:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074e1d30">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="64:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="seqno" ref="0x2b61074e00d0">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="option" provided="0" ref="0x2b61074ebe60">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="bool" ref="0x2b610586b090"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="tinysdn_options_t" ref="0x2b61074894f0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074eb840">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="opt" ref="0x2b61074ebbd0">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="tinysdn_options_t" ref="0x2b61074894f0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="57:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="getDestination" provided="0" ref="0x2b61074e5750">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+            <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="57:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074e54d0">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="67:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="setSocketID" provided="0" ref="0x2b61074dfb50">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="67:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074df590">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="67:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="id" ref="0x2b61074df8c0">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="55:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="setOrigin" provided="0" ref="0x2b61074e7cf0">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="55:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074e7710">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="55:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="addr" ref="0x2b61074e7a60">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="clearOption" provided="0" ref="0x2b61074eb120">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="tinysdn_options_t" ref="0x2b61074894f0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074eca80">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="option" ref="0x2b61074ece30">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="tinysdn_options_t" ref="0x2b61074894f0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="66:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="getSocketID" provided="0" ref="0x2b61074e0e30">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="66:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074e0bb0">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="61:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="setType" provided="0" ref="0x2b61074e3b40">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="61:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074e3570">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="61:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="type" ref="0x2b61074e38b0">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="54:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="getOrigin" provided="0" ref="0x2b61074e7020">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+            <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="54:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074e8d30">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="setOption" provided="0" ref="0x2b61074ec360">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="tinysdn_options_t" ref="0x2b61074894f0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074f1cf0">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="option" ref="0x2b61074ec0d0">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="tinysdn_options_t" ref="0x2b61074894f0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="58:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="setDestination" provided="0" ref="0x2b61074e4480">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="58:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074e5e70">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="58:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="addr" ref="0x2b61074e41f0">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="70:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="matchPacket" provided="0" ref="0x2b61074dc670">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="bool" ref="0x2b610586b090"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="70:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="m1" ref="0x2b61074dc060">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="70:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="m2" ref="0x2b61074dc3e0">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="getThl" provided="0" ref="0x2b61074e9830">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074e95b0">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="63:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="getSequenceNumber" provided="0" ref="0x2b61074e15f0">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="63:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074e1370">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="69:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="matchInstance" provided="0" ref="0x2b61074dd8e0">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="bool" ref="0x2b610586b090"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="69:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="m1" ref="0x2b61074dd2d0">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="69:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="m2" ref="0x2b61074dd650">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="60:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="getType" provided="0" ref="0x2b61074e4e30">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="60:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074e4bb0">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="setThl" provided="0" ref="0x2b61074e85e0">
+        <interfacedef-ref nicename="TinySdnPacket" qname="TinySdnPacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="msg" ref="0x2b61074e8020">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnPacket.nc" name="thl" ref="0x2b61074e8350">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>

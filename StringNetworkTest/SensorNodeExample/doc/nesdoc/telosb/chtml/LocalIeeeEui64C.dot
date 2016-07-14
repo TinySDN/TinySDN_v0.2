@@ -1,0 +1,8 @@
+digraph "LocalIeeeEui64C" {
+  n0x2b6106ba1e70 [shape=ellipse, style=filled, label="LocalIeeeEui64", fontsize=12];
+  "DallasId48ToIeeeEui64C" [fontsize=12, shape=box, URL="../chtml/DallasId48ToIeeeEui64C.html"];
+  "DallasId48ToIeeeEui64C" [fontsize=12, shape=box, URL="../chtml/DallasId48ToIeeeEui64C.html"];
+  "Ds2411C" [fontsize=12, shape=box,peripheries=2, URL="../chtml/Ds2411C.html"];
+  "n0x2b6106ba1e70" -> "DallasId48ToIeeeEui64C" [label="LocalIeeeEui64", URL="../ihtml/LocalIeeeEui64.html", fontsize=10];
+  "DallasId48ToIeeeEui64C" -> "Ds2411C" [label="ReadId48", URL="../ihtml/ReadId48.html", fontsize=10];
+}

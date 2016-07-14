@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?><interfacedef loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/GpioInterrupt.nc" nicename="GpioInterrupt" qname="GpioInterrupt">
+      <documentation loc="34:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/GpioInterrupt.nc">
+        <short>
+ </short>
+        <long>
+ @author Jonathan Hui
+ @author Joe Polastre
+ Revision:  $Revision: 1.5 $
+
+ Provides a microcontroller-independent presentation of interrupts
+</long>
+      </documentation>
+      <function event="" loc="68:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/GpioInterrupt.nc" name="fired" provided="0" ref="0x2b61064e27e0">
+        <documentation loc="63:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/GpioInterrupt.nc">
+          <short>
+ Fired when an edge interrupt occurs.</short>
+          <long>
+ Fired when an edge interrupt occurs.
+
+ NOTE: Interrupts keep running until &quot;disable()&quot; is called
+</long>
+        </documentation>
+        <interfacedef-ref nicename="GpioInterrupt" qname="GpioInterrupt"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="61:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/GpioInterrupt.nc" name="disable" provided="0" ref="0x2b61064e2020">
+        <documentation loc="56:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/GpioInterrupt.nc">
+          <short>  
+ Diables an edge interrupt or capture interrupt
+ 
+ </short>
+          <long>  
+ Diables an edge interrupt or capture interrupt
+ 
+ @return SUCCESS if the interrupt has been disabled
+</long>
+        </documentation>
+        <interfacedef-ref nicename="GpioInterrupt" qname="GpioInterrupt"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="54:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/GpioInterrupt.nc" name="enableFallingEdge" provided="0" ref="0x2b61064e3720">
+        <interfacedef-ref nicename="GpioInterrupt" qname="GpioInterrupt"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="53:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/GpioInterrupt.nc" name="enableRisingEdge" provided="0" ref="0x2b61064abdd0">
+        <documentation loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/GpioInterrupt.nc">
+          <short> 
+ Enable an edge based interrupt.</short>
+          <long> 
+ Enable an edge based interrupt. Calls to these functions are
+ not cumulative: only the transition type of the last called function
+ will be monitored for.
+
+
+ @return SUCCESS if the interrupt has been enabled
+</long>
+        </documentation>
+        <interfacedef-ref nicename="GpioInterrupt" qname="GpioInterrupt"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+    </interfacedef>

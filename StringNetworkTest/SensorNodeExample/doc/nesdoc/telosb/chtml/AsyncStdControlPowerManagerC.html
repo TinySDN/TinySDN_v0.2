@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: AsyncStdControlPowerManagerC</title>
+  </head>
+  <body>
+    <h2>Component: AsyncStdControlPowerManagerC
+    </h2>
+    <b>generic configuration AsyncStdControlPowerManagerC()</b>
+    <p>
+ Please refer to TEP 115 for more information about this component and its
+ intended use.<br><br>
+
+ This is the internal implementation of the standard power management
+ policy for managing the power states of non-virtualized devices.
+ Non-virtualized devices are shared using a parameterized Resource
+ interface, and are powered down according to some policy whenever there
+ are no more pending requests to that Resource.  The policy implemented
+ by this component is to power down a device as soon as it becomes free.
+ Such a policy is useful whenever a device has a negligible wake-up
+ latency.  There is no cost associated with waiting for the device to
+ power up, so it can be powered on and off as often as possible.<br><br>
+
+ Powerdown of the device is done through the <code>AsyncStdControl</code>
+ interface, so this component can only be used with those devices that
+ provide that interface.<br><br>
+
+ For devices providing either the <code>StdControl</code> or
+ <code>SplitControl</code> interfaces, please use either the
+ <code>StdControlPowerManagerC</code> component or the
+ <code>SplitControlPowerManagerC</code> component respectively.
+ 
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Kevin Klues (klueska@cs.wustl.edu)
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Uses</div><div id=funcsig>interface <a href="../ihtml/ArbiterInfo.html">ArbiterInfo</a></div><div id=funcsig>interface <a href="../ihtml/AsyncStdControl.html">AsyncStdControl</a></div><div id=funcsig>interface <a href="../ihtml/PowerDownCleanup.html">PowerDownCleanup</a></div><div id=funcsig>interface <a href="../ihtml/ResourceDefaultOwner.html">ResourceDefaultOwner</a></div><p><div id=heading>Wiring</div><p>
+    <map name="comp">
+      <area shape="rect" id="node1" href="../chtml/AsyncPowerManagerP.html" title="AsyncPowerManagerP\n(PowerManager)" alt="" coords="314,5,483,53">
+
+      <area shape="poly" id="edge1" href="../ihtml/AsyncStdControl.html" title="AsyncStdControl" alt="" coords="315,55,236,80,141,118,139,113,234,75,313,50">
+
+      <area shape="rect" id="edge1-label" href="../ihtml/AsyncStdControl.html" title="AsyncStdControl" alt="" coords="235,78,331,93">
+
+      <area shape="poly" id="edge2" href="../ihtml/PowerDownCleanup.html" title="PowerDownCleanup" alt="" coords="377,56,321,110,317,106,373,52">
+
+      <area shape="rect" id="edge2-label" href="../ihtml/PowerDownCleanup.html" title="PowerDownCleanup" alt="" coords="351,78,465,93">
+
+      <area shape="poly" id="edge3" href="../ihtml/ResourceDefaultOwner.html" title="ResourceDefaultOwner" alt="" coords="442,51,473,75,495,104,491,107,469,79,438,55">
+
+      <area shape="rect" id="edge3-label" href="../ihtml/ResourceDefaultOwner.html" title="ResourceDefaultOwner" alt="" coords="485,78,615,93">
+
+      <area shape="poly" id="edge4" href="../ihtml/ArbiterInfo.html" title="ArbiterInfo" alt="" coords="484,37,552,51,621,75,647,90,670,108,667,112,644,94,619,80,551,56,482,42">
+
+      <area shape="rect" id="edge4-label" href="../ihtml/ArbiterInfo.html" title="ArbiterInfo" alt="" coords="647,78,708,93">
+
+    </map>
+    <img src="AsyncStdControlPowerManagerC.png" usemap="#comp" id=imgwiring>
+  </body>
+</html>

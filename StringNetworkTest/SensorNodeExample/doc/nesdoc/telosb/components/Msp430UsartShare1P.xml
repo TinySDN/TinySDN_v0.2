@@ -1,0 +1,455 @@
+<?xml version="1.0" ?><component loc="38:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc" nicename="Msp430UsartShare1P" qname="Msp430UsartShare1P">
+      <documentation loc="32:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc">
+        <short>
+ </short>
+        <long>
+ @author Vlado Handziski &lt;handzisk@tkn.tu-berlin.de&gt;
+ @author Jonathan Hui &lt;jhui@archedrock.com&gt;
+ @version $Revision: 1.6 $ $Date: 2008-05-21 22:11:57 $
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="56:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc">
+          <from><interface-ref name="ResourceRequested" ref="0x2b61073f52c0" scoped=""/></from>
+          <to><interface-ref name="ResourceRequested" ref="0x2b61073ec9e0" scoped=""/></to>
+        </wire>
+        <wire loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc">
+          <from><interface-ref name="Interrupts" ref="0x2b61073f81d0" scoped=""/></from>
+          <to><interface-ref name="Interrupts" ref="0x2b61073f2060" scoped=""/></to>
+        </wire>
+        <wire loc="55:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc">
+          <from><interface-ref name="Resource" ref="0x2b61073f6020" scoped=""/></from>
+          <to><interface-ref name="Resource" ref="0x2b61073edb60" scoped=""/></to>
+        </wire>
+        <wire loc="58:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc">
+          <from><interface-ref name="ArbiterInfo" ref="0x2b61073f5ad0" scoped=""/></from>
+          <to><interface-ref name="ArbiterInfo" ref="0x2b61073ebe80" scoped=""/></to>
+        </wire>
+        <wire loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc">
+          <from><interface-ref name="RawInterrupts" ref="0x2b61073f1060" scoped=""/></from>
+          <to><interface-ref name="HplMsp430UsartInterrupts" ref="0x2b61073363b0" scoped=""/></to>
+        </wire>
+        <wire loc="57:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc">
+          <from><interface-ref name="ResourceConfigure" ref="0x2b61073ea770" scoped=""/></from>
+          <to><interface-ref name="ResourceConfigure" ref="0x2b61073f48a0" scoped=""/></to>
+        </wire>
+        <wire loc="59:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc">
+          <from><interface-ref name="ArbiterInfo" ref="0x2b61073f1e50" scoped=""/></from>
+          <to><interface-ref name="ArbiterInfo" ref="0x2b61073ebe80" scoped=""/></to>
+        </wire>
+        <wire loc="62:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc">
+          <from><interface-ref name="ResourceDefaultOwner" ref="0x2b61073cf5f0" scoped=""/></from>
+          <to><interface-ref name="ResourceDefaultOwner" ref="0x2b61073eb270" scoped=""/></to>
+        </wire>
+        <wire loc="65:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc">
+          <from><interface-ref name="AsyncStdControl" ref="0x2b61073e5880" scoped=""/></from>
+          <to><interface-ref name="AsyncStdControl" ref="0x2b610733c080" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="42:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc" name="ResourceRequested" provided="1" ref="0x2b61073f52c0">
+      <component-ref nicename="Msp430UsartShare1P" qname="Msp430UsartShare1P"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ResourceRequested" ref="0x2b61073f52c0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ResourceRequested" qname="ResourceRequested"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="requested" ref="0x2b61073f5640" scoped=""/>
+        <function-ref name="immediateRequested" ref="0x2b61073f57d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc" name="ResourceConfigure" provided="0" ref="0x2b61073f48a0">
+      <component-ref nicename="Msp430UsartShare1P" qname="Msp430UsartShare1P"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ResourceConfigure" ref="0x2b61073f48a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ResourceConfigure" qname="ResourceConfigure"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="unconfigure" ref="0x2b61073f4c20" scoped=""/>
+        <function-ref name="configure" ref="0x2b61073f4db0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="40:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc" name="Interrupts" provided="1" ref="0x2b61073f81d0">
+      <component-ref nicename="Msp430UsartShare1P" qname="Msp430UsartShare1P"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Interrupts" ref="0x2b61073f81d0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="HplMsp430UsartInterrupts" qname="HplMsp430UsartInterrupts"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="rxDone" ref="0x2b61073f8550" scoped=""/>
+        <function-ref name="txDone" ref="0x2b61073f86e0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="41:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc" name="Resource" provided="1" ref="0x2b61073f6020">
+      <component-ref nicename="Msp430UsartShare1P" qname="Msp430UsartShare1P"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Resource" ref="0x2b61073f6020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Resource" qname="Resource"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="release" ref="0x2b61073f63a0" scoped=""/>
+        <function-ref name="immediateRequest" ref="0x2b61073f6530" scoped=""/>
+        <function-ref name="request" ref="0x2b61073f66c0" scoped=""/>
+        <function-ref name="granted" ref="0x2b61073f6850" scoped=""/>
+        <function-ref name="isOwner" ref="0x2b61073f69e0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShare1P.nc" name="ArbiterInfo" provided="1" ref="0x2b61073f5ad0">
+      <component-ref nicename="Msp430UsartShare1P" qname="Msp430UsartShare1P"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ArbiterInfo" ref="0x2b61073f5ad0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ArbiterInfo" qname="ArbiterInfo"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="inUse" ref="0x2b61073f5e50" scoped=""/>
+        <function-ref name="userId" ref="0x2b61073f4020" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="94:/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc" name="ArbiterInfo" provided="1" ref="0x2b61073ebe80">
+      <component-ref nicename="Msp430UsartShare1P.ArbiterC" qname="Msp430UsartShare1P.ArbiterC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ArbiterInfo" ref="0x2b61073ebe80" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ArbiterInfo" qname="ArbiterInfo"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="inUse" ref="0x2b61073ea220" scoped=""/>
+        <function-ref name="userId" ref="0x2b61073ea3b0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="93:/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc" name="ResourceDefaultOwner" provided="1" ref="0x2b61073eb270">
+      <component-ref nicename="Msp430UsartShare1P.ArbiterC" qname="Msp430UsartShare1P.ArbiterC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ResourceDefaultOwner" ref="0x2b61073eb270" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ResourceDefaultOwner" qname="ResourceDefaultOwner"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="release" ref="0x2b61073eb5f0" scoped=""/>
+        <function-ref name="requested" ref="0x2b61073eb780" scoped=""/>
+        <function-ref name="granted" ref="0x2b61073eb910" scoped=""/>
+        <function-ref name="isOwner" ref="0x2b61073ebaa0" scoped=""/>
+        <function-ref name="immediateRequested" ref="0x2b61073ebc30" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="76:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/HplMsp430Usart1C.nc" name="AsyncStdControl" provided="1" ref="0x2b610733c080">
+      <component-ref nicename="HplMsp430Usart1C" qname="HplMsp430Usart1C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AsyncStdControl" ref="0x2b610733c080" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AsyncStdControl" qname="AsyncStdControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="start" ref="0x2b610733c400" scoped=""/>
+        <function-ref name="stop" ref="0x2b610733c590" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="39:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShareP.nc" name="Interrupts" provided="1" ref="0x2b61073f2060">
+      <component-ref nicename="Msp430UsartShare1P.UsartShareP" qname="Msp430UsartShare1P.UsartShareP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Interrupts" ref="0x2b61073f2060" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="HplMsp430UsartInterrupts" qname="HplMsp430UsartInterrupts"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="rxDone" ref="0x2b61073f2400" scoped=""/>
+        <function-ref name="txDone" ref="0x2b61073f2590" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="96:/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc" name="ResourceConfigure" provided="0" ref="0x2b61073ea770">
+      <component-ref nicename="Msp430UsartShare1P.ArbiterC" qname="Msp430UsartShare1P.ArbiterC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ResourceConfigure" ref="0x2b61073ea770" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ResourceConfigure" qname="ResourceConfigure"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="unconfigure" ref="0x2b61073eab10" scoped=""/>
+        <function-ref name="configure" ref="0x2b61073eaca0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="78:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/HplMsp430Usart1C.nc" name="HplMsp430UsartInterrupts" provided="1" ref="0x2b61073363b0">
+      <component-ref nicename="HplMsp430Usart1C" qname="HplMsp430Usart1C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="HplMsp430UsartInterrupts" ref="0x2b61073363b0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="HplMsp430UsartInterrupts" qname="HplMsp430UsartInterrupts"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="rxDone" ref="0x2b6107336730" scoped=""/>
+        <function-ref name="txDone" ref="0x2b61073368c0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShareP.nc" name="ArbiterInfo" provided="0" ref="0x2b61073f1e50">
+      <component-ref nicename="Msp430UsartShare1P.UsartShareP" qname="Msp430UsartShare1P.UsartShareP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ArbiterInfo" ref="0x2b61073f1e50" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ArbiterInfo" qname="ArbiterInfo"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="inUse" ref="0x2b61073ef210" scoped=""/>
+        <function-ref name="userId" ref="0x2b61073ef3a0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="92:/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc" name="ResourceRequested" provided="1" ref="0x2b61073ec9e0">
+      <component-ref nicename="Msp430UsartShare1P.ArbiterC" qname="Msp430UsartShare1P.ArbiterC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ResourceRequested" ref="0x2b61073ec9e0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ResourceRequested" qname="ResourceRequested"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="requested" ref="0x2b61073ecd80" scoped=""/>
+        <function-ref name="immediateRequested" ref="0x2b61073eb020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="91:/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc" name="Resource" provided="1" ref="0x2b61073edb60">
+      <component-ref nicename="Msp430UsartShare1P.ArbiterC" qname="Msp430UsartShare1P.ArbiterC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Resource" ref="0x2b61073edb60" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Resource" qname="Resource"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="release" ref="0x2b61073ec020" scoped=""/>
+        <function-ref name="immediateRequest" ref="0x2b61073ec1b0" scoped=""/>
+        <function-ref name="request" ref="0x2b61073ec340" scoped=""/>
+        <function-ref name="granted" ref="0x2b61073ec4d0" scoped=""/>
+        <function-ref name="isOwner" ref="0x2b61073ec660" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="41:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShareP.nc" name="RawInterrupts" provided="0" ref="0x2b61073f1060">
+      <component-ref nicename="Msp430UsartShare1P.UsartShareP" qname="Msp430UsartShare1P.UsartShareP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="RawInterrupts" ref="0x2b61073f1060" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="HplMsp430UsartInterrupts" qname="HplMsp430UsartInterrupts"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="rxDone" ref="0x2b61073f13e0" scoped=""/>
+        <function-ref name="txDone" ref="0x2b61073f1570" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="70:/opt/tinyos-release-tinyos-2_1_2//tos/lib/power/AsyncStdControlPowerManagerC.nc" name="AsyncStdControl" provided="0" ref="0x2b61073e5880">
+      <component-ref nicename="Msp430UsartShare1P.PowerManagerC" qname="Msp430UsartShare1P.PowerManagerC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AsyncStdControl" ref="0x2b61073e5880" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AsyncStdControl" qname="AsyncStdControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="start" ref="0x2b61073e5c00" scoped=""/>
+        <function-ref name="stop" ref="0x2b61073e5d90" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="73:/opt/tinyos-release-tinyos-2_1_2//tos/lib/power/AsyncStdControlPowerManagerC.nc" name="ResourceDefaultOwner" provided="0" ref="0x2b61073cf5f0">
+      <component-ref nicename="Msp430UsartShare1P.PowerManagerC" qname="Msp430UsartShare1P.PowerManagerC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ResourceDefaultOwner" ref="0x2b61073cf5f0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ResourceDefaultOwner" qname="ResourceDefaultOwner"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="release" ref="0x2b61073cf970" scoped=""/>
+        <function-ref name="requested" ref="0x2b61073cfb00" scoped=""/>
+        <function-ref name="granted" ref="0x2b61073cfc90" scoped=""/>
+        <function-ref name="isOwner" ref="0x2b61073cfe20" scoped=""/>
+        <function-ref name="immediateRequested" ref="0x2b61073ce020" scoped=""/>
+      </interface-functions>
+    </interface><component loc="74:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/HplMsp430Usart1C.nc" nicename="HplMsp430Usart1C" qname="HplMsp430Usart1C">
+      <documentation loc="31:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/msp430usart.h">
+        <short>
+ </short>
+        <long>
+ @author Vlado Handziski &lt;handzisk@tkn.tu-berlin.de&gt;
+ @author Philipp Huppertz &lt;huppertz@tkn.tu-berlin.de&gt;
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="89:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/HplMsp430Usart1C.nc">
+          <from><interface-ref name="HplMsp430UsartInterrupts" ref="0x2b61073363b0" scoped=""/></from>
+          <to><interface-ref name="Interrupts" ref="0x2b610732edc0" scoped=""/></to>
+        </wire>
+        <wire loc="87:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/HplMsp430Usart1C.nc">
+          <from><interface-ref name="AsyncStdControl" ref="0x2b610733c080" scoped=""/></from>
+          <to><interface-ref name="AsyncStdControl" ref="0x2b6107335720" scoped=""/></to>
+        </wire>
+        <wire loc="88:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/HplMsp430Usart1C.nc">
+          <from><interface-ref name="HplMsp430Usart" ref="0x2b610733c8b0" scoped=""/></from>
+          <to><interface-ref name="Usart" ref="0x2b6107332020" scoped=""/></to>
+        </wire>
+        <wire loc="91:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/HplMsp430Usart1C.nc">
+          <from><interface-ref name="SIMO" ref="0x2b610732d6d0" scoped=""/></from>
+          <to><interface-ref name="SIMO1" ref="0x2b610602e580" scoped=""/></to>
+        </wire>
+        <wire loc="92:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/HplMsp430Usart1C.nc">
+          <from><interface-ref name="SOMI" ref="0x2b610732b670" scoped=""/></from>
+          <to><interface-ref name="SOMI1" ref="0x2b6106056580" scoped=""/></to>
+        </wire>
+        <wire loc="93:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/HplMsp430Usart1C.nc">
+          <from><interface-ref name="UCLK" ref="0x2b6107329670" scoped=""/></from>
+          <to><interface-ref name="UCLK1" ref="0x2b6106054580" scoped=""/></to>
+        </wire>
+        <wire loc="94:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/HplMsp430Usart1C.nc">
+          <from><interface-ref name="URXD" ref="0x2b6107327670" scoped=""/></from>
+          <to><interface-ref name="URXD1" ref="0x2b6106050580" scoped=""/></to>
+        </wire>
+        <wire loc="95:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/HplMsp430Usart1C.nc">
+          <from><interface-ref name="UTXD" ref="0x2b6107325670" scoped=""/></from>
+          <to><interface-ref name="UTXD1" ref="0x2b6106052580" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="89(Msp430UsartShare1P.ArbiterC):/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc" nicename="Msp430UsartShare1P.ArbiterC" qname="Msp430UsartShare1P.ArbiterC">
+      <documentation loc="69:/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc">
+        <short>
+ Please refer to TEP 108 for more information about this component and its
+ intended use.&lt;br&gt;&lt;br&gt;
+
+ This component provides the Resource, ArbiterInfo, and ResourceDefaultOwner
+ interfaces and uses the ResourceConfigure interface as
+ described in TEP 108.</short>
+        <long>
+ Please refer to TEP 108 for more information about this component and its
+ intended use.&lt;br&gt;&lt;br&gt;
+
+ This component provides the Resource, ArbiterInfo, and ResourceDefaultOwner
+ interfaces and uses the ResourceConfigure interface as
+ described in TEP 108.  It provides arbitration to a shared resource in
+ an FCFS fashion.  An array is used to keep track of which users have put
+ in requests for the resource.  Upon the release of the resource by one
+ of these users, the array is checked and the next user (in FCFS order)
+ that has a pending request will ge granted control of the resource.  If
+ there are no pending requests, then the resource is granted to the default 
+ user.  If a new request is made, the default user will release the resource, 
+ and it will be granted to the requesting cleint.
+
+ @param &lt;b&gt;resourceName&lt;/b&gt; -- The name of the Resource being shared
+ 
+ @author Kevin Klues (klues@tkn.tu-berlin.de)
+</long>
+      </documentation>
+      <instance number="1">
+        <component-ref nicename="FcfsArbiterC" qname="FcfsArbiterC"/>
+        <arguments>
+          <value cst="S:Msp430Usart1.Resource">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="char" size="I:1"/>
+            </type-pointer>
+          </value>
+        </arguments>
+      </instance>
+      <configuration/>
+      <wiring>
+        <wire loc="106:/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc">
+          <from><interface-ref name="ResourceRequested" ref="0x2b61073ec9e0" scoped=""/></from>
+          <to><interface-ref name="ResourceRequested" ref="0x2b610852d3a0" scoped=""/></to>
+        </wire>
+        <wire loc="107:/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc">
+          <from><interface-ref name="ResourceDefaultOwner" ref="0x2b61073eb270" scoped=""/></from>
+          <to><interface-ref name="ResourceDefaultOwner" ref="0x2b610852db20" scoped=""/></to>
+        </wire>
+        <wire loc="105:/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc">
+          <from><interface-ref name="Resource" ref="0x2b61073edb60" scoped=""/></from>
+          <to><interface-ref name="Resource" ref="0x2b610852e540" scoped=""/></to>
+        </wire>
+        <wire loc="108:/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc">
+          <from><interface-ref name="ArbiterInfo" ref="0x2b61073ebe80" scoped=""/></from>
+          <to><interface-ref name="ArbiterInfo" ref="0x2b610852b8b0" scoped=""/></to>
+        </wire>
+        <wire loc="103:/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc">
+          <from><interface-ref name="SoftwareInit" ref="0x2b6105d641b0" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b6108531ca0" scoped=""/></to>
+        </wire>
+        <wire loc="109:/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc">
+          <from><interface-ref name="ResourceConfigure" ref="0x2b610852a210" scoped=""/></from>
+          <to><interface-ref name="ResourceConfigure" ref="0x2b61073ea770" scoped=""/></to>
+        </wire>
+        <wire loc="111:/opt/tinyos-release-tinyos-2_1_2//tos/system/FcfsArbiterC.nc">
+          <from><interface-ref name="Queue" ref="0x2b610852a9d0" scoped=""/></from>
+          <to><interface-ref name="FcfsQueue" ref="0x2b6108530330" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="37(Msp430UsartShare1P.UsartShareP):/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShareP.nc" nicename="Msp430UsartShare1P.UsartShareP" qname="Msp430UsartShare1P.UsartShareP">
+      <documentation loc="32:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430UsartShareP.nc">
+        <short>
+ </short>
+        <long>
+ @author Jonathan Hui &lt;jhui@archrock.com&gt;
+ @version $Revision: 1.5 $ $Date: 2008-06-26 04:39:08 $
+</long>
+      </documentation>
+      <instance number="1">
+        <component-ref nicename="Msp430UsartShareP" qname="Msp430UsartShareP"/>
+      </instance>
+      <module/>
+    </component><component loc="67(Msp430UsartShare1P.PowerManagerC):/opt/tinyos-release-tinyos-2_1_2//tos/lib/power/AsyncStdControlPowerManagerC.nc" nicename="Msp430UsartShare1P.PowerManagerC" qname="Msp430UsartShare1P.PowerManagerC">
+      <documentation loc="41:/opt/tinyos-release-tinyos-2_1_2//tos/lib/power/AsyncStdControlPowerManagerC.nc">
+        <short>
+ Please refer to TEP 115 for more information about this component and its
+ intended use.&lt;br&gt;&lt;br&gt;
+
+ This is the internal implementation of the standard power management
+ policy for managing the power states of non-virtualized devices.</short>
+        <long>
+ Please refer to TEP 115 for more information about this component and its
+ intended use.&lt;br&gt;&lt;br&gt;
+
+ This is the internal implementation of the standard power management
+ policy for managing the power states of non-virtualized devices.
+ Non-virtualized devices are shared using a parameterized Resource
+ interface, and are powered down according to some policy whenever there
+ are no more pending requests to that Resource.  The policy implemented
+ by this component is to power down a device as soon as it becomes free.
+ Such a policy is useful whenever a device has a negligible wake-up
+ latency.  There is no cost associated with waiting for the device to
+ power up, so it can be powered on and off as often as possible.&lt;br&gt;&lt;br&gt;
+
+ Powerdown of the device is done through the &lt;code&gt;AsyncStdControl&lt;/code&gt;
+ interface, so this component can only be used with those devices that
+ provide that interface.&lt;br&gt;&lt;br&gt;
+
+ For devices providing either the &lt;code&gt;StdControl&lt;/code&gt; or
+ &lt;code&gt;SplitControl&lt;/code&gt; interfaces, please use either the
+ &lt;code&gt;StdControlPowerManagerC&lt;/code&gt; component or the
+ &lt;code&gt;SplitControlPowerManagerC&lt;/code&gt; component respectively.
+ 
+ @author Kevin Klues (klueska@cs.wustl.edu)
+</long>
+      </documentation>
+      <instance number="0">
+        <component-ref nicename="AsyncStdControlPowerManagerC" qname="AsyncStdControlPowerManagerC"/>
+      </instance>
+      <configuration/>
+      <wiring>
+        <wire loc="80:/opt/tinyos-release-tinyos-2_1_2//tos/lib/power/AsyncStdControlPowerManagerC.nc">
+          <from><interface-ref name="AsyncStdControl" ref="0x2b61085b73a0" scoped=""/></from>
+          <to><interface-ref name="AsyncStdControl" ref="0x2b61073e5880" scoped=""/></to>
+        </wire>
+        <wire loc="82:/opt/tinyos-release-tinyos-2_1_2//tos/lib/power/AsyncStdControlPowerManagerC.nc">
+          <from><interface-ref name="PowerDownCleanup" ref="0x2b61085b7b00" scoped=""/></from>
+          <to><interface-ref name="PowerDownCleanup" ref="0x2b61073cf020" scoped=""/></to>
+        </wire>
+        <wire loc="84:/opt/tinyos-release-tinyos-2_1_2//tos/lib/power/AsyncStdControlPowerManagerC.nc">
+          <from><interface-ref name="ResourceDefaultOwner" ref="0x2b61085b50f0" scoped=""/></from>
+          <to><interface-ref name="ResourceDefaultOwner" ref="0x2b61073cf5f0" scoped=""/></to>
+        </wire>
+        <wire loc="85:/opt/tinyos-release-tinyos-2_1_2//tos/lib/power/AsyncStdControlPowerManagerC.nc">
+          <from><interface-ref name="ArbiterInfo" ref="0x2b61085b5d00" scoped=""/></from>
+          <to><interface-ref name="ArbiterInfo" ref="0x2b61073ce270" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component></referenced></component>

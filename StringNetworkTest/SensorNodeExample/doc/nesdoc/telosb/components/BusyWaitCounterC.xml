@@ -1,0 +1,61 @@
+<?xml version="1.0" ?><component abstract="" loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/BusyWaitCounterC.nc" nicename="BusyWaitCounterC" qname="BusyWaitCounterC">
+      <documentation loc="36:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/BusyWaitCounterC.nc">
+        <short>
+ BusyWaitCounterC uses a Counter to implement the BusyWait interface
+ (block until a specified amount of time elapses).</short>
+        <long>
+ BusyWaitCounterC uses a Counter to implement the BusyWait interface
+ (block until a specified amount of time elapses). See TEP102 for more
+ details.
+
+ &lt;p&gt;See TEP102 for more details.
+
+ @param precision_tag A type indicating the precision of the BusyWait
+   interface.
+ @param size_type An integer type representing time values for the
+   BusyWait interface.
+
+ @author Cory Sharp &lt;cssharp@eecs.berkeley.edu&gt;
+</long>
+      </documentation>
+      <parameters>
+        <typedef loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/BusyWaitCounterC.nc" name="precision_tag" ref="0x2b6106bfb800">
+          <component-ref nicename="BusyWaitCounterC" qname="BusyWaitCounterC"/>
+          <type-var alignment="U:" size="U:"><typedef-ref name="precision_tag" ref="0x2b6106bfb800" scoped=""/></type-var>
+        </typedef>
+        <typedef loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/BusyWaitCounterC.nc" name="size_type" ref="0x2b6106c52020">
+          <component-ref nicename="BusyWaitCounterC" qname="BusyWaitCounterC"/>
+          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b6106c52020" scoped=""/></type-var>
+        </typedef>
+      </parameters>
+      <module/>
+    <specification><interface loc="53:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/BusyWaitCounterC.nc" name="BusyWait" provided="1" ref="0x2b6106c52810">
+      <component-ref nicename="BusyWaitCounterC" qname="BusyWaitCounterC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="BusyWait" ref="0x2b6106c52810" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="BusyWait" qname="BusyWait"/>
+        <arguments>
+          <type-var alignment="U:" size="U:"><typedef-ref name="precision_tag" ref="0x2b6106bfb800" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b6106c52020" scoped=""/></type-var>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="wait" ref="0x2b6106c516a0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="54:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/BusyWaitCounterC.nc" name="Counter" provided="0" ref="0x2b6106c50020">
+      <component-ref nicename="BusyWaitCounterC" qname="BusyWaitCounterC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Counter" ref="0x2b6106c50020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Counter" qname="Counter"/>
+        <arguments>
+          <type-var alignment="U:" size="U:"><typedef-ref name="precision_tag" ref="0x2b6106bfb800" scoped=""/></type-var>
+          <type-var alignment="U:" size="U:"><typedef-ref name="size_type" ref="0x2b6106c52020" scoped=""/></type-var>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b6106c50e30" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b6106c4f800" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b6106c4f340" scoped=""/>
+        <function-ref name="overflow" ref="0x2b6106c4fcc0" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

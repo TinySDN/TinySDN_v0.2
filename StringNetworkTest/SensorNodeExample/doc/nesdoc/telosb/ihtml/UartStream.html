@@ -1,0 +1,237 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Interface: UartStream</title>
+  </head>
+  <body>
+    <h2>Interface: UartStream</h2>
+    <b>interface UartStream</b><p>
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Jonathan Hui &lt;jhui@archedrock.com&gt;
+ 
+      </dd>
+      <dt><b>Version:</b>
+      <dd>
+        $Revision: 1.5 $ $Date: 2008-06-04 03:00:35 $
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Commands</div><div id=funcsig><span id=funcnameshort>command error_t <a href="#disableReceiveInterrupt">disableReceiveInterrupt</a>()
+      </span><menu>
+ Disable the receive byte interrupt.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command error_t <a href="#enableReceiveInterrupt">enableReceiveInterrupt</a>()
+      </span><menu>
+ Enable the receive byte interrupt.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command error_t <a href="#receive">receive</a>(uint8_t *buf, uint16_t len)
+      </span><menu>
+ Begin reception of a UART stream.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command error_t <a href="#send">send</a>(uint8_t *buf, uint16_t len)
+      </span><menu>
+ Begin transmission of a UART stream.
+      </menu>
+    </div><p><div id=heading>Events</div><div id=funcsig><span id=funcnameshort>event void <a href="#receivedByte">receivedByte</a>(uint8_t byte)
+      </span><menu>
+ Signals the receipt of a byte.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>event void <a href="#receiveDone">receiveDone</a>(uint8_t *buf, uint16_t len, error_t error)
+      </span><menu>
+ Signal completion of receiving a stream.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>event void <a href="#sendDone">sendDone</a>(uint8_t *buf, uint16_t len, error_t error)
+      </span><menu>
+ Signal completion of sending a stream.
+      </menu>
+    </div><p><div id=heading>Commands - Details</div>
+    <a name="disableReceiveInterrupt"></a>
+    <h4>disableReceiveInterrupt
+    </h4>
+    <span id=funcnameshort>command error_t <b>disableReceiveInterrupt</b>()
+    </span>
+    <p>
+    <menu>
+      
+ Disable the receive byte interrupt.
+
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          SUCCESS if interrupt was disabled, FAIL otherwise.
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="enableReceiveInterrupt"></a>
+    <h4>enableReceiveInterrupt
+    </h4>
+    <span id=funcnameshort>command error_t <b>enableReceiveInterrupt</b>()
+    </span>
+    <p>
+    <menu>
+      
+ Enable the receive byte interrupt. The <code>receive</code> event
+ is signalled each time a byte is received.
+
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          SUCCESS if interrupt was enabled, FAIL otherwise.
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="receive"></a>
+    <h4>receive
+    </h4>
+    <span id=funcnameshort>command error_t <b>receive</b>(uint8_t *buf, uint16_t len)
+    </span>
+    <p>
+    <menu>
+      
+ Begin reception of a UART stream. If SUCCESS is returned,
+ <code>receiveDone</code> will be signalled when reception is
+ complete.
+
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          'uint8_t* COUNT(len) buf' Buffer for received bytes.
+ 
+        </dd>
+        <dd>
+          <code>len</code> -  Number of bytes to receive.
+ 
+        </dd>
+        <dt><b>Returns:</b>
+        <dd>
+          SUCCESS if request was accepted, FAIL otherwise.
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="send"></a>
+    <h4>send
+    </h4>
+    <span id=funcnameshort>command error_t <b>send</b>(uint8_t *buf, uint16_t len)
+    </span>
+    <p>
+    <menu>
+      
+ Begin transmission of a UART stream. If SUCCESS is returned,
+ <code>sendDone</code> will be signalled when transmission is
+ complete.
+
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          'uint8_t* COUNT(len) buf' Buffer for bytes to send.
+ 
+        </dd>
+        <dd>
+          <code>len</code> -  Number of bytes to send.
+ 
+        </dd>
+        <dt><b>Returns:</b>
+        <dd>
+          SUCCESS if request was accepted, FAIL otherwise.
+
+        </dd>
+      </dl>
+    </menu>
+    <p><div id=heading>Events - Details</div>
+    <a name="receivedByte"></a>
+    <h4>receivedByte
+    </h4>
+    <span id=funcnameshort>event void <b>receivedByte</b>(uint8_t byte)
+    </span>
+    <p>
+    <menu>
+      
+ Signals the receipt of a byte.
+
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>byte</code> -  The byte received.
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="receiveDone"></a>
+    <h4>receiveDone
+    </h4>
+    <span id=funcnameshort>event void <b>receiveDone</b>(uint8_t *buf, uint16_t len, error_t error)
+    </span>
+    <p>
+    <menu>
+      
+ Signal completion of receiving a stream.
+
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          'uint8_t* COUNT(len) buf' Buffer for bytes received.
+ 
+        </dd>
+        <dd>
+          <code>len</code> -  Number of bytes received.
+ 
+        </dd>
+        <dd>
+          <code>error</code> -  SUCCESS if the reception was successful, FAIL otherwise.
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="sendDone"></a>
+    <h4>sendDone
+    </h4>
+    <span id=funcnameshort>event void <b>sendDone</b>(uint8_t *buf, uint16_t len, error_t error)
+    </span>
+    <p>
+    <menu>
+      
+ Signal completion of sending a stream.
+
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          'uint8_t* COUNT(len) buf' Bytes sent.
+ 
+        </dd>
+        <dd>
+          <code>len</code> -  Number of bytes sent.
+ 
+        </dd>
+        <dd>
+          <code>error</code> -  SUCCESS if the transmission was successful, FAIL otherwise.
+
+        </dd>
+      </dl>
+    </menu>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+digraph "DummyLplC" {
+  n0x2b6106f7eb80 [shape=ellipse, style=filled, label="SplitControl", fontsize=12];
+  n0x2b6106f7bd90 [shape=ellipse, style=filled, label="SubControl", fontsize=12];
+  n0x2b6106f82d00 [shape=ellipse, style=filled, label="Send", fontsize=12];
+  n0x2b6106f7c860 [shape=ellipse, style=filled, label="SubSend", fontsize=12];
+  n0x2b6106f7e080 [shape=ellipse, style=filled, label="LowPowerListening", fontsize=12];
+  "DummyLplP" [fontsize=12, shape=box, URL="../chtml/DummyLplP.html"];
+  n0x2b6106f7d800 [shape=ellipse, style=filled, label="SendState", fontsize=12];
+  "DummyLplC.StateC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="StateC", URL="../chtml/StateC.html"];
+  n0x2b6106f7f980 [shape=ellipse, style=filled, label="Receive", fontsize=12];
+  n0x2b6106f7b690 [shape=ellipse, style=filled, label="SubReceive", fontsize=12];
+  "n0x2b6106f7eb80" -> "n0x2b6106f7bd90" [label="SplitControl", URL="../ihtml/SplitControl.html", fontsize=10];
+  "n0x2b6106f82d00" -> "n0x2b6106f7c860" [label="Send", URL="../ihtml/Send.html", fontsize=10];
+  "n0x2b6106f7e080" -> "DummyLplP" [label="LowPowerListening", URL="../ihtml/LowPowerListening.html", fontsize=10];
+  "n0x2b6106f7d800" -> "DummyLplC.StateC" [label="State", URL="../ihtml/State.html", fontsize=10];
+  "n0x2b6106f7f980" -> "n0x2b6106f7b690" [label="Receive", URL="../ihtml/Receive.html", fontsize=10];
+}

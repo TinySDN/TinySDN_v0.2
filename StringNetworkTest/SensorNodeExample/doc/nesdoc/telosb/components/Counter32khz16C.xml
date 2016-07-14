@@ -1,0 +1,83 @@
+<?xml version="1.0" ?><component loc="41:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Counter32khz16C.nc" nicename="Counter32khz16C" qname="Counter32khz16C">
+      <documentation loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Counter32khz16C.nc">
+        <short>
+ Counter32khz16C provides at 16-bit counter at 32768 ticks per second.</short>
+        <long>
+ Counter32khz16C provides at 16-bit counter at 32768 ticks per second.
+
+ @author Cory Sharp &lt;cssharp@eecs.berkeley.edu&gt;
+ @see  Please refer to TEP 102 for more information about this component and its
+          intended use.
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Counter32khz16C.nc">
+          <from><interface-ref name="Counter" ref="0x2b6107395110" scoped=""/></from>
+          <to><interface-ref name="Msp430Counter32khz" ref="0x2b61062a2060" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Counter32khz16C.nc" name="Counter" provided="1" ref="0x2b6107395110">
+      <component-ref nicename="Counter32khz16C" qname="Counter32khz16C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Counter" ref="0x2b6107395110" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Counter" qname="Counter"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f51d70"/>
+            <typename><typedef-ref name="T32khz" ref="0x2b6105f4f180"/></typename>
+          </type-tag>
+          <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b6107394020" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b61073949a0" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b61073944e0" scoped=""/>
+        <function-ref name="overflow" ref="0x2b6107394e60" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430Counter32khzC.nc" name="Msp430Counter32khz" provided="1" ref="0x2b61062a2060">
+      <component-ref nicename="Msp430Counter32khzC" qname="Msp430Counter32khzC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Msp430Counter32khz" ref="0x2b61062a2060" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Counter" qname="Counter"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f51d70"/>
+            <typename><typedef-ref name="T32khz" ref="0x2b6105f4f180"/></typename>
+          </type-tag>
+          <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b61062a2e70" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b61062a1820" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b61062a1360" scoped=""/>
+        <function-ref name="overflow" ref="0x2b61062a1ce0" scoped=""/>
+      </interface-functions>
+    </interface><component loc="41:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430Counter32khzC.nc" nicename="Msp430Counter32khzC" qname="Msp430Counter32khzC">
+      <documentation loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430Counter32khzC.nc">
+        <short>
+ Msp430Counter32khC provides the standard 32khz counter for the MSP430.</short>
+        <long>
+ Msp430Counter32khC provides the standard 32khz counter for the MSP430.
+
+ @author Cory Sharp &lt;cssharp@eecs.berkeley.edu&gt;
+ @see  Please refer to TEP 102 for more information about this component and its
+          intended use.
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="50:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430Counter32khzC.nc">
+          <from><interface-ref name="Msp430Counter32khz" ref="0x2b61062a2060" scoped=""/></from>
+          <to><interface-ref name="Counter" ref="0x2b610629d0a0" scoped=""/></to>
+        </wire>
+        <wire loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430Counter32khzC.nc">
+          <from><interface-ref name="Msp430Timer" ref="0x2b61062c32c0" scoped=""/></from>
+          <to><interface-ref name="TimerB" ref="0x2b6105dfab70" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component></referenced></component>

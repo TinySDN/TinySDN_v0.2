@@ -1,0 +1,8 @@
+digraph "Msp430CounterMicroC" {
+  n0x2b6106c42ad0 [shape=ellipse, style=filled, label="Msp430CounterMicro", fontsize=12];
+  "Msp430CounterMicroC.Counter" [fontsize=12, shape=box, style=dashed, label="Msp430CounterC\n(Counter)", URL="../chtml/Msp430CounterC.html"];
+  "Msp430CounterMicroC.Counter" [fontsize=12, shape=box, style=dashed, label="Msp430CounterC\n(Counter)", URL="../chtml/Msp430CounterC.html"];
+  "Msp430TimerC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/Msp430TimerC.html"];
+  "n0x2b6106c42ad0" -> "Msp430CounterMicroC.Counter" [label="Counter<TMicro, uint16_t>", URL="../ihtml/Counter.html", fontsize=10];
+  "Msp430CounterMicroC.Counter" -> "Msp430TimerC" [label="Msp430Timer", URL="../ihtml/Msp430Timer.html", fontsize=10];
+}

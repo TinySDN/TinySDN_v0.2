@@ -1,0 +1,82 @@
+<?xml version="1.0" ?><component loc="26:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/LocalIeeeEui64C.nc" nicename="LocalIeeeEui64C" qname="LocalIeeeEui64C">
+      <configuration/>
+      <wiring>
+        <wire loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/LocalIeeeEui64C.nc">
+          <from><interface-ref name="LocalIeeeEui64" ref="0x2b6106ba1e70" scoped=""/></from>
+          <to><interface-ref name="LocalIeeeEui64" ref="0x2b6106c2cd70" scoped=""/></to>
+        </wire>
+        <wire loc="34:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/LocalIeeeEui64C.nc">
+          <from><interface-ref name="ReadId48" ref="0x2b6106c2b470" scoped=""/></from>
+          <to><interface-ref name="ReadId48" ref="0x2b6106be4c70" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="27:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/LocalIeeeEui64C.nc" name="LocalIeeeEui64" provided="1" ref="0x2b6106ba1e70">
+      <component-ref nicename="LocalIeeeEui64C" qname="LocalIeeeEui64C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="LocalIeeeEui64" ref="0x2b6106ba1e70" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="LocalIeeeEui64" qname="LocalIeeeEui64"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getId" ref="0x2b6106be7220" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="12:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/Ds2411C.nc" name="ReadId48" provided="1" ref="0x2b6106be4c70">
+      <component-ref nicename="Ds2411C" qname="Ds2411C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ReadId48" ref="0x2b6106be4c70" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ReadId48" qname="ReadId48"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="read" ref="0x2b6106be3020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="6:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/DallasId48ToIeeeEui64C.nc" name="ReadId48" provided="0" ref="0x2b6106c2b470">
+      <component-ref nicename="DallasId48ToIeeeEui64C" qname="DallasId48ToIeeeEui64C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ReadId48" ref="0x2b6106c2b470" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ReadId48" qname="ReadId48"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="read" ref="0x2b6106c2b7f0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="5:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/DallasId48ToIeeeEui64C.nc" name="LocalIeeeEui64" provided="1" ref="0x2b6106c2cd70">
+      <component-ref nicename="DallasId48ToIeeeEui64C" qname="DallasId48ToIeeeEui64C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="LocalIeeeEui64" ref="0x2b6106c2cd70" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="LocalIeeeEui64" qname="LocalIeeeEui64"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getId" ref="0x2b6106c2b180" scoped=""/>
+      </interface-functions>
+    </interface><component loc="11:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/Ds2411C.nc" nicename="Ds2411C" qname="Ds2411C">
+      <documentation loc="5:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/Ds2411C.nc">
+        <short>
+ </short>
+        <long>
+ @author: Andreas Koepke (koepke@tkn.tu-berlin.de)
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="25:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/Ds2411C.nc">
+          <from><interface-ref name="ReadId48" ref="0x2b6106be4c70" scoped=""/></from>
+          <to><interface-ref name="ReadId48" ref="0x2b6106bd9ca0" scoped=""/></to>
+        </wire>
+        <wire loc="23:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/Ds2411C.nc">
+          <from><interface-ref name="HplGeneralIO" ref="0x2b6106c34020" scoped=""/></from>
+          <to><interface-ref name="Port24" ref="0x2b6105fe1020" scoped=""/></to>
+        </wire>
+        <wire loc="26:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/Ds2411C.nc">
+          <from><interface-ref name="OneWire" ref="0x2b6106bd3750" scoped=""/></from>
+          <to><interface-ref name="OneWire" ref="0x2b6106c25970" scoped=""/></to>
+        </wire>
+        <wire loc="27:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/Ds2411C.nc">
+          <from><interface-ref name="Pin" ref="0x2b6106c22230" scoped=""/></from>
+          <to><interface-ref name="GeneralIO" ref="0x2b6106bffd50" scoped=""/></to>
+        </wire>
+        <wire loc="28:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/Ds2411C.nc">
+          <from><interface-ref name="BusyWait" ref="0x2b6106c20200" scoped=""/></from>
+          <to><interface-ref name="BusyWait" ref="0x2b6106bfe440" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="4:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/epic/chips/ds2411/DallasId48ToIeeeEui64C.nc" nicename="DallasId48ToIeeeEui64C" qname="DallasId48ToIeeeEui64C">
+      <module/>
+    </component></referenced></component>

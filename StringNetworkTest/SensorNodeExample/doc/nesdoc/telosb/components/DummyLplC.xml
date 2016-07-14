@@ -1,0 +1,193 @@
+<?xml version="1.0" ?><component loc="41:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc" nicename="DummyLplC" qname="DummyLplC">
+      <documentation loc="32:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc">
+        <short>
+ Dummy low power listening interface used when LowPowerListening is not
+ compiled in with the application.</short>
+        <long>
+ Dummy low power listening interface used when LowPowerListening is not
+ compiled in with the application.
+ Sleep interval is always 0, and duty cycle is always 100%
+ @author David Moss
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="63:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc">
+          <from><interface-ref name="SplitControl" ref="0x2b6106f7eb80" scoped=""/></from>
+          <to><interface-ref name="SubControl" ref="0x2b6106f7bd90" scoped=""/></to>
+        </wire>
+        <wire loc="61:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc">
+          <from><interface-ref name="Send" ref="0x2b6106f82d00" scoped=""/></from>
+          <to><interface-ref name="SubSend" ref="0x2b6106f7c860" scoped=""/></to>
+        </wire>
+        <wire loc="64:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc">
+          <from><interface-ref name="LowPowerListening" ref="0x2b6106f7e080" scoped=""/></from>
+          <to><interface-ref name="LowPowerListening" ref="0x2b6106f772d0" scoped=""/></to>
+        </wire>
+        <wire loc="65:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc">
+          <from><interface-ref name="SendState" ref="0x2b6106f7d800" scoped=""/></from>
+          <to><interface-ref name="State" ref="0x2b6106f79580" scoped=""/></to>
+        </wire>
+        <wire loc="62:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc">
+          <from><interface-ref name="Receive" ref="0x2b6106f7f980" scoped=""/></from>
+          <to><interface-ref name="SubReceive" ref="0x2b6106f7b690" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc" name="SplitControl" provided="1" ref="0x2b6106f7eb80">
+      <component-ref nicename="DummyLplC" qname="DummyLplC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SplitControl" ref="0x2b6106f7eb80" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x2b6106f7d020" scoped=""/>
+        <function-ref name="stopDone" ref="0x2b6106f7d1b0" scoped=""/>
+        <function-ref name="start" ref="0x2b6106f7d340" scoped=""/>
+        <function-ref name="stop" ref="0x2b6106f7d4d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc" name="SubSend" provided="0" ref="0x2b6106f7c860">
+      <component-ref nicename="DummyLplC" qname="DummyLplC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SubSend" ref="0x2b6106f7c860" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Send" qname="Send"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b6106f7cbe0" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6106f7cd70" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b6106f7b020" scoped=""/>
+        <function-ref name="cancel" ref="0x2b6106f7b1b0" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b6106f7b340" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc" name="SubReceive" provided="0" ref="0x2b6106f7b690">
+      <component-ref nicename="DummyLplC" qname="DummyLplC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SubReceive" ref="0x2b6106f7b690" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Receive" qname="Receive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b6106f7ba10" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc" name="Send" provided="1" ref="0x2b6106f82d00">
+      <component-ref nicename="DummyLplC" qname="DummyLplC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Send" ref="0x2b6106f82d00" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Send" qname="Send"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b6106f7f0a0" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6106f7f230" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b6106f7f3c0" scoped=""/>
+        <function-ref name="cancel" ref="0x2b6106f7f550" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b6106f7f6e0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc" name="LowPowerListening" provided="1" ref="0x2b6106f7e080">
+      <component-ref nicename="DummyLplC" qname="DummyLplC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="LowPowerListening" ref="0x2b6106f7e080" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="LowPowerListening" qname="LowPowerListening"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setRemoteWakeupInterval" ref="0x2b6106f7e400" scoped=""/>
+        <function-ref name="getRemoteWakeupInterval" ref="0x2b6106f7e590" scoped=""/>
+        <function-ref name="getLocalWakeupInterval" ref="0x2b6106f7e720" scoped=""/>
+        <function-ref name="setLocalWakeupInterval" ref="0x2b6106f7e8b0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="47:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc" name="SendState" provided="1" ref="0x2b6106f7d800">
+      <component-ref nicename="DummyLplC" qname="DummyLplC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SendState" ref="0x2b6106f7d800" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="State" qname="State"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getState" ref="0x2b6106f7db80" scoped=""/>
+        <function-ref name="toIdle" ref="0x2b6106f7dd10" scoped=""/>
+        <function-ref name="isState" ref="0x2b6106f7c020" scoped=""/>
+        <function-ref name="isIdle" ref="0x2b6106f7c1b0" scoped=""/>
+        <function-ref name="requestState" ref="0x2b6106f7c340" scoped=""/>
+        <function-ref name="forceState" ref="0x2b6106f7c4d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="53:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc" name="SubControl" provided="0" ref="0x2b6106f7bd90">
+      <component-ref nicename="DummyLplC" qname="DummyLplC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SubControl" ref="0x2b6106f7bd90" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x2b6106f7a180" scoped=""/>
+        <function-ref name="stopDone" ref="0x2b6106f7a310" scoped=""/>
+        <function-ref name="start" ref="0x2b6106f7a4a0" scoped=""/>
+        <function-ref name="stop" ref="0x2b6106f7a630" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="44:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplC.nc" name="Receive" provided="1" ref="0x2b6106f7f980">
+      <component-ref nicename="DummyLplC" qname="DummyLplC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Receive" ref="0x2b6106f7f980" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Receive" qname="Receive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b6106f7fd00" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="67:/opt/tinyos-release-tinyos-2_1_2//tos/system/StateC.nc" name="State" provided="1" ref="0x2b6106f79580">
+      <component-ref nicename="DummyLplC.StateC" qname="DummyLplC.StateC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="State" ref="0x2b6106f79580" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="State" qname="State"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getState" ref="0x2b6106f79900" scoped=""/>
+        <function-ref name="toIdle" ref="0x2b6106f79a90" scoped=""/>
+        <function-ref name="isState" ref="0x2b6106f79c20" scoped=""/>
+        <function-ref name="isIdle" ref="0x2b6106f79db0" scoped=""/>
+        <function-ref name="requestState" ref="0x2b6106f78020" scoped=""/>
+        <function-ref name="forceState" ref="0x2b6106f781b0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="41:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplP.nc" name="LowPowerListening" provided="1" ref="0x2b6106f772d0">
+      <component-ref nicename="DummyLplP" qname="DummyLplP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="LowPowerListening" ref="0x2b6106f772d0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="LowPowerListening" qname="LowPowerListening"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setRemoteWakeupInterval" ref="0x2b6106f77650" scoped=""/>
+        <function-ref name="getRemoteWakeupInterval" ref="0x2b6106f777e0" scoped=""/>
+        <function-ref name="getLocalWakeupInterval" ref="0x2b6106f77970" scoped=""/>
+        <function-ref name="setLocalWakeupInterval" ref="0x2b6106f77b00" scoped=""/>
+      </interface-functions>
+    </interface><component loc="65(DummyLplC.StateC):/opt/tinyos-release-tinyos-2_1_2//tos/system/StateC.nc" nicename="DummyLplC.StateC" qname="DummyLplC.StateC">
+      <documentation loc="32:/opt/tinyos-release-tinyos-2_1_2//tos/types/State.h">
+        <short>
+ </short>
+        <long>
+ @author David Moss
+</long>
+      </documentation>
+      <instance number="3">
+        <component-ref nicename="StateC" qname="StateC"/>
+      </instance>
+      <configuration/>
+      <wiring>
+        <wire loc="74:/opt/tinyos-release-tinyos-2_1_2//tos/system/StateC.nc">
+          <from><interface-ref name="State" ref="0x2b6106f79580" scoped=""/></from>
+          <to><interface-ref name="State" ref="0x2b61067ed280" scoped=""/>
+          <arguments>
+            <value cst="I:3">
+              <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned=""/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+      </wiring>
+    </component><component loc="39:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplP.nc" nicename="DummyLplP" qname="DummyLplP">
+      <documentation loc="32:/opt/tinyos-release-tinyos-2_1_2//tos/chips/cc2420/lpl/DummyLplP.nc">
+        <short>
+ Dummy low power listening interface used when LowPowerListening is not
+ compiled in with the application.</short>
+        <long>
+ Dummy low power listening interface used when LowPowerListening is not
+ compiled in with the application.
+ Wakeup interval is always 0 (always on)
+ @author David Moss
+</long>
+      </documentation>
+      <module/>
+    </component></referenced></component>

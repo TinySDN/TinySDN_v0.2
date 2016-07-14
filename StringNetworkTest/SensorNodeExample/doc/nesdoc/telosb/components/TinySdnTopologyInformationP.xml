@@ -1,0 +1,79 @@
+<?xml version="1.0" ?><component abstract="" loc="7:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnTopologyInformationP.nc" nicename="TinySdnTopologyInformationP" qname="TinySdnTopologyInformationP">
+      <parameters>
+      </parameters>
+      <module/>
+    <specification><interface loc="14:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnTopologyInformationP.nc" name="LinkEstimator" provided="0" ref="0x2b610771f020">
+      <component-ref nicename="TinySdnTopologyInformationP" qname="TinySdnTopologyInformationP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="LinkEstimator" ref="0x2b610771f020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="LinkEstimator" qname="LinkEstimator"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="txAck" ref="0x2b610771f3a0" scoped=""/>
+        <function-ref name="pinNeighbor" ref="0x2b610771f530" scoped=""/>
+        <function-ref name="txNoAck" ref="0x2b610771f6c0" scoped=""/>
+        <function-ref name="insertNeighbor" ref="0x2b610771f850" scoped=""/>
+        <function-ref name="evicted" ref="0x2b610771f9e0" scoped=""/>
+        <function-ref name="clearDLQ" ref="0x2b610771fb70" scoped=""/>
+        <function-ref name="unpinNeighbor" ref="0x2b610771fd00" scoped=""/>
+        <function-ref name="getNeighborTable" ref="0x2b610771e020" scoped=""/>
+        <function-ref name="getLinkQuality" ref="0x2b610771e1b0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="12:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnTopologyInformationP.nc" name="TopologyReportTimer" provided="0" ref="0x2b6107726410">
+      <component-ref nicename="TinySdnTopologyInformationP" qname="TinySdnTopologyInformationP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="TopologyReportTimer" ref="0x2b6107726410" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Timer" qname="Timer"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f515c0"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b6105f51930"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b6107722870" scoped=""/>
+        <function-ref name="fired" ref="0x2b6107724e40" scoped=""/>
+        <function-ref name="startPeriodicAt" ref="0x2b6107723c00" scoped=""/>
+        <function-ref name="isOneShot" ref="0x2b6107723780" scoped=""/>
+        <function-ref name="getdt" ref="0x2b61077211e0" scoped=""/>
+        <function-ref name="gett0" ref="0x2b6107722cf0" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b6107723300" scoped=""/>
+        <function-ref name="startPeriodic" ref="0x2b6107724020" scoped=""/>
+        <function-ref name="startOneShotAt" ref="0x2b6107722260" scoped=""/>
+        <function-ref name="startOneShot" ref="0x2b61077244f0" scoped=""/>
+        <function-ref name="stop" ref="0x2b61077249c0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="15:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnTopologyInformationP.nc" name="Packet" provided="0" ref="0x2b610771e440">
+      <component-ref nicename="TinySdnTopologyInformationP" qname="TinySdnTopologyInformationP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Packet" ref="0x2b610771e440" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b610771e7c0" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b610771e950" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b610771eae0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b610771ec70" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b610771ee00" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="9:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnTopologyInformationP.nc" name="StdControl" provided="1" ref="0x2b6107727960">
+      <component-ref nicename="TinySdnTopologyInformationP" qname="TinySdnTopologyInformationP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="StdControl" ref="0x2b6107727960" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="StdControl" qname="StdControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="start" ref="0x2b6107727ce0" scoped=""/>
+        <function-ref name="stop" ref="0x2b6107727e70" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="13:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySdnTopologyInformationP.nc" name="TinySdnReportTopologyPacket" provided="0" ref="0x2b61077216e0">
+      <component-ref nicename="TinySdnTopologyInformationP" qname="TinySdnTopologyInformationP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="TinySdnReportTopologyPacket" ref="0x2b61077216e0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="TinySdnReportTopologyPacket" qname="TinySdnReportTopologyPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setPeriod" ref="0x2b6107721a60" scoped=""/>
+        <function-ref name="pushReportPacket" ref="0x2b6107721bf0" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

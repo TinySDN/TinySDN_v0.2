@@ -1,0 +1,13 @@
+digraph "RandomC" {
+  n0x2b6106ebca20 [shape=ellipse, style=filled, label="Random", fontsize=12];
+  "RandomMlcgC" [fontsize=12, shape=box, URL="../chtml/RandomMlcgC.html"];
+  n0x2b6106eb8920 [shape=ellipse, style=filled, label="SeedInit", fontsize=12];
+  "RandomMlcgC" [fontsize=12, shape=box, URL="../chtml/RandomMlcgC.html"];
+  n0x2b6106ec09b0 [shape=ellipse, style=filled, label="Init", fontsize=12];
+  "RandomMlcgC" [fontsize=12, shape=box, URL="../chtml/RandomMlcgC.html"];
+  "MainC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/MainC.html"];
+  "n0x2b6106ebca20" -> "RandomMlcgC" [label="Random", URL="../ihtml/Random.html", fontsize=10];
+  "n0x2b6106eb8920" -> "RandomMlcgC" [label="ParameterInit<uint16_t>", URL="../ihtml/ParameterInit.html", fontsize=10];
+  "n0x2b6106ec09b0" -> "RandomMlcgC" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+  "MainC" -> "RandomMlcgC" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+}

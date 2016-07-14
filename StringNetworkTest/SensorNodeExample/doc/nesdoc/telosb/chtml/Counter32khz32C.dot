@@ -1,0 +1,8 @@
+digraph "Counter32khz32C" {
+  n0x2b6106568d70 [shape=ellipse, style=filled, label="Counter", fontsize=12];
+  "Counter32khz32C.Transform" [fontsize=12, shape=box, style=dashed, label="TransformCounterC\n(Transform)", URL="../chtml/TransformCounterC.html"];
+  "Counter32khz32C.Transform" [fontsize=12, shape=box, style=dashed, label="TransformCounterC\n(Transform)", URL="../chtml/TransformCounterC.html"];
+  "Msp430Counter32khzC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/Msp430Counter32khzC.html"];
+  "n0x2b6106568d70" -> "Counter32khz32C.Transform" [label="Counter<T32khz, uint32_t>", URL="../ihtml/Counter.html", fontsize=10];
+  "Counter32khz32C.Transform" -> "Msp430Counter32khzC" [label="Counter<T32khz, uint16_t>", URL="../ihtml/Counter.html", fontsize=10];
+}

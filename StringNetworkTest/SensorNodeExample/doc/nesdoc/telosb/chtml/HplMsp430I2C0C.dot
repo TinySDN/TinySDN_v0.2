@@ -1,0 +1,16 @@
+digraph "HplMsp430I2C0C" {
+  n0x2b6106a3e890 [shape=ellipse, style=filled, label="HplMsp430I2C", fontsize=12];
+  "HplMsp430I2C0P" [fontsize=12, shape=box, URL="../chtml/HplMsp430I2C0P.html"];
+  "HplMsp430Usart0P" [fontsize=12, shape=box, URL="../chtml/HplMsp430Usart0P.html"];
+  "HplMsp430I2C0P" [fontsize=12, shape=box, URL="../chtml/HplMsp430I2C0P.html"];
+  "HplMsp430Usart0P" [fontsize=12, shape=box, URL="../chtml/HplMsp430Usart0P.html"];
+  "HplMsp430I2C0P" [fontsize=12, shape=box, URL="../chtml/HplMsp430I2C0P.html"];
+  "HplMsp430GeneralIOC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/HplMsp430GeneralIOC.html"];
+  "HplMsp430I2C0P" [fontsize=12, shape=box, URL="../chtml/HplMsp430I2C0P.html"];
+  "HplMsp430GeneralIOC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/HplMsp430GeneralIOC.html"];
+  "n0x2b6106a3e890" -> "HplMsp430I2C0P" [label="HplMsp430I2C", URL="../ihtml/HplMsp430I2C.html", fontsize=10];
+  "HplMsp430Usart0P" -> "HplMsp430I2C0P" [label="HplMsp430I2C", URL="../ihtml/HplMsp430I2C.html", fontsize=10];
+  "HplMsp430I2C0P" -> "HplMsp430Usart0P" [label="HplMsp430Usart", URL="../ihtml/HplMsp430Usart.html", fontsize=10];
+  "HplMsp430I2C0P" -> "HplMsp430GeneralIOC" [label="HplMsp430GeneralIO", URL="../ihtml/HplMsp430GeneralIO.html", fontsize=10];
+  "HplMsp430I2C0P" -> "HplMsp430GeneralIOC" [label="HplMsp430GeneralIO", URL="../ihtml/HplMsp430GeneralIO.html", fontsize=10];
+}

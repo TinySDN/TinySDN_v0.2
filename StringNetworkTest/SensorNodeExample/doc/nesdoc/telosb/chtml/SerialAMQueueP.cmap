@@ -1,0 +1,10 @@
+<area shape="rect" id="node2" href="../chtml/AMQueueImplP.html" title="AMQueueImplP" alt="" coords="79,117,207,165">
+<area shape="poly" id="edge1" href="../ihtml/Send.html" title="Send[uint8_t]" alt="" coords="146,54,146,104,140,104,140,54">
+<area shape="rect" id="edge1-label" href="../ihtml/Send.html" title="Send[uint8_t]" alt="" coords="143,78,219,93">
+<area shape="rect" id="node3" href="../chtml/SerialActiveMessageC.html" title="SerialActiveMessageC" alt="" coords="54,229,231,288">
+<area shape="poly" id="edge2" href="../ihtml/AMSend.html" title="AMSend[am_id_t]" alt="" coords="80,152,42,166,26,177,13,191,8,204,12,216,24,226,43,234,40,239,22,230,8,219,3,204,9,188,23,173,40,161,78,147">
+<area shape="rect" id="edge2-label" href="../ihtml/AMSend.html" title="AMSend[am_id_t]" alt="" coords="11,190,114,205">
+<area shape="poly" id="edge3" href="../ihtml/AMPacket.html" title="AMPacket" alt="" coords="146,166,146,216,140,216,140,166">
+<area shape="rect" id="edge3-label" href="../ihtml/AMPacket.html" title="AMPacket" alt="" coords="143,190,202,205">
+<area shape="poly" id="edge4" href="../ihtml/Packet.html" title="Packet" alt="" coords="187,164,204,182,208,194,205,206,197,220,192,217,200,204,202,194,200,185,184,167">
+<area shape="rect" id="edge4-label" href="../ihtml/Packet.html" title="Packet" alt="" coords="204,190,242,205">

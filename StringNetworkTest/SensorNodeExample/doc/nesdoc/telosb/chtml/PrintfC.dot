@@ -1,0 +1,17 @@
+digraph "PrintfC" {
+  "MainC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/MainC.html"];
+  "PrintfP" [fontsize=12, shape=box, URL="../chtml/PrintfP.html"];
+  "PrintfP" [fontsize=12, shape=box, URL="../chtml/PrintfP.html"];
+  "PrintfC.QueueC" [fontsize=12, shape=box, style=dashed, label="QueueC", URL="../chtml/QueueC.html"];
+  "PrintfP" [fontsize=12, shape=box, URL="../chtml/PrintfP.html"];
+  "PrintfC.SerialAMSenderC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="SerialAMSenderC", URL="../chtml/SerialAMSenderC.html"];
+  "PrintfP" [fontsize=12, shape=box, URL="../chtml/PrintfP.html"];
+  "PrintfC.SerialAMSenderC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="SerialAMSenderC", URL="../chtml/SerialAMSenderC.html"];
+  "PutcharC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/PutcharC.html"];
+  "PrintfP" [fontsize=12, shape=box, URL="../chtml/PrintfP.html"];
+  "MainC" -> "PrintfP" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+  "PrintfP" -> "PrintfC.QueueC" [label="Queue<uint8_t>", URL="../ihtml/Queue.html", fontsize=10];
+  "PrintfP" -> "PrintfC.SerialAMSenderC" [label="AMSend", URL="../ihtml/AMSend.html", fontsize=10];
+  "PrintfP" -> "PrintfC.SerialAMSenderC" [label="Packet", URL="../ihtml/Packet.html", fontsize=10];
+  "PutcharC" -> "PrintfP" [label="Putchar", URL="../ihtml/Putchar.html", fontsize=10];
+}

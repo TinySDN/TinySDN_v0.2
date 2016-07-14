@@ -1,0 +1,85 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: TinySDNSocketC</title>
+  </head>
+  <body>
+    <h2>Component: TinySDNSocketC
+    </h2>
+    <b>configuration TinySDNSocketC</b>
+    <p>
+ A data collection service that uses a tree routing protocol
+ to deliver data to collection roots, following TEP 119.
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Rodrigo Fonseca
+ 
+      </dd>
+      <dd>
+        Omprakash Gnawali
+ 
+      </dd>
+      <dd>
+        Kyle Jamieson
+ 
+      </dd>
+      <dd>
+        Philip Levis
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/Intercept.html">Intercept</a>[tinysdnsocket_id_t]</div><div id=funcsig>interface <a href="../ihtml/Packet.html">Packet</a></div><div id=funcsig>interface <a href="../ihtml/Receive.html">Receive</a>[tinysdnsocket_id_t]</div><div id=funcsig>interface <a href="../ihtml/AMSend.html">AMSend</a> as <b>Send</b>[uint8_t]</div><div id=funcsig>interface <a href="../ihtml/Receive.html">Receive</a> as <b>Snoop</b>[tinysdnsocket_id_t]</div><div id=funcsig>interface <a href="../ihtml/StdControl.html">StdControl</a></div><div id=funcsig>interface <a href="../ihtml/TinySdnPacket.html">TinySdnPacket</a></div><div id=funcsig>interface <a href="../ihtml/TinySDNSocketPacket.html">TinySDNSocketPacket</a></div><p><div id=heading>Uses</div><div id=funcsig>interface <a href="../ihtml/CollectionId.html">CollectionId</a>[uint8_t]</div><div id=funcsig>interface <a href="../ihtml/TinySDNSocketDebug.html">TinySDNSocketDebug</a></div><div id=funcsig>interface <a href="../ihtml/TinySDNSocketId.html">TinySDNSocketId</a>[uint8_t]</div><p><div id=heading>Wiring</div><p>
+    <map name="comp">
+      <area shape="rect" id="node2" href="../chtml/TinySdnP.html" title="TinySdnP" alt="" coords="549,117,645,176">
+
+      <area shape="poly" id="edge1" href="../ihtml/Intercept.html" title="Intercept[tinysdnsocket_id_t]" alt="" coords="60,52,69,74,84,91,119,107,167,120,291,136,424,143,535,144,535,149,423,148,290,142,166,125,117,112,81,95,64,77,55,55">
+
+      <area shape="rect" id="edge1-label" href="../ihtml/Intercept.html" title="Intercept[tinysdnsocket_id_t]" alt="" coords="83,78,244,93">
+
+      <area shape="poly" id="edge9" href="../ihtml/TinySDNSocketId.html" title="TinySDNSocketId[uint8_t]" alt="" coords="550,161,497,177,444,202,409,232,406,228,441,198,495,172,548,156">
+
+      <area shape="rect" id="edge9-label" href="../ihtml/TinySDNSocketId.html" title="TinySDNSocketId[uint8_t]" alt="" coords="443,201,592,215">
+
+      <area shape="poly" id="edge10" href="../ihtml/TinySDNSocketDebug.html" title="TinySDNSocketDebug" alt="" coords="600,176,600,226,595,226,595,176">
+
+      <area shape="rect" id="edge10-label" href="../ihtml/TinySDNSocketDebug.html" title="TinySDNSocketDebug" alt="" coords="597,201,725,215">
+
+      <area shape="poly" id="edge11" href="../ihtml/CollectionId.html" title="CollectionId[uint8_t]" alt="" coords="647,159,690,175,732,198,765,228,762,232,729,202,688,180,645,164">
+
+      <area shape="rect" id="edge11-label" href="../ihtml/CollectionId.html" title="CollectionId[uint8_t]" alt="" coords="749,201,867,215">
+
+      <area shape="poly" id="edge2" href="../ihtml/AMSend.html" title="AMSend[uint8_t]" alt="" coords="246,53,250,74,261,91,279,103,307,113,379,128,461,137,535,141,534,147,460,142,378,134,305,119,277,108,257,95,245,76,241,54">
+
+      <area shape="rect" id="edge2-label" href="../ihtml/AMSend.html" title="AMSend[uint8_t]" alt="" coords="259,78,356,93">
+
+      <area shape="poly" id="edge3" href="../ihtml/Receive.html" title="Receive[tinysdnsocket_id_t]" alt="" coords="364,53,363,74,370,92,395,108,437,121,536,137,535,143,436,126,393,113,366,95,358,74,359,53">
+
+      <area shape="rect" id="edge3-label" href="../ihtml/Receive.html" title="Receive[tinysdnsocket_id_t]" alt="" coords="368,78,525,93">
+
+      <area shape="poly" id="edge4" href="../ihtml/Packet.html" title="Packet" alt="" coords="496,46,532,75,564,106,560,109,529,79,492,50">
+
+      <area shape="rect" id="edge4-label" href="../ihtml/Packet.html" title="Packet" alt="" coords="548,78,585,93">
+
+      <area shape="poly" id="edge5" href="../ihtml/TinySDNSocketPacket.html" title="TinySDNSocketPacket" alt="" coords="632,54,614,105,609,104,627,52">
+
+      <area shape="rect" id="edge5-label" href="../ihtml/TinySDNSocketPacket.html" title="TinySDNSocketPacket" alt="" coords="621,78,748,93">
+
+      <area shape="poly" id="edge6" href="../ihtml/Receive.html" title="Receive[tinysdnsocket_id_t]" alt="" coords="798,54,779,76,755,96,708,119,660,135,658,130,706,114,752,91,775,72,794,51">
+
+      <area shape="rect" id="edge6-label" href="../ihtml/Receive.html" title="Receive[tinysdnsocket_id_t]" alt="" coords="772,78,929,93">
+
+      <area shape="poly" id="edge7" href="../ihtml/TinySdnPacket.html" title="TinySdnPacket" alt="" coords="972,55,957,77,936,96,885,114,812,128,660,144,659,139,812,123,884,109,933,91,953,73,967,52">
+
+      <area shape="rect" id="edge7-label" href="../ihtml/TinySdnPacket.html" title="TinySdnPacket" alt="" coords="953,78,1037,93">
+
+      <area shape="poly" id="edge8" href="../ihtml/StdControl.html" title="StdControl" alt="" coords="1112,54,1081,76,1044,96,969,114,865,127,660,144,659,139,865,122,968,108,1042,91,1078,72,1109,49">
+
+      <area shape="rect" id="edge8-label" href="../ihtml/StdControl.html" title="StdControl" alt="" coords="1073,78,1135,93">
+
+    </map>
+    <img src="TinySDNSocketC.png" usemap="#comp" id=imgwiring>
+  </body>
+</html>

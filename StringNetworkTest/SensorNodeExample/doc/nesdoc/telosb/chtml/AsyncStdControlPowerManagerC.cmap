@@ -1,0 +1,9 @@
+<area shape="rect" id="node1" href="../chtml/AsyncPowerManagerP.html" title="AsyncPowerManagerP\n(PowerManager)" alt="" coords="314,5,483,53">
+<area shape="poly" id="edge1" href="../ihtml/AsyncStdControl.html" title="AsyncStdControl" alt="" coords="315,55,236,80,141,118,139,113,234,75,313,50">
+<area shape="rect" id="edge1-label" href="../ihtml/AsyncStdControl.html" title="AsyncStdControl" alt="" coords="235,78,331,93">
+<area shape="poly" id="edge2" href="../ihtml/PowerDownCleanup.html" title="PowerDownCleanup" alt="" coords="377,56,321,110,317,106,373,52">
+<area shape="rect" id="edge2-label" href="../ihtml/PowerDownCleanup.html" title="PowerDownCleanup" alt="" coords="351,78,465,93">
+<area shape="poly" id="edge3" href="../ihtml/ResourceDefaultOwner.html" title="ResourceDefaultOwner" alt="" coords="442,51,473,75,495,104,491,107,469,79,438,55">
+<area shape="rect" id="edge3-label" href="../ihtml/ResourceDefaultOwner.html" title="ResourceDefaultOwner" alt="" coords="485,78,615,93">
+<area shape="poly" id="edge4" href="../ihtml/ArbiterInfo.html" title="ArbiterInfo" alt="" coords="484,37,552,51,621,75,647,90,670,108,667,112,644,94,619,80,551,56,482,42">
+<area shape="rect" id="edge4-label" href="../ihtml/ArbiterInfo.html" title="ArbiterInfo" alt="" coords="647,78,708,93">

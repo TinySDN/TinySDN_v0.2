@@ -1,0 +1,270 @@
+<?xml version="1.0" ?><component loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialAMQueueP.nc" nicename="SerialAMQueueP" qname="SerialAMQueueP">
+      <documentation loc="71:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/Serial.h">
+        <short>
+ </short>
+        <long>
+ @author Phil Buonadonna
+ @author Lewis Girod
+ @author Ben Greenstein
+ @author Philip Levis
+ @date   August 7 2005
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="54:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialAMQueueP.nc">
+          <from><interface-ref name="Send" ref="0x2b610703fd00" scoped=""/></from>
+          <to><interface-ref name="Send" ref="0x2b61070cc580" scoped=""/></to>
+        </wire>
+        <wire loc="55:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialAMQueueP.nc">
+          <from><interface-ref name="AMSend" ref="0x2b61070ca400" scoped=""/></from>
+          <to><interface-ref name="AMSend" ref="0x2b61070c11d0" scoped=""/></to>
+        </wire>
+        <wire loc="56:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialAMQueueP.nc">
+          <from><interface-ref name="AMPacket" ref="0x2b61070c9060" scoped=""/></from>
+          <to><interface-ref name="AMPacket" ref="0x2b61070be780" scoped=""/></to>
+        </wire>
+        <wire loc="57:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialAMQueueP.nc">
+          <from><interface-ref name="Packet" ref="0x2b61070c8720" scoped=""/></from>
+          <to><interface-ref name="Packet" ref="0x2b61070c0a00" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="44:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialAMQueueP.nc" name="Send" provided="1" ref="0x2b610703fd00">
+      <component-ref nicename="SerialAMQueueP" qname="SerialAMQueueP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Send" ref="0x2b610703fd00" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Send" qname="Send"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b610703c0a0" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b610703c230" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b610703c3c0" scoped=""/>
+        <function-ref name="cancel" ref="0x2b610703c550" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b610703c6e0" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc" name="Packet" provided="1" ref="0x2b61070c0a00">
+      <component-ref nicename="SerialActiveMessageC" qname="SerialActiveMessageC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Packet" ref="0x2b61070c0a00" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b61070c0d80" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b61070be020" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b61070be1b0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b61070be340" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b61070be4d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="48:/opt/tinyos-release-tinyos-2_1_2//tos/system/AMQueueImplP.nc" name="AMSend" provided="0" ref="0x2b61070ca400">
+      <component-ref nicename="SerialAMQueueP.AMQueueImplP" qname="SerialAMQueueP.AMQueueImplP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AMSend" ref="0x2b61070ca400" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMSend" qname="AMSend"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="am_id_t" ref="0x2b6105d4adc0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b61070ca7a0" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b61070ca930" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b61070caac0" scoped=""/>
+        <function-ref name="cancel" ref="0x2b61070cac50" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b61070cade0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/system/AMQueueImplP.nc" name="Send" provided="1" ref="0x2b61070cc580">
+      <component-ref nicename="SerialAMQueueP.AMQueueImplP" qname="SerialAMQueueP.AMQueueImplP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Send" ref="0x2b61070cc580" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Send" qname="Send"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b61070cc920" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b61070ccab0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b61070ccc40" scoped=""/>
+        <function-ref name="cancel" ref="0x2b61070ccdd0" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b61070ca020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="50:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc" name="AMPacket" provided="1" ref="0x2b61070be780">
+      <component-ref nicename="SerialActiveMessageC" qname="SerialActiveMessageC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AMPacket" ref="0x2b61070be780" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMPacket" qname="AMPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="group" ref="0x2b61070beb00" scoped=""/>
+        <function-ref name="source" ref="0x2b61070bec90" scoped=""/>
+        <function-ref name="address" ref="0x2b61070bee20" scoped=""/>
+        <function-ref name="destination" ref="0x2b61070bd020" scoped=""/>
+        <function-ref name="setSource" ref="0x2b61070bd1b0" scoped=""/>
+        <function-ref name="setDestination" ref="0x2b61070bd340" scoped=""/>
+        <function-ref name="type" ref="0x2b61070bd4d0" scoped=""/>
+        <function-ref name="setType" ref="0x2b61070bd660" scoped=""/>
+        <function-ref name="isForMe" ref="0x2b61070bd7f0" scoped=""/>
+        <function-ref name="setGroup" ref="0x2b61070bd980" scoped=""/>
+        <function-ref name="localGroup" ref="0x2b61070bdb10" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/system/AMQueueImplP.nc" name="AMPacket" provided="0" ref="0x2b61070c9060">
+      <component-ref nicename="SerialAMQueueP.AMQueueImplP" qname="SerialAMQueueP.AMQueueImplP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AMPacket" ref="0x2b61070c9060" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMPacket" qname="AMPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="group" ref="0x2b61070c93e0" scoped=""/>
+        <function-ref name="source" ref="0x2b61070c9570" scoped=""/>
+        <function-ref name="address" ref="0x2b61070c9700" scoped=""/>
+        <function-ref name="destination" ref="0x2b61070c9890" scoped=""/>
+        <function-ref name="setSource" ref="0x2b61070c9a20" scoped=""/>
+        <function-ref name="setDestination" ref="0x2b61070c9bb0" scoped=""/>
+        <function-ref name="type" ref="0x2b61070c9d40" scoped=""/>
+        <function-ref name="setType" ref="0x2b61070c8020" scoped=""/>
+        <function-ref name="isForMe" ref="0x2b61070c81b0" scoped=""/>
+        <function-ref name="setGroup" ref="0x2b61070c8340" scoped=""/>
+        <function-ref name="localGroup" ref="0x2b61070c84d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="47:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc" name="AMSend" provided="1" ref="0x2b61070c11d0">
+      <component-ref nicename="SerialActiveMessageC" qname="SerialActiveMessageC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AMSend" ref="0x2b61070c11d0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMSend" qname="AMSend"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="am_id_t" ref="0x2b6105d4adc0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b61070c1550" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b61070c16e0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b61070c1870" scoped=""/>
+        <function-ref name="cancel" ref="0x2b61070c1a00" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b61070c1b90" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="50:/opt/tinyos-release-tinyos-2_1_2//tos/system/AMQueueImplP.nc" name="Packet" provided="0" ref="0x2b61070c8720">
+      <component-ref nicename="SerialAMQueueP.AMQueueImplP" qname="SerialAMQueueP.AMQueueImplP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Packet" ref="0x2b61070c8720" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b61070c8aa0" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b61070c8c30" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b61070c8dc0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b61070c7020" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b61070c71b0" scoped=""/>
+      </interface-functions>
+    </interface><component loc="44:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc" nicename="SerialActiveMessageC" qname="SerialActiveMessageC">
+      <documentation loc="71:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/Serial.h">
+        <short>
+ </short>
+        <long>
+ @author Phil Buonadonna
+ @author Lewis Girod
+ @author Ben Greenstein
+ @author Philip Levis
+ @date   August 7 2005
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="61:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc">
+          <from><interface-ref name="SplitControl" ref="0x2b61070c2140" scoped=""/></from>
+          <to><interface-ref name="SplitControl" ref="0x2b61071362f0" scoped=""/></to>
+        </wire>
+        <wire loc="63:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc">
+          <from><interface-ref name="AMSend" ref="0x2b61070c11d0" scoped=""/></from>
+          <to><interface-ref name="AMSend" ref="0x2b61070b87d0" scoped=""/></to>
+        </wire>
+        <wire loc="65:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc">
+          <from><interface-ref name="Packet" ref="0x2b61070c0a00" scoped=""/></from>
+          <to><interface-ref name="Packet" ref="0x2b610713d400" scoped=""/></to>
+        </wire>
+        <wire loc="64:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc">
+          <from><interface-ref name="Receive" ref="0x2b61070c03f0" scoped=""/></from>
+          <to><interface-ref name="Receive" ref="0x2b610713f6c0" scoped=""/></to>
+        </wire>
+        <wire loc="67:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc">
+          <from><interface-ref name="PacketAcknowledgements" ref="0x2b61070bde40" scoped=""/></from>
+          <to><interface-ref name="PacketAcknowledgements" ref="0x2b610713c060" scoped=""/></to>
+        </wire>
+        <wire loc="66:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc">
+          <from><interface-ref name="AMPacket" ref="0x2b61070be780" scoped=""/></from>
+          <to><interface-ref name="AMPacket" ref="0x2b610713fcb0" scoped=""/></to>
+        </wire>
+        <wire loc="59:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc">
+          <from><interface-ref name="SoftwareInit" ref="0x2b6105d641b0" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b6107139bd0" scoped=""/></to>
+        </wire>
+        <wire loc="60:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc">
+          <from><interface-ref name="Leds" ref="0x2b6107132940" scoped=""/></from>
+          <to><interface-ref name="Leds" ref="0x2b61070bc7e0" scoped=""/></to>
+        </wire>
+        <wire loc="69:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc">
+          <from><interface-ref name="SubSend" ref="0x2b610713c9f0" scoped=""/></from>
+          <to><interface-ref name="Send" ref="0x2b6107135e10" scoped=""/>
+          <arguments>
+            <value cst="I:0">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="70:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc">
+          <from><interface-ref name="SubReceive" ref="0x2b610713b760" scoped=""/></from>
+          <to><interface-ref name="Receive" ref="0x2b6107135320" scoped=""/>
+          <arguments>
+            <value cst="I:0">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="72:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialActiveMessageC.nc">
+          <from><interface-ref name="SerialPacketInfo" ref="0x2b6107132020" scoped=""/>
+          <arguments>
+            <value cst="I:0">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </from>
+          <to><interface-ref name="Info" ref="0x2b61074166d0" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="45(SerialAMQueueP.AMQueueImplP):/opt/tinyos-release-tinyos-2_1_2//tos/system/AMQueueImplP.nc" nicename="SerialAMQueueP.AMQueueImplP" qname="SerialAMQueueP.AMQueueImplP">
+      <documentation loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/system/AMQueueImplP.nc">
+        <short>
+ An AM send queue that provides a Service Instance pattern for
+ formatted packets and calls an underlying AMSend in a round-robin
+ fashion.</short>
+        <long>
+ An AM send queue that provides a Service Instance pattern for
+ formatted packets and calls an underlying AMSend in a round-robin
+ fashion. Used to share L2 bandwidth between different communication
+ clients.
+
+ @author Philip Levis
+ @date   Jan 16 2006
+</long>
+      </documentation>
+      <instance number="0">
+        <component-ref nicename="AMQueueImplP" qname="AMQueueImplP"/>
+        <arguments>
+          <value cst="I:1">
+            <type-int alignment="I:2" cname="int" size="I:2"/>
+          </value>
+        </arguments>
+      </instance>
+      <module/>
+    </component></referenced></component>

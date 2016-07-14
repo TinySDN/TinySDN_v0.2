@@ -1,0 +1,107 @@
+<?xml version="1.0" ?><component loc="87:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PrintfP.nc" nicename="PrintfP" qname="PrintfP" safe="">
+      <documentation loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/printf.h">
+        <short>
+
+ </short>
+        <long>
+
+ @author Kevin Klues (klueska@cs.wustl.edu)
+ @version $Revision: 1.17 $
+ @date $Date: 2010-06-29 22:07:50 $
+</long>
+      </documentation>
+      <module/>
+    <specification><interface loc="93:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PrintfP.nc" name="Queue" provided="0" ref="0x2b6107447e70">
+      <component-ref nicename="PrintfP" qname="PrintfP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Queue" ref="0x2b6107447e70" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Queue" qname="Queue"/>
+        <arguments>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="head" ref="0x2b6107448920" scoped=""/>
+        <function-ref name="enqueue" ref="0x2b61074456d0" scoped=""/>
+        <function-ref name="element" ref="0x2b6107445d40" scoped=""/>
+        <function-ref name="maxSize" ref="0x2b61074484a0" scoped=""/>
+        <function-ref name="dequeue" ref="0x2b6107445020" scoped=""/>
+        <function-ref name="empty" ref="0x2b6107449a90" scoped=""/>
+        <function-ref name="size" ref="0x2b6107448020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="94:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PrintfP.nc" name="AMSend" provided="0" ref="0x2b6107444440">
+      <component-ref nicename="PrintfP" qname="PrintfP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AMSend" ref="0x2b6107444440" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMSend" qname="AMSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b61074447c0" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6107444950" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b6107444ae0" scoped=""/>
+        <function-ref name="cancel" ref="0x2b6107444c70" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b6107444e00" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="95:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PrintfP.nc" name="Packet" provided="0" ref="0x2b61074430c0">
+      <component-ref nicename="PrintfP" qname="PrintfP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Packet" ref="0x2b61074430c0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b6107443440" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b61074435d0" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6107443760" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b61074438f0" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b6107443a80" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="114:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PrintfP.nc" name="retrySend" provided="0" ref="0x2b61074b9500">
+      <component-ref nicename="PrintfP" qname="PrintfP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="retrySend" ref="0x2b61074b9500" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="TaskBasic" qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" ref="0x2b61074b9880" scoped=""/>
+        <function-ref name="runTask" ref="0x2b61074b9a10" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="89:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PrintfP.nc" name="Init" provided="1" ref="0x2b610744dde0">
+      <component-ref nicename="PrintfP" qname="PrintfP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Init" ref="0x2b610744dde0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b610744a180" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="96:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PrintfP.nc" name="Leds" provided="0" ref="0x2b6107443d00">
+      <component-ref nicename="PrintfP" qname="PrintfP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Leds" ref="0x2b6107443d00" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Leds" qname="Leds"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="led0Off" ref="0x2b61074420a0" scoped=""/>
+        <function-ref name="led0Toggle" ref="0x2b6107442230" scoped=""/>
+        <function-ref name="led1On" ref="0x2b61074423c0" scoped=""/>
+        <function-ref name="led1Toggle" ref="0x2b6107442550" scoped=""/>
+        <function-ref name="led2Toggle" ref="0x2b61074426e0" scoped=""/>
+        <function-ref name="get" ref="0x2b6107442870" scoped=""/>
+        <function-ref name="led1Off" ref="0x2b6107442a00" scoped=""/>
+        <function-ref name="led2Off" ref="0x2b61074411b0" scoped=""/>
+        <function-ref name="set" ref="0x2b6107442b90" scoped=""/>
+        <function-ref name="led0On" ref="0x2b6107442d20" scoped=""/>
+        <function-ref name="led2On" ref="0x2b6107441020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="90:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/PrintfP.nc" name="Putchar" provided="1" ref="0x2b61074475f0">
+      <component-ref nicename="PrintfP" qname="PrintfP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Putchar" ref="0x2b61074475f0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Putchar" qname="Putchar"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="putchar" ref="0x2b6107447970" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

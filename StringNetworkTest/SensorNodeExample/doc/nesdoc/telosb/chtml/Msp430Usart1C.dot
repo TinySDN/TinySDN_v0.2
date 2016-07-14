@@ -1,0 +1,20 @@
+digraph "Msp430Usart1C" {
+  n0x2b6107388810 [shape=ellipse, style=filled, label="ResourceRequested", fontsize=12];
+  "Msp430UsartShare1P" [fontsize=12, shape=box,peripheries=2, URL="../chtml/Msp430UsartShare1P.html"];
+  n0x2b61073fd3b0 [shape=ellipse, style=filled, label="HplMsp430UsartInterrupts", fontsize=12];
+  "Msp430UsartShare1P" [fontsize=12, shape=box,peripheries=2, URL="../chtml/Msp430UsartShare1P.html"];
+  n0x2b610738ba20 [shape=ellipse, style=filled, label="Resource", fontsize=12];
+  "Msp430UsartShare1P" [fontsize=12, shape=box,peripheries=2, URL="../chtml/Msp430UsartShare1P.html"];
+  n0x2b61073878b0 [shape=ellipse, style=filled, label="HplMsp430Usart", fontsize=12];
+  "HplMsp430Usart1C" [fontsize=12, shape=box,peripheries=2, URL="../chtml/HplMsp430Usart1C.html"];
+  n0x2b6107387080 [shape=ellipse, style=filled, label="ArbiterInfo", fontsize=12];
+  "Msp430UsartShare1P" [fontsize=12, shape=box,peripheries=2, URL="../chtml/Msp430UsartShare1P.html"];
+  "Msp430UsartShare1P" [fontsize=12, shape=box,peripheries=2, URL="../chtml/Msp430UsartShare1P.html"];
+  n0x2b61073fdc00 [shape=ellipse, style=filled, label="ResourceConfigure", fontsize=12];
+  "n0x2b6107388810" -> "Msp430UsartShare1P" [label="ResourceRequested", URL="../ihtml/ResourceRequested.html", fontsize=10];
+  "n0x2b61073fd3b0" -> "Msp430UsartShare1P" [label="HplMsp430UsartInterrupts", URL="../ihtml/HplMsp430UsartInterrupts.html", fontsize=10];
+  "n0x2b610738ba20" -> "Msp430UsartShare1P" [label="Resource", URL="../ihtml/Resource.html", fontsize=10];
+  "n0x2b61073878b0" -> "HplMsp430Usart1C" [label="HplMsp430Usart", URL="../ihtml/HplMsp430Usart.html", fontsize=10];
+  "n0x2b6107387080" -> "Msp430UsartShare1P" [label="ArbiterInfo", URL="../ihtml/ArbiterInfo.html", fontsize=10];
+  "Msp430UsartShare1P" -> "n0x2b61073fdc00" [label="ResourceConfigure[uint8_t]", style=bold, URL="../ihtml/ResourceConfigure.html", fontsize=10];
+}

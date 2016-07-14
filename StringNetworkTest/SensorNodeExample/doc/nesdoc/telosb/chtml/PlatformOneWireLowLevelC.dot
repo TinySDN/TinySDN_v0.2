@@ -1,0 +1,8 @@
+digraph "PlatformOneWireLowLevelC" {
+  n0x2b6106be25d0 [shape=ellipse, style=filled, label="OneWirePin", fontsize=12];
+  "PlatformOneWireLowLevelC.Msp430GpioC" [fontsize=12, shape=box, style=dashed, label="Msp430GpioC", URL="../chtml/Msp430GpioC.html"];
+  "PlatformOneWireLowLevelC.Msp430GpioC" [fontsize=12, shape=box, style=dashed, label="Msp430GpioC", URL="../chtml/Msp430GpioC.html"];
+  "HplMsp430GeneralIOC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/HplMsp430GeneralIOC.html"];
+  "n0x2b6106be25d0" -> "PlatformOneWireLowLevelC.Msp430GpioC" [label="GeneralIO", URL="../ihtml/GeneralIO.html", fontsize=10];
+  "PlatformOneWireLowLevelC.Msp430GpioC" -> "HplMsp430GeneralIOC" [label="HplMsp430GeneralIO", URL="../ihtml/HplMsp430GeneralIO.html", fontsize=10];
+}

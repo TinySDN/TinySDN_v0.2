@@ -1,0 +1,502 @@
+<?xml version="1.0" ?><component loc="13:SDNEnabledSensorNodeTestAppC.nc" nicename="SDNEnabledSensorNodeTestAppC" qname="SDNEnabledSensorNodeTestAppC">
+      <configuration/>
+      <wiring>
+        <wire loc="17:SDNEnabledSensorNodeTestAppC.nc">
+          <from><interface-ref name="Boot" ref="0x2b6105f4a020" scoped=""/></from>
+          <to><interface-ref name="Boot" ref="0x2b6105d69c20" scoped=""/></to>
+        </wire>
+        <wire loc="18:SDNEnabledSensorNodeTestAppC.nc">
+          <from><interface-ref name="Timer" ref="0x2b6105f5c1e0" scoped=""/></from>
+          <to><interface-ref name="Timer" ref="0x2b6106206640" scoped=""/></to>
+        </wire>
+        <wire loc="19:SDNEnabledSensorNodeTestAppC.nc">
+          <from><interface-ref name="Leds" ref="0x2b6105f860d0" scoped=""/></from>
+          <to><interface-ref name="Leds" ref="0x2b6105f285b0" scoped=""/></to>
+        </wire>
+        <wire loc="31:SDNEnabledSensorNodeTestAppC.nc">
+          <from><interface-ref name="RadioControl" ref="0x2b6105f45990" scoped=""/></from>
+          <to><interface-ref name="SplitControl" ref="0x2b6107531a60" scoped=""/></to>
+        </wire>
+        <wire loc="32:SDNEnabledSensorNodeTestAppC.nc">
+          <from><interface-ref name="RoutingControl" ref="0x2b6105f48020" scoped=""/></from>
+          <to><interface-ref name="StdControl" ref="0x2b61074f9250" scoped=""/></to>
+        </wire>
+        <wire loc="34:SDNEnabledSensorNodeTestAppC.nc">
+          <from><interface-ref name="Send" ref="0x2b6105f5f630" scoped=""/></from>
+          <to><interface-ref name="Send" ref="0x2b6107b81b10" scoped=""/></to>
+        </wire>
+        <wire loc="35:SDNEnabledSensorNodeTestAppC.nc">
+          <from><interface-ref name="Receive" ref="0x2b6105f5bdf0" scoped=""/></from>
+          <to><interface-ref name="Receive" ref="0x2b61074f6280" scoped=""/>
+          <arguments>
+            <value cst="I:147">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+      </wiring>
+    <specification/><referenced><interface loc="21:SDNEnabledSensorNodeTestC.nc" name="Receive" provided="0" ref="0x2b6105f5bdf0">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Receive" ref="0x2b6105f5bdf0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Receive" qname="Receive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b6105f411c0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="15:SDNEnabledSensorNodeTestC.nc" name="Boot" provided="0" ref="0x2b6105f4a020">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Boot" ref="0x2b6105f4a020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Boot" qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" ref="0x2b6105f4a3a0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc" name="Receive" provided="1" ref="0x2b61074f6280">
+      <component-ref nicename="TinySDNSocketC" qname="TinySDNSocketC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Receive" ref="0x2b61074f6280" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Receive" qname="Receive"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="tinysdnsocket_id_t" ref="0x2b6105f59830"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b61074f6600" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="20:SDNEnabledSensorNodeTestC.nc" name="Send" provided="0" ref="0x2b6105f5f630">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Send" ref="0x2b6105f5f630" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMSend" qname="AMSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b6105f5f9b0" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6105f5fb40" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b6105f5fcd0" scoped=""/>
+        <function-ref name="cancel" ref="0x2b6105f5fe60" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b6105f44020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/system/LedsC.nc" name="Leds" provided="1" ref="0x2b6105f285b0">
+      <component-ref nicename="LedsC" qname="LedsC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Leds" ref="0x2b6105f285b0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Leds" qname="Leds"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="led0Off" ref="0x2b6105f28930" scoped=""/>
+        <function-ref name="led0Toggle" ref="0x2b6105f28ac0" scoped=""/>
+        <function-ref name="led1On" ref="0x2b6105f28c50" scoped=""/>
+        <function-ref name="led1Toggle" ref="0x2b6105f28de0" scoped=""/>
+        <function-ref name="led2Toggle" ref="0x2b6105f91020" scoped=""/>
+        <function-ref name="get" ref="0x2b6105f911b0" scoped=""/>
+        <function-ref name="led1Off" ref="0x2b6105f91340" scoped=""/>
+        <function-ref name="led2Off" ref="0x2b6105f91980" scoped=""/>
+        <function-ref name="set" ref="0x2b6105f914d0" scoped=""/>
+        <function-ref name="led0On" ref="0x2b6105f91660" scoped=""/>
+        <function-ref name="led2On" ref="0x2b6105f917f0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="26:SDNEnabledSensorNodeTestC.nc" name="Leds" provided="0" ref="0x2b6105f860d0">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Leds" ref="0x2b6105f860d0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Leds" qname="Leds"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="led0Off" ref="0x2b6105f86450" scoped=""/>
+        <function-ref name="led0Toggle" ref="0x2b6105f865e0" scoped=""/>
+        <function-ref name="led1On" ref="0x2b6105f86770" scoped=""/>
+        <function-ref name="led1Toggle" ref="0x2b6105f86900" scoped=""/>
+        <function-ref name="led2Toggle" ref="0x2b6105f86a90" scoped=""/>
+        <function-ref name="get" ref="0x2b6105f86c20" scoped=""/>
+        <function-ref name="led1Off" ref="0x2b6105f86db0" scoped=""/>
+        <function-ref name="led2Off" ref="0x2b6105f694d0" scoped=""/>
+        <function-ref name="set" ref="0x2b6105f69020" scoped=""/>
+        <function-ref name="led0On" ref="0x2b6105f691b0" scoped=""/>
+        <function-ref name="led2On" ref="0x2b6105f69340" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="61:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/ActiveMessageC.nc" name="SplitControl" provided="1" ref="0x2b6107531a60">
+      <component-ref nicename="ActiveMessageC" qname="ActiveMessageC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SplitControl" ref="0x2b6107531a60" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x2b6107531de0" scoped=""/>
+        <function-ref name="stopDone" ref="0x2b610752e020" scoped=""/>
+        <function-ref name="start" ref="0x2b610752e1b0" scoped=""/>
+        <function-ref name="stop" ref="0x2b610752e340" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="17:SDNEnabledSensorNodeTestC.nc" name="RoutingControl" provided="0" ref="0x2b6105f48020">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="RoutingControl" ref="0x2b6105f48020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="StdControl" qname="StdControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="start" ref="0x2b6105f483a0" scoped=""/>
+        <function-ref name="stop" ref="0x2b6105f48530" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderC.nc" name="Send" provided="1" ref="0x2b6107b81b10">
+      <component-ref nicename="SDNEnabledSensorNodeTestAppC.TinySDNSocketSenderC" qname="SDNEnabledSensorNodeTestAppC.TinySDNSocketSenderC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Send" ref="0x2b6107b81b10" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMSend" qname="AMSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b6107c04020" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6107c041b0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b6107c04340" scoped=""/>
+        <function-ref name="cancel" ref="0x2b6107c044d0" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b6107c04660" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="47:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc" name="StdControl" provided="1" ref="0x2b61074f9250">
+      <component-ref nicename="TinySDNSocketC" qname="TinySDNSocketC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="StdControl" ref="0x2b61074f9250" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="StdControl" qname="StdControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="start" ref="0x2b61074f95d0" scoped=""/>
+        <function-ref name="stop" ref="0x2b61074f9760" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="25:SDNEnabledSensorNodeTestC.nc" name="Timer" provided="0" ref="0x2b6105f5c1e0">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Timer" ref="0x2b6105f5c1e0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Timer" qname="Timer"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f515c0"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b6105f51930"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b6105f6b630" scoped=""/>
+        <function-ref name="fired" ref="0x2b6105f52c30" scoped=""/>
+        <function-ref name="startPeriodicAt" ref="0x2b6105f6d9d0" scoped=""/>
+        <function-ref name="isOneShot" ref="0x2b6105f6d550" scoped=""/>
+        <function-ref name="getdt" ref="0x2b6105f6a020" scoped=""/>
+        <function-ref name="gett0" ref="0x2b6105f6bab0" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b6105f6d0d0" scoped=""/>
+        <function-ref name="startPeriodic" ref="0x2b6105f5cdd0" scoped=""/>
+        <function-ref name="startOneShotAt" ref="0x2b6105f6b020" scoped=""/>
+        <function-ref name="startOneShot" ref="0x2b6105f522e0" scoped=""/>
+        <function-ref name="stop" ref="0x2b6105f527b0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/system/TimerMilliC.nc" name="Timer" provided="1" ref="0x2b6106206640">
+      <component-ref nicename="SDNEnabledSensorNodeTestAppC.TimerMilliC" qname="SDNEnabledSensorNodeTestAppC.TimerMilliC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Timer" ref="0x2b6106206640" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Timer" qname="Timer"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f515c0"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b6105f51930"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b61063afc40" scoped=""/>
+        <function-ref name="fired" ref="0x2b61063b01e0" scoped=""/>
+        <function-ref name="startPeriodicAt" ref="0x2b61063af020" scoped=""/>
+        <function-ref name="isOneShot" ref="0x2b61063b0ae0" scoped=""/>
+        <function-ref name="getdt" ref="0x2b61063ad590" scoped=""/>
+        <function-ref name="gett0" ref="0x2b61063ad110" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b61063b0660" scoped=""/>
+        <function-ref name="startPeriodic" ref="0x2b61063b1390" scoped=""/>
+        <function-ref name="startOneShotAt" ref="0x2b61063af630" scoped=""/>
+        <function-ref name="startOneShot" ref="0x2b61063b1860" scoped=""/>
+        <function-ref name="stop" ref="0x2b61063b1d30" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="16:SDNEnabledSensorNodeTestC.nc" name="RadioControl" provided="0" ref="0x2b6105f45990">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="RadioControl" ref="0x2b6105f45990" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x2b6105f45d10" scoped=""/>
+        <function-ref name="stopDone" ref="0x2b6105f49020" scoped=""/>
+        <function-ref name="start" ref="0x2b6105f491b0" scoped=""/>
+        <function-ref name="stop" ref="0x2b6105f49340" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="57:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc" name="Boot" provided="1" ref="0x2b6105d69c20">
+      <component-ref nicename="MainC" qname="MainC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Boot" ref="0x2b6105d69c20" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Boot" qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" ref="0x2b6105d68020" scoped=""/>
+      </interface-functions>
+    </interface><component loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc" nicename="TinySDNSocketC" qname="TinySDNSocketC">
+      <documentation loc="34:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+        <short>
+ A data collection service that uses a tree routing protocol
+ to deliver data to collection roots, following TEP 119.</short>
+        <long>
+ A data collection service that uses a tree routing protocol
+ to deliver data to collection roots, following TEP 119.
+
+ @author Rodrigo Fonseca
+ @author Omprakash Gnawali
+ @author Kyle Jamieson
+ @author Philip Levis
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="72:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="Intercept" ref="0x2b61074f4040" scoped=""/></from>
+          <to><interface-ref name="Intercept" ref="0x2b61074c0db0" scoped=""/></to>
+        </wire>
+        <wire loc="69:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="Send" ref="0x2b61074f7020" scoped=""/></from>
+          <to><interface-ref name="Send" ref="0x2b61074c21d0" scoped=""/></to>
+        </wire>
+        <wire loc="71:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="Snoop" ref="0x2b61074f6e70" scoped=""/></from>
+          <to><interface-ref name="Snoop" ref="0x2b61074c01d0" scoped=""/></to>
+        </wire>
+        <wire loc="74:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="Packet" ref="0x2b61074f4650" scoped=""/></from>
+          <to><interface-ref name="Packet" ref="0x2b61074bf410" scoped=""/></to>
+        </wire>
+        <wire loc="75:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="TinySDNSocketPacket" ref="0x2b61074f3340" scoped=""/></from>
+          <to><interface-ref name="TinySDNSocketPacket" ref="0x2b61074be180" scoped=""/></to>
+        </wire>
+        <wire loc="70:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="Receive" ref="0x2b61074f6280" scoped=""/></from>
+          <to><interface-ref name="Receive" ref="0x2b61074c1460" scoped=""/></to>
+        </wire>
+        <wire loc="76:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="TinySdnPacket" ref="0x2b61074dc910" scoped=""/></from>
+          <to><interface-ref name="TinySdnPacket" ref="0x2b61074bd020" scoped=""/></to>
+        </wire>
+        <wire loc="68:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="StdControl" ref="0x2b61074f9250" scoped=""/></from>
+          <to><interface-ref name="StdControl" ref="0x2b61074c3370" scoped=""/></to>
+        </wire>
+        <wire loc="78:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="TinySDNSocketId" ref="0x2b6107538d70" scoped=""/></from>
+          <to><interface-ref name="TinySDNSocketId" ref="0x2b61074d9e80" scoped=""/></to>
+        </wire>
+        <wire loc="79:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="TinySDNSocketDebug" ref="0x2b6107534080" scoped=""/></from>
+          <to><interface-ref name="TinySDNSocketDebug" ref="0x2b61074cd2c0" scoped=""/></to>
+        </wire>
+        <wire loc="80:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="CollectionId" ref="0x2b61075379b0" scoped=""/></from>
+          <to><interface-ref name="CollectionId" ref="0x2b61074d5dc0" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="43(SDNEnabledSensorNodeTestAppC.TinySDNSocketSenderC):/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderC.nc" nicename="SDNEnabledSensorNodeTestAppC.TinySDNSocketSenderC" qname="SDNEnabledSensorNodeTestAppC.TinySDNSocketSenderC">
+      <documentation loc="32:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderC.nc">
+        <short>
+ The virtualized collection sender abstraction.</short>
+        <long>
+ The virtualized collection sender abstraction.
+
+ @author Kyle Jamieson
+ @author Philip Levis
+ @date April 25 2006
+ @see TinyOS Net2-WG
+</long>
+      </documentation>
+      <instance number="0">
+        <component-ref nicename="TinySDNSocketSenderC" qname="TinySDNSocketSenderC"/>
+        <arguments>
+          <value cst="I:147">
+            <type-int alignment="I:2" cname="int" size="I:2"/>
+          </value>
+          <value cst="I:239">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned=""/>
+          </value>
+        </arguments>
+      </instance>
+      <configuration/>
+      <wiring>
+        <wire loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderC.nc">
+          <from><interface-ref name="Packet" ref="0x2b6107c048b0" scoped=""/></from>
+          <to><interface-ref name="Packet" ref="0x2b6108933930" scoped=""/></to>
+        </wire>
+        <wire loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderC.nc">
+          <from><interface-ref name="Send" ref="0x2b6107b81b10" scoped=""/></from>
+          <to><interface-ref name="Send" ref="0x2b6108934c90" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="59:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/ActiveMessageC.nc" nicename="ActiveMessageC" qname="ActiveMessageC">
+      <documentation loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/ActiveMessageC.nc">
+        <short>
+
+ The Active Message layer on the Telos platform.</short>
+        <long>
+
+ The Active Message layer on the Telos platform. This is a naming wrapper
+ around the CC2420 Active Message layer.
+
+ @author Philip Levis
+ @version $Revision: 1.9 $ $Date: 2010-06-29 22:07:55 $
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="78:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/ActiveMessageC.nc">
+          <from><interface-ref name="SplitControl" ref="0x2b6107531a60" scoped=""/></from>
+          <to><interface-ref name="SplitControl" ref="0x2b61063d72f0" scoped=""/></to>
+        </wire>
+        <wire loc="80:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/ActiveMessageC.nc">
+          <from><interface-ref name="AMSend" ref="0x2b610752eb10" scoped=""/></from>
+          <to><interface-ref name="AMSend" ref="0x2b61063d6320" scoped=""/></to>
+        </wire>
+        <wire loc="82:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/ActiveMessageC.nc">
+          <from><interface-ref name="Snoop" ref="0x2b610752ba40" scoped=""/></from>
+          <to><interface-ref name="Snoop" ref="0x2b61063d41d0" scoped=""/></to>
+        </wire>
+        <wire loc="83:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/ActiveMessageC.nc">
+          <from><interface-ref name="Packet" ref="0x2b610752a080" scoped=""/></from>
+          <to><interface-ref name="Packet" ref="0x2b61063f14b0" scoped=""/></to>
+        </wire>
+        <wire loc="89:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/ActiveMessageC.nc">
+          <from><interface-ref name="PacketTimeStamp32khz" ref="0x2b61075272b0" scoped=""/></from>
+          <to><interface-ref name="PacketTimeStamp32khz" ref="0x2b6106deb550" scoped=""/></to>
+        </wire>
+        <wire loc="86:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/ActiveMessageC.nc">
+          <from><interface-ref name="LowPowerListening" ref="0x2b610751f0c0" scoped=""/></from>
+          <to><interface-ref name="LowPowerListening" ref="0x2b610640c2a0" scoped=""/></to>
+        </wire>
+        <wire loc="81:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/ActiveMessageC.nc">
+          <from><interface-ref name="Receive" ref="0x2b610752ce40" scoped=""/></from>
+          <to><interface-ref name="Receive" ref="0x2b61063d5510" scoped=""/></to>
+        </wire>
+        <wire loc="85:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/ActiveMessageC.nc">
+          <from><interface-ref name="PacketAcknowledgements" ref="0x2b61075284e0" scoped=""/></from>
+          <to><interface-ref name="PacketAcknowledgements" ref="0x2b61063f0080" scoped=""/></to>
+        </wire>
+        <wire loc="84:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/ActiveMessageC.nc">
+          <from><interface-ref name="AMPacket" ref="0x2b610752acf0" scoped=""/></from>
+          <to><interface-ref name="AMPacket" ref="0x2b61063c1af0" scoped=""/></to>
+        </wire>
+        <wire loc="90:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/ActiveMessageC.nc">
+          <from><interface-ref name="PacketTimeStampMilli" ref="0x2b61075233f0" scoped=""/></from>
+          <to><interface-ref name="PacketTimeStampMilli" ref="0x2b6106de7660" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="12:SDNEnabledSensorNodeTestC.nc" nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC">
+      <documentation loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/printf.h">
+        <short>
+
+ </short>
+        <long>
+
+ @author Kevin Klues (klueska@cs.wustl.edu)
+ @version $Revision: 1.17 $
+ @date $Date: 2010-06-29 22:07:50 $
+</long>
+      </documentation>
+      <module/>
+    </component><component loc="44(SDNEnabledSensorNodeTestAppC.TimerMilliC):/opt/tinyos-release-tinyos-2_1_2//tos/system/TimerMilliC.nc" nicename="SDNEnabledSensorNodeTestAppC.TimerMilliC" qname="SDNEnabledSensorNodeTestAppC.TimerMilliC">
+      <documentation loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/system/TimerMilliC.nc">
+        <short>
+ The virtualized millisecond timer abstraction.</short>
+        <long>
+ The virtualized millisecond timer abstraction. Instantiating this 
+ component gives an independent millisecond granularity timer.
+
+ @author Philip Levis
+ @date   January 16 2006
+ @see    TEP 102: Timers
+</long>
+      </documentation>
+      <instance number="0">
+        <component-ref nicename="TimerMilliC" qname="TimerMilliC"/>
+      </instance>
+      <configuration/>
+      <wiring>
+        <wire loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/system/TimerMilliC.nc">
+          <from><interface-ref name="Timer" ref="0x2b6106206640" scoped=""/></from>
+          <to><interface-ref name="TimerMilli" ref="0x2b61061fc610" scoped=""/>
+          <arguments>
+            <value cst="I:0">
+              <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned=""/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+      </wiring>
+    </component><component loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/system/LedsC.nc" nicename="LedsC" qname="LedsC">
+      <documentation loc="34:/opt/tinyos-release-tinyos-2_1_2//tos/system/LedsC.nc">
+        <short>
+
+ The basic TinyOS LEDs abstraction.</short>
+        <long>
+
+ The basic TinyOS LEDs abstraction.
+
+ @author Phil Buonadonna
+ @author David Gay
+ @author Philip Levis
+ @author Joe Polastre
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/system/LedsC.nc">
+          <from><interface-ref name="Leds" ref="0x2b6105f285b0" scoped=""/></from>
+          <to><interface-ref name="Leds" ref="0x2b6105f8d020" scoped=""/></to>
+        </wire>
+        <wire loc="53:/opt/tinyos-release-tinyos-2_1_2//tos/system/LedsC.nc">
+          <from><interface-ref name="Init" ref="0x2b6105fb5c40" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b6105f908f0" scoped=""/></to>
+        </wire>
+        <wire loc="54:/opt/tinyos-release-tinyos-2_1_2//tos/system/LedsC.nc">
+          <from><interface-ref name="Led0" ref="0x2b6105fad7b0" scoped=""/></from>
+          <to><interface-ref name="Led0" ref="0x2b6105f8e3b0" scoped=""/></to>
+        </wire>
+        <wire loc="55:/opt/tinyos-release-tinyos-2_1_2//tos/system/LedsC.nc">
+          <from><interface-ref name="Led1" ref="0x2b6105f8b980" scoped=""/></from>
+          <to><interface-ref name="Led1" ref="0x2b6105fb76a0" scoped=""/></to>
+        </wire>
+        <wire loc="56:/opt/tinyos-release-tinyos-2_1_2//tos/system/LedsC.nc">
+          <from><interface-ref name="Led2" ref="0x2b6105f8aca0" scoped=""/></from>
+          <to><interface-ref name="Led2" ref="0x2b6105fb69c0" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="56:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc" nicename="MainC" qname="MainC">
+      <documentation loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc">
+        <short>
+ MainC is the system interface the TinyOS boot sequence.</short>
+        <long>
+ MainC is the system interface the TinyOS boot sequence. It wires the
+ boot sequence implementation to the scheduler and hardware resources.
+
+ @author Philip Levis
+ @date   August 6 2005
+ @see    TEP 107: Boot Sequence
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="72:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc">
+          <from><interface-ref name="Boot" ref="0x2b6105d69c20" scoped=""/></from>
+          <to><interface-ref name="Boot" ref="0x2b6105f1a590" scoped=""/></to>
+        </wire>
+        <wire loc="67:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc">
+          <from><interface-ref name="Scheduler" ref="0x2b6105f1ac00" scoped=""/></from>
+          <to><interface-ref name="Scheduler" ref="0x2b61058673a0" scoped=""/></to>
+        </wire>
+        <wire loc="68:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc">
+          <from><interface-ref name="PlatformInit" ref="0x2b6105f336c0" scoped=""/></from>
+          <to><interface-ref name="Init" ref="0x2b6105d63190" scoped=""/></to>
+        </wire>
+        <wire loc="71:/opt/tinyos-release-tinyos-2_1_2//tos/system/MainC.nc">
+          <from><interface-ref name="SoftwareInit" ref="0x2b6105f33dc0" scoped=""/></from>
+          <to><interface-ref name="SoftwareInit" ref="0x2b6105d641b0" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component></referenced></component>

@@ -1,0 +1,14 @@
+digraph "TinySDNSocketSenderP" {
+  n0x2b6107b79de0 [shape=ellipse, style=filled, label="Packet", fontsize=12];
+  "TinySDNSocketC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/TinySDNSocketC.html"];
+  n0x2b6107b79190 [shape=ellipse, style=filled, label="Send", fontsize=12];
+  "TinySDNSocketC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/TinySDNSocketC.html"];
+  "TinySDNSocketC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/TinySDNSocketC.html"];
+  "TinySDNSocketSenderP.TinySDNSocketIdP" [fontsize=12, shape=box, style=dashed, label="TinySDNSocketIdP", URL="../chtml/TinySDNSocketIdP.html"];
+  "TinySDNSocketC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/TinySDNSocketC.html"];
+  "TinySDNSocketSenderP.CollectionIdP" [fontsize=12, shape=box, style=dashed, label="CollectionIdP", URL="../chtml/CollectionIdP.html"];
+  "n0x2b6107b79de0" -> "TinySDNSocketC" [label="Packet", URL="../ihtml/Packet.html", fontsize=10];
+  "n0x2b6107b79190" -> "TinySDNSocketC" [label="AMSend", URL="../ihtml/AMSend.html", fontsize=10];
+  "TinySDNSocketC" -> "TinySDNSocketSenderP.TinySDNSocketIdP" [label="TinySDNSocketId[uint8_t]", style=bold, URL="../ihtml/TinySDNSocketId.html", fontsize=10];
+  "TinySDNSocketC" -> "TinySDNSocketSenderP.CollectionIdP" [label="CollectionId[uint8_t]", style=bold, URL="../ihtml/CollectionId.html", fontsize=10];
+}

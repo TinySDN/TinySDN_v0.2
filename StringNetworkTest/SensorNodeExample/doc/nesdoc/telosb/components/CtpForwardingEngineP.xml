@@ -1,0 +1,530 @@
+<?xml version="1.0" ?><component abstract="" loc="107:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP">
+      <documentation loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc">
+        <short>
+  This component contains the forwarding path of CTP Noe, the
+  standard CTP implementation packaged with TinyOS 2.x.</short>
+        <long>
+  This component contains the forwarding path of CTP Noe, the
+  standard CTP implementation packaged with TinyOS 2.x. The CTP
+  specification can be found in TEP 123.  The paper entitled
+  &quot;Collection Tree Protocol,&quot; by Omprakash Gnawali et al., in SenSys
+  2009, describes the implementation and provides detailed
+  performance results of CTP Noe.&lt;/p&gt;
+
+  &lt;p&gt;The CTP ForwardingEngine is responsible for queueing and
+  scheduling outgoing packets. It maintains a pool of forwarding
+  messages and a packet send queue. A ForwardingEngine with a
+  forwarding message pool of size &lt;i&gt;F&lt;/i&gt; and &lt;i&gt;C&lt;/i&gt;
+  CollectionSenderC clients has a send queue of size &lt;i&gt;F +
+  C&lt;/i&gt;. This implementation several configuration constants, which
+  can be found in &lt;code&gt;ForwardingEngine.h&lt;/code&gt;.&lt;/p&gt;
+
+  &lt;p&gt;Packets in the send queue are sent in FIFO order, with
+  head-of-line blocking. Because this is a tree collection protocol,
+  all packets are going to the same destination, and so the
+  ForwardingEngine does not distinguish packets from one
+  another. Packets from CollectionSenderC clients are sent
+  identically to forwarded packets: only their buffer handling is
+  different.&lt;/p&gt;
+
+  &lt;p&gt;If ForwardingEngine is on top of a link layer that supports
+  synchronous acknowledgments, it enables them and retransmits packets
+  when they are not acked. It transmits a packet up to MAX_RETRIES times
+  before giving up and dropping the packet. MAX_RETRIES is typically a
+  large number (e.g., &gt;20), as this implementation assumes there is
+  link layer feedback on failed packets, such that link costs will go
+  up and cause the routing layer to pick a next hop. If the underlying
+  link layer does not support acknowledgments, ForwardingEngine sends
+  a packet only once.&lt;/p&gt;
+
+  &lt;p&gt;The ForwardingEngine detects routing loops and tries to correct
+  them. Routing is in terms of a cost gradient, where the collection
+  root has a cost of zero and a node's cost is the cost of its next
+  hop plus the cost of the link to that next hop.  If there are no
+  loops, then this gradient value decreases monotonically along a
+  route. When the ForwardingEngine sends a packet to the next hop,
+  it puts the local gradient value in the packet header. If a node
+  receives a packet to forward whose gradient value is less than its
+  own, then the gradient is not monotonically decreasing and there
+  may be a routing loop. When the ForwardingEngine receives such a
+  packet, it tells the RoutingEngine to advertise its gradient value
+  soon, with the hope that the advertisement will update the node
+  who just sent a packet and break the loop. It also pauses the
+  before the next packet transmission, in hopes of giving the
+  routing layer's packet a priority.&lt;/p&gt;
+
+  &lt;p&gt;ForwardingEngine times its packet transmissions. It
+  differentiates between four transmission cases: forwarding,
+  success, ack failure, and loop detection. In each case, the
+  ForwardingEngine waits a randomized period of time before sending
+  the next packet. This approach assumes that the network is
+  operating at low utilization; its goal is to prevent correlated
+  traffic -- such as nodes along a route forwarding packets -- from
+  interfering with itself.&lt;/p&gt;
+
+  &lt;p&gt;While this implementation can work on top of a variety of link
+  estimators, it is designed to work with a 4-bit link estimator
+  (4B). Details on 4B can be found in the HotNets paper &quot;Four Bit
+  Link Estimation&quot; by Rodrigo Fonseca et al. The forwarder provides
+  the &quot;ack&quot; bit for each sent packet, telling the estimator whether
+  the packet was acknowledged.&lt;/p&gt;
+
+  @author Philip Levis
+  @author Kyle Jamieson
+  @date   $Date: 2010-04-11 23:27:30 $
+</long>
+      </documentation>
+      <parameters>
+      </parameters>
+      <module/>
+    <specification><interface loc="142:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="SubReceive" provided="0" ref="0x2b6107a81580">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SubReceive" ref="0x2b6107a81580" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Receive" qname="Receive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b6107a81900" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="145:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="RootControl" provided="0" ref="0x2b6107a7e920">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="RootControl" ref="0x2b6107a7e920" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="RootControl" qname="RootControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="isRoot" ref="0x2b6107a7eca0" scoped=""/>
+        <function-ref name="setRoot" ref="0x2b6107a7ee30" scoped=""/>
+        <function-ref name="unsetRoot" ref="0x2b6107a7d020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="126:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="SubSend" provided="0" ref="0x2b6107a030b0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SubSend" ref="0x2b6107a030b0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMSend" qname="AMSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b6107a03430" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6107a035c0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b6107a03750" scoped=""/>
+        <function-ref name="cancel" ref="0x2b6107a038e0" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b6107a03a70" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="156:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="CollectionDebug" provided="0" ref="0x2b6107a796a0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CollectionDebug" ref="0x2b6107a796a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CollectionDebug" qname="CollectionDebug"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="logEvent" ref="0x2b6107a79a20" scoped=""/>
+        <function-ref name="logEventMsg" ref="0x2b6107a79bb0" scoped=""/>
+        <function-ref name="logEventSimple" ref="0x2b6107a79d40" scoped=""/>
+        <function-ref name="logEventRoute" ref="0x2b6107a78020" scoped=""/>
+        <function-ref name="logEventDbg" ref="0x2b6107a781b0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="116:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="CollectionPacket" provided="1" ref="0x2b6107a16cc0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CollectionPacket" ref="0x2b6107a16cc0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CollectionPacket" qname="CollectionPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setSequenceNumber" ref="0x2b6107a1c0a0" scoped=""/>
+        <function-ref name="setOrigin" ref="0x2b6107a1c230" scoped=""/>
+        <function-ref name="setType" ref="0x2b6107a1c3c0" scoped=""/>
+        <function-ref name="getOrigin" ref="0x2b6107a1c550" scoped=""/>
+        <function-ref name="getSequenceNumber" ref="0x2b6107a1c6e0" scoped=""/>
+        <function-ref name="getType" ref="0x2b6107a1c870" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="129:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="LinkEstimator" provided="0" ref="0x2b6107a93da0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="LinkEstimator" ref="0x2b6107a93da0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="LinkEstimator" qname="LinkEstimator"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="txAck" ref="0x2b6107a91180" scoped=""/>
+        <function-ref name="pinNeighbor" ref="0x2b6107a91310" scoped=""/>
+        <function-ref name="txNoAck" ref="0x2b6107a914a0" scoped=""/>
+        <function-ref name="insertNeighbor" ref="0x2b6107a91630" scoped=""/>
+        <function-ref name="evicted" ref="0x2b6107a917c0" scoped=""/>
+        <function-ref name="clearDLQ" ref="0x2b6107a91950" scoped=""/>
+        <function-ref name="unpinNeighbor" ref="0x2b6107a91ae0" scoped=""/>
+        <function-ref name="getNeighborTable" ref="0x2b6107a91c70" scoped=""/>
+        <function-ref name="getLinkQuality" ref="0x2b6107a91e00" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="140:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="SentCache" provided="0" ref="0x2b6107a83a10">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SentCache" ref="0x2b6107a83a10" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Cache" qname="Cache"/>
+        <arguments>
+          <type-pointer alignment="I:2" size="I:2">
+            <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+              <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+            </type-tag>
+          </type-pointer>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="insert" ref="0x2b6107a82670" scoped=""/>
+        <function-ref name="flush" ref="0x2b6107a81090" scoped=""/>
+        <function-ref name="lookup" ref="0x2b6107a82b40" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="114:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="Intercept" provided="1" ref="0x2b6107a1fdd0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Intercept" ref="0x2b6107a1fdd0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Intercept" qname="Intercept"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="collection_id_t" ref="0x2b61074d67f0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="forward" ref="0x2b6107a1e180" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="115:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="Packet" provided="1" ref="0x2b6107a1e410">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Packet" ref="0x2b6107a1e410" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b6107a1e790" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b6107a1e920" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6107a1eab0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b6107a1ec40" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b6107a1edd0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="113:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="Snoop" provided="1" ref="0x2b6107a1f210">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Snoop" ref="0x2b6107a1f210" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Receive" qname="Receive"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="collection_id_t" ref="0x2b61074d67f0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b6107a1f590" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="149:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="Random" provided="0" ref="0x2b6107a7ada0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Random" ref="0x2b6107a7ada0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Random" qname="Random"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="rand16" ref="0x2b6107a79180" scoped=""/>
+        <function-ref name="rand32" ref="0x2b6107a79310" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="111:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="Send" provided="1" ref="0x2b6107a21390">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Send" ref="0x2b6107a21390" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Send" qname="Send"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b6107a21710" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6107a218a0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b6107a21a30" scoped=""/>
+        <function-ref name="cancel" ref="0x2b6107a21bc0" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b6107a21d50" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="128:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="RetxmitTimer" provided="0" ref="0x2b6107a02950">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="RetxmitTimer" ref="0x2b6107a02950" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Timer" qname="Timer"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f515c0"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b6105f51930"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b6107a93020" scoped=""/>
+        <function-ref name="fired" ref="0x2b6107a95510" scoped=""/>
+        <function-ref name="startPeriodicAt" ref="0x2b6107a94300" scoped=""/>
+        <function-ref name="isOneShot" ref="0x2b6107a95e10" scoped=""/>
+        <function-ref name="getdt" ref="0x2b6107a93920" scoped=""/>
+        <function-ref name="gett0" ref="0x2b6107a934a0" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b6107a95990" scoped=""/>
+        <function-ref name="startPeriodic" ref="0x2b6107a96670" scoped=""/>
+        <function-ref name="startOneShotAt" ref="0x2b6107a94910" scoped=""/>
+        <function-ref name="startOneShot" ref="0x2b6107a96b40" scoped=""/>
+        <function-ref name="stop" ref="0x2b6107a95090" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="162:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="RadioControl" provided="0" ref="0x2b6107a785a0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="RadioControl" ref="0x2b6107a785a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x2b6107a78920" scoped=""/>
+        <function-ref name="stopDone" ref="0x2b6107a78ab0" scoped=""/>
+        <function-ref name="start" ref="0x2b6107a78c40" scoped=""/>
+        <function-ref name="stop" ref="0x2b6107a78dd0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="234:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="sendTask" provided="0" ref="0x2b6107a66020">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="sendTask" ref="0x2b6107a66020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="TaskBasic" qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" ref="0x2b6107a663a0" scoped=""/>
+        <function-ref name="runTask" ref="0x2b6107a66530" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="137:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="SendQueue" provided="0" ref="0x2b6107a8fca0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SendQueue" ref="0x2b6107a8fca0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Queue" qname="Queue"/>
+        <arguments>
+          <type-pointer alignment="I:2" size="I:2">
+            <type-tag alignment="I:2" size="I:4"><struct-ref ref="0x2b6107511710"/>
+              <typename><typedef-ref name="fe_queue_entry_t" ref="0x2b6107511be0"/></typename>
+            </type-tag>
+          </type-pointer>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="head" ref="0x2b6107a8d660" scoped=""/>
+        <function-ref name="enqueue" ref="0x2b6107a8b410" scoped=""/>
+        <function-ref name="element" ref="0x2b6107a8ba80" scoped=""/>
+        <function-ref name="maxSize" ref="0x2b6107a8d1e0" scoped=""/>
+        <function-ref name="dequeue" ref="0x2b6107a8dd10" scoped=""/>
+        <function-ref name="empty" ref="0x2b6107a8e8c0" scoped=""/>
+        <function-ref name="size" ref="0x2b6107a8ed40" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="144:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="CtpInfo" provided="0" ref="0x2b6107a802c0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CtpInfo" ref="0x2b6107a802c0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CtpInfo" qname="CtpInfo"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNeighborLinkQuality" ref="0x2b6107a80640" scoped=""/>
+        <function-ref name="recomputeRoutes" ref="0x2b6107a807d0" scoped=""/>
+        <function-ref name="numNeighbors" ref="0x2b6107a80960" scoped=""/>
+        <function-ref name="triggerRouteUpdate" ref="0x2b6107a80af0" scoped=""/>
+        <function-ref name="getEtx" ref="0x2b6107a80c80" scoped=""/>
+        <function-ref name="triggerImmediateRouteUpdate" ref="0x2b6107a80e10" scoped=""/>
+        <function-ref name="setNeighborCongested" ref="0x2b6107a7e020" scoped=""/>
+        <function-ref name="getNeighborAddr" ref="0x2b6107a7e1b0" scoped=""/>
+        <function-ref name="getParent" ref="0x2b6107a7e340" scoped=""/>
+        <function-ref name="getNeighborRouteQuality" ref="0x2b6107a7e4d0" scoped=""/>
+        <function-ref name="isNeighborCongested" ref="0x2b6107a7e660" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="131:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="SubPacket" provided="0" ref="0x2b6107a90d00">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SubPacket" ref="0x2b6107a90d00" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b6107a8f0a0" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b6107a8f230" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6107a8f3c0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b6107a8f550" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b6107a8f6e0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="109:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="Init" provided="1" ref="0x2b6107a23020">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Init" ref="0x2b6107a23020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6107a233a0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="112:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="Receive" provided="1" ref="0x2b6107a205b0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Receive" ref="0x2b6107a205b0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Receive" qname="Receive"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="collection_id_t" ref="0x2b61074d67f0"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b6107a20930" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="118:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="CtpCongestion" provided="1" ref="0x2b6107a14720">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CtpCongestion" ref="0x2b6107a14720" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CtpCongestion" qname="CtpCongestion"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="isCongested" ref="0x2b6107a14aa0" scoped=""/>
+        <function-ref name="setClientCongested" ref="0x2b6107a14c30" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="130:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="UnicastNameFreeRouting" provided="0" ref="0x2b6107a901a0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="UnicastNameFreeRouting" ref="0x2b6107a901a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="UnicastNameFreeRouting" qname="UnicastNameFreeRouting"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="hasRoute" ref="0x2b6107a90520" scoped=""/>
+        <function-ref name="routeFound" ref="0x2b6107a906b0" scoped=""/>
+        <function-ref name="nextHop" ref="0x2b6107a90840" scoped=""/>
+        <function-ref name="noRoute" ref="0x2b6107a909d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="148:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="Leds" provided="0" ref="0x2b6107a7b750">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Leds" ref="0x2b6107a7b750" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Leds" qname="Leds"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="led0Off" ref="0x2b6107a7bad0" scoped=""/>
+        <function-ref name="led0Toggle" ref="0x2b6107a7bc60" scoped=""/>
+        <function-ref name="led1On" ref="0x2b6107a7bdf0" scoped=""/>
+        <function-ref name="led1Toggle" ref="0x2b6107a7a020" scoped=""/>
+        <function-ref name="led2Toggle" ref="0x2b6107a7a1b0" scoped=""/>
+        <function-ref name="get" ref="0x2b6107a7a340" scoped=""/>
+        <function-ref name="led1Off" ref="0x2b6107a7a4d0" scoped=""/>
+        <function-ref name="led2Off" ref="0x2b6107a7ab10" scoped=""/>
+        <function-ref name="set" ref="0x2b6107a7a660" scoped=""/>
+        <function-ref name="led0On" ref="0x2b6107a7a7f0" scoped=""/>
+        <function-ref name="led2On" ref="0x2b6107a7a980" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="127:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="PacketAcknowledgements" provided="0" ref="0x2b6107a03da0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="PacketAcknowledgements" ref="0x2b6107a03da0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="PacketAcknowledgements" qname="PacketAcknowledgements"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="requestAck" ref="0x2b6107a02180" scoped=""/>
+        <function-ref name="noAck" ref="0x2b6107a02310" scoped=""/>
+        <function-ref name="wasAcked" ref="0x2b6107a024a0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="117:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="CtpPacket" provided="1" ref="0x2b6107a058d0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CtpPacket" ref="0x2b6107a058d0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CtpPacket" qname="CtpPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setSequenceNumber" ref="0x2b6107a05c50" scoped=""/>
+        <function-ref name="option" ref="0x2b6107a05de0" scoped=""/>
+        <function-ref name="setEtx" ref="0x2b6107a1b020" scoped=""/>
+        <function-ref name="setOrigin" ref="0x2b6107a1b1b0" scoped=""/>
+        <function-ref name="clearOption" ref="0x2b6107a1b340" scoped=""/>
+        <function-ref name="getEtx" ref="0x2b6107a1b4d0" scoped=""/>
+        <function-ref name="getOrigin" ref="0x2b6107a1b660" scoped=""/>
+        <function-ref name="setType" ref="0x2b6107a1b7f0" scoped=""/>
+        <function-ref name="setOption" ref="0x2b6107a1b980" scoped=""/>
+        <function-ref name="matchPacket" ref="0x2b6107a1bb10" scoped=""/>
+        <function-ref name="getThl" ref="0x2b6107a1bca0" scoped=""/>
+        <function-ref name="getSequenceNumber" ref="0x2b6107a1be30" scoped=""/>
+        <function-ref name="matchInstance" ref="0x2b6107a14020" scoped=""/>
+        <function-ref name="getType" ref="0x2b6107a142b0" scoped=""/>
+        <function-ref name="setThl" ref="0x2b6107a14440" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="138:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="QEntryPool" provided="0" ref="0x2b6107a8a3f0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="QEntryPool" ref="0x2b6107a8a3f0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Pool" qname="Pool"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:4"><struct-ref ref="0x2b6107511710"/>
+            <typename><typedef-ref name="fe_queue_entry_t" ref="0x2b6107511be0"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b6107a874c0" scoped=""/>
+        <function-ref name="maxSize" ref="0x2b6107a89920" scoped=""/>
+        <function-ref name="empty" ref="0x2b6107a89020" scoped=""/>
+        <function-ref name="put" ref="0x2b6107a89da0" scoped=""/>
+        <function-ref name="size" ref="0x2b6107a894a0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="147:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="AMPacket" provided="0" ref="0x2b6107a7c0c0">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AMPacket" ref="0x2b6107a7c0c0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMPacket" qname="AMPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="group" ref="0x2b6107a7c440" scoped=""/>
+        <function-ref name="source" ref="0x2b6107a7c5d0" scoped=""/>
+        <function-ref name="address" ref="0x2b6107a7c760" scoped=""/>
+        <function-ref name="destination" ref="0x2b6107a7c8f0" scoped=""/>
+        <function-ref name="setSource" ref="0x2b6107a7ca80" scoped=""/>
+        <function-ref name="setDestination" ref="0x2b6107a7cc10" scoped=""/>
+        <function-ref name="type" ref="0x2b6107a7cda0" scoped=""/>
+        <function-ref name="setType" ref="0x2b6107a7b020" scoped=""/>
+        <function-ref name="isForMe" ref="0x2b6107a7b1b0" scoped=""/>
+        <function-ref name="setGroup" ref="0x2b6107a7b340" scoped=""/>
+        <function-ref name="localGroup" ref="0x2b6107a7b4d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="110:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="StdControl" provided="1" ref="0x2b6107a23660">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="StdControl" ref="0x2b6107a23660" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="StdControl" qname="StdControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="start" ref="0x2b6107a239e0" scoped=""/>
+        <function-ref name="stop" ref="0x2b6107a23b70" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="143:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="SubSnoop" provided="0" ref="0x2b6107a81c40">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SubSnoop" ref="0x2b6107a81c40" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Receive" qname="Receive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b6107a80020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="139:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="MessagePool" provided="0" ref="0x2b6107a87e00">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="MessagePool" ref="0x2b6107a87e00" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Pool" qname="Pool"/>
+        <arguments>
+          <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+            <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b6107a83090" scoped=""/>
+        <function-ref name="maxSize" ref="0x2b6107a854a0" scoped=""/>
+        <function-ref name="empty" ref="0x2b6107a86a80" scoped=""/>
+        <function-ref name="put" ref="0x2b6107a85920" scoped=""/>
+        <function-ref name="size" ref="0x2b6107a85020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="146:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpForwardingEngineP.nc" name="CollectionId" provided="0" ref="0x2b6107a7d850">
+      <component-ref nicename="CtpForwardingEngineP" qname="CtpForwardingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CollectionId" ref="0x2b6107a7d850" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CollectionId" qname="CollectionId"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="fetch" ref="0x2b6107a7ddd0" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

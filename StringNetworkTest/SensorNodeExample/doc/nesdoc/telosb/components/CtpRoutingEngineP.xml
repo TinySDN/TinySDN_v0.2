@@ -1,0 +1,353 @@
+<?xml version="1.0" ?><component abstract="" loc="107:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP">
+      <documentation loc="38:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc">
+        <short>
+  The TreeRoutingEngine is responsible for computing the routes for
+  collection.</short>
+        <long>
+  The TreeRoutingEngine is responsible for computing the routes for
+  collection.  It builds a set of trees rooted at specific nodes (roots) and
+  maintains these trees using information provided by the link estimator on
+  the quality of one hop links.
+
+  &lt;p&gt;Each node is part of only one tree at any given time, but there is no
+  difference from the node's point of view of which tree it is part. In other
+  words, a message is sent towards &lt;i&gt;a&lt;/i&gt; root, but which one is not
+  specified. It is assumed that the roots will work together to have all data
+  aggregated later if need be.  The tree routing engine's responsibility is
+  for each node to find the path with the least number of transmissions to
+  any one root.
+
+  &lt;p&gt;The tree is proactively maintained by periodic beacons sent by each
+  node. These beacons are jittered in time to prevent synchronizations in the
+  network. All nodes maintain the same &lt;i&gt;average&lt;/i&gt; beacon sending rate
+  (defined by BEACON_INTERVAL +- 50%). The beacon contains the node's parent,
+  the current hopcount, and the cumulative path quality metric. The metric is
+  defined as the parent's metric plus the bidirectional quality of the link
+  between the current node and its parent.  The metric represents the
+  expected number of transmissions along the path to the root, and is 0 by
+  definition at the root.
+
+  &lt;p&gt;Every time a node receives an update from a neighbor it records the
+  information if the node is part of the neighbor table. The neighbor table
+  keeps the best candidates for being parents i.e., the nodes with the best
+  path metric. The neighbor table does not store the full path metric,
+  though. It stores the parent's path metric, and the link quality to the
+  parent is only added when the information is needed: (i) when choosing a
+  parent and (ii) when choosing a route. The nodes in the neighbor table are
+  a subset of the nodes in the link estimator table, as a node is not
+  admitted in the neighbor table with an estimate of infinity.
+
+  &lt;p&gt;There are two uses for the neighbor table, as mentioned above. The first
+  one is to select a parent. The parent is just the neighbor with the best
+  path metric. It serves to define the node's own path metric and hopcount,
+  and the set of child-parent links is what defines the tree. In a sense the
+  tree is defined to form a coherent propagation substrate for the path
+  metrics. The parent is (re)-selected periodically, immediately before a
+  node sends its own beacon, in the updateRouteTask.
+
+  &lt;p&gt;The second use is to actually choose a next hop towards any root at
+  message forwarding time.  This need not be the current parent, even though
+  it is currently implemented as such.
+
+  &lt;p&gt;The operation of the routing engine has two main tasks and one main
+  event: updateRouteTask is called periodically and chooses a new parent;
+  sendBeaconTask broadcasts the current route information to the neighbors.
+  The main event is the receiving of a neighbor's beacon, which updates the
+  neighbor table.
+
+  &lt;p&gt; The interface with the ForwardingEngine occurs through the nextHop()
+  call.
+
+  &lt;p&gt; Any node can become a root, and routed messages from a subset of the
+  network will be routed towards it. The RootControl interface allows
+  setting, unsetting, and querying the root state of a node. By convention,
+  when a node is root its hopcount and metric are 0, and the parent is
+  itself. A root always has a valid route, to itself.
+
+  @author Rodrigo Fonseca
+  @author Philip Levis (added trickle-like updates)
+  Acknowledgment: based on MintRoute, MultiHopLQI, BVR tree construction, Berkeley's MTree
+
+  @date   $Date: 2010-06-29 22:07:49 $
+  @see Net2-WG
+</long>
+      </documentation>
+      <parameters>
+        <constant loc="107:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="routingTableSize" ref="0x2b6107916a50">
+          <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+          </type-int>
+        </constant>
+        <constant loc="107:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="minInterval" ref="0x2b6107916de0">
+          <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+          <type-int alignment="I:2" cname="unsigned long" size="I:4" unsigned="">
+            <typename><typedef-ref name="uint32_t" ref="0x2b6104f08920"/></typename>
+          </type-int>
+        </constant>
+        <constant loc="107:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="maxInterval" ref="0x2b61079151c0">
+          <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+          <type-int alignment="I:2" cname="unsigned long" size="I:4" unsigned="">
+            <typename><typedef-ref name="uint32_t" ref="0x2b6104f08920"/></typename>
+          </type-int>
+        </constant>
+      </parameters>
+      <module/>
+    <specification><interface loc="110:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="RootControl" provided="1" ref="0x2b61079142e0">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="RootControl" ref="0x2b61079142e0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="RootControl" qname="RootControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="isRoot" ref="0x2b6107914660" scoped=""/>
+        <function-ref name="setRoot" ref="0x2b61079147f0" scoped=""/>
+        <function-ref name="unsetRoot" ref="0x2b6107914980" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="271:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="updateRouteTask" provided="0" ref="0x2b610794ca60">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="updateRouteTask" ref="0x2b610794ca60" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="TaskBasic" qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" ref="0x2b610794cde0" scoped=""/>
+        <function-ref name="runTask" ref="0x2b610794b020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="125:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="CollectionDebug" provided="0" ref="0x2b61078e38d0">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CollectionDebug" ref="0x2b61078e38d0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CollectionDebug" qname="CollectionDebug"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="logEvent" ref="0x2b61078e3c50" scoped=""/>
+        <function-ref name="logEventMsg" ref="0x2b61078e3de0" scoped=""/>
+        <function-ref name="logEventSimple" ref="0x2b61078eb020" scoped=""/>
+        <function-ref name="logEventRoute" ref="0x2b61078eb1b0" scoped=""/>
+        <function-ref name="logEventDbg" ref="0x2b61078eb340" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="119:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="LinkEstimator" provided="0" ref="0x2b61078fa020">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="LinkEstimator" ref="0x2b61078fa020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="LinkEstimator" qname="LinkEstimator"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="txAck" ref="0x2b61078fa3a0" scoped=""/>
+        <function-ref name="pinNeighbor" ref="0x2b61078fa530" scoped=""/>
+        <function-ref name="txNoAck" ref="0x2b61078fa6c0" scoped=""/>
+        <function-ref name="insertNeighbor" ref="0x2b61078fa850" scoped=""/>
+        <function-ref name="evicted" ref="0x2b61078fa9e0" scoped=""/>
+        <function-ref name="clearDLQ" ref="0x2b61078fab70" scoped=""/>
+        <function-ref name="unpinNeighbor" ref="0x2b61078fad00" scoped=""/>
+        <function-ref name="getNeighborTable" ref="0x2b61078f9020" scoped=""/>
+        <function-ref name="getLinkQuality" ref="0x2b61078f91b0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="113:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="CtpRoutingPacket" provided="1" ref="0x2b61078fb0d0">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CtpRoutingPacket" ref="0x2b61078fb0d0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CtpRoutingPacket" qname="CtpRoutingPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clearOptions" ref="0x2b61078fb450" scoped=""/>
+        <function-ref name="setEtx" ref="0x2b61078fb5e0" scoped=""/>
+        <function-ref name="clearOption" ref="0x2b61078fb770" scoped=""/>
+        <function-ref name="getEtx" ref="0x2b61078fb900" scoped=""/>
+        <function-ref name="setOption" ref="0x2b61078fba90" scoped=""/>
+        <function-ref name="setParent" ref="0x2b61078fbc20" scoped=""/>
+        <function-ref name="getParent" ref="0x2b61078fbdb0" scoped=""/>
+        <function-ref name="getOption" ref="0x2b6107907020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="121:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="RadioControl" provided="0" ref="0x2b61078f8b80">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="RadioControl" ref="0x2b61078f8b80" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x2b61078f7020" scoped=""/>
+        <function-ref name="stopDone" ref="0x2b61078f71b0" scoped=""/>
+        <function-ref name="start" ref="0x2b61078f7340" scoped=""/>
+        <function-ref name="stop" ref="0x2b61078f74d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="124:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="Random" provided="0" ref="0x2b61078ec190">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Random" ref="0x2b61078ec190" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Random" qname="Random"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="rand16" ref="0x2b61078ec510" scoped=""/>
+        <function-ref name="rand32" ref="0x2b61078ec6a0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="111:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="CtpInfo" provided="1" ref="0x2b6107913020">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CtpInfo" ref="0x2b6107913020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CtpInfo" qname="CtpInfo"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNeighborLinkQuality" ref="0x2b61079133a0" scoped=""/>
+        <function-ref name="recomputeRoutes" ref="0x2b6107913530" scoped=""/>
+        <function-ref name="numNeighbors" ref="0x2b61079136c0" scoped=""/>
+        <function-ref name="triggerRouteUpdate" ref="0x2b6107913850" scoped=""/>
+        <function-ref name="getEtx" ref="0x2b61079139e0" scoped=""/>
+        <function-ref name="triggerImmediateRouteUpdate" ref="0x2b6107913b70" scoped=""/>
+        <function-ref name="setNeighborCongested" ref="0x2b6107913d00" scoped=""/>
+        <function-ref name="getNeighborAddr" ref="0x2b6107912020" scoped=""/>
+        <function-ref name="getParent" ref="0x2b61079121b0" scoped=""/>
+        <function-ref name="getNeighborRouteQuality" ref="0x2b6107912340" scoped=""/>
+        <function-ref name="isNeighborCongested" ref="0x2b61079124d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="390:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="sendBeaconTask" provided="0" ref="0x2b6107937db0">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="sendBeaconTask" ref="0x2b6107937db0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="TaskBasic" qname="TaskBasic"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="postTask" ref="0x2b6107936180" scoped=""/>
+        <function-ref name="runTask" ref="0x2b6107936310" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="114:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="Init" provided="1" ref="0x2b61079072a0">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Init" ref="0x2b61079072a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6107907620" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="117:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="BeaconSend" provided="0" ref="0x2b61079079e0">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="BeaconSend" ref="0x2b61079079e0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMSend" qname="AMSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b6107907d60" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6107906020" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b61079061b0" scoped=""/>
+        <function-ref name="cancel" ref="0x2b6107906340" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b61079064d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="122:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="BeaconTimer" provided="0" ref="0x2b61078f7970">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="BeaconTimer" ref="0x2b61078f7970" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Timer" qname="Timer"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f515c0"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b6105f51930"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b61078f3e80" scoped=""/>
+        <function-ref name="fired" ref="0x2b61078f54a0" scoped=""/>
+        <function-ref name="startPeriodicAt" ref="0x2b61078f3260" scoped=""/>
+        <function-ref name="isOneShot" ref="0x2b61078f5da0" scoped=""/>
+        <function-ref name="getdt" ref="0x2b61078f27a0" scoped=""/>
+        <function-ref name="gett0" ref="0x2b61078f2320" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b61078f5920" scoped=""/>
+        <function-ref name="startPeriodic" ref="0x2b61078f65a0" scoped=""/>
+        <function-ref name="startOneShotAt" ref="0x2b61078f3870" scoped=""/>
+        <function-ref name="startOneShot" ref="0x2b61078f6a70" scoped=""/>
+        <function-ref name="stop" ref="0x2b61078f5020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="123:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="RouteTimer" provided="0" ref="0x2b61078f2de0">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="RouteTimer" ref="0x2b61078f2de0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Timer" qname="Timer"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f515c0"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b6105f51930"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b61078ed410" scoped=""/>
+        <function-ref name="fired" ref="0x2b61078f09e0" scoped=""/>
+        <function-ref name="startPeriodicAt" ref="0x2b61078ef790" scoped=""/>
+        <function-ref name="isOneShot" ref="0x2b61078ef310" scoped=""/>
+        <function-ref name="getdt" ref="0x2b61078edd10" scoped=""/>
+        <function-ref name="gett0" ref="0x2b61078ed890" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b61078f0e60" scoped=""/>
+        <function-ref name="startPeriodic" ref="0x2b61078f1b80" scoped=""/>
+        <function-ref name="startOneShotAt" ref="0x2b61078efda0" scoped=""/>
+        <function-ref name="startOneShot" ref="0x2b61078f0090" scoped=""/>
+        <function-ref name="stop" ref="0x2b61078f0560" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="126:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="CtpCongestion" provided="0" ref="0x2b61078eb620">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CtpCongestion" ref="0x2b61078eb620" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CtpCongestion" qname="CtpCongestion"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="isCongested" ref="0x2b61078eb9a0" scoped=""/>
+        <function-ref name="setClientCongested" ref="0x2b61078ebb30" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="128:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="CompareBit" provided="0" ref="0x2b61078ebdf0">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CompareBit" ref="0x2b61078ebdf0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CompareBit" qname="CompareBit"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="shouldInsert" ref="0x2b61079701c0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="118:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="BeaconReceive" provided="0" ref="0x2b6107906840">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="BeaconReceive" ref="0x2b6107906840" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Receive" qname="Receive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b6107906bc0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="120:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="AMPacket" provided="0" ref="0x2b61078f9460">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AMPacket" ref="0x2b61078f9460" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMPacket" qname="AMPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="group" ref="0x2b61078f97e0" scoped=""/>
+        <function-ref name="source" ref="0x2b61078f9970" scoped=""/>
+        <function-ref name="address" ref="0x2b61078f9b00" scoped=""/>
+        <function-ref name="destination" ref="0x2b61078f9c90" scoped=""/>
+        <function-ref name="setSource" ref="0x2b61078f9e20" scoped=""/>
+        <function-ref name="setDestination" ref="0x2b61078f8020" scoped=""/>
+        <function-ref name="type" ref="0x2b61078f81b0" scoped=""/>
+        <function-ref name="setType" ref="0x2b61078f8340" scoped=""/>
+        <function-ref name="isForMe" ref="0x2b61078f84d0" scoped=""/>
+        <function-ref name="setGroup" ref="0x2b61078f8660" scoped=""/>
+        <function-ref name="localGroup" ref="0x2b61078f87f0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="112:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="StdControl" provided="1" ref="0x2b6107912790">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="StdControl" ref="0x2b6107912790" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="StdControl" qname="StdControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="start" ref="0x2b6107912b10" scoped=""/>
+        <function-ref name="stop" ref="0x2b6107912ca0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="109:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpRoutingEngineP.nc" name="Routing" provided="1" ref="0x2b6107915790">
+      <component-ref nicename="CtpRoutingEngineP" qname="CtpRoutingEngineP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Routing" ref="0x2b6107915790" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="UnicastNameFreeRouting" qname="UnicastNameFreeRouting"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="hasRoute" ref="0x2b6107915b10" scoped=""/>
+        <function-ref name="routeFound" ref="0x2b6107915ca0" scoped=""/>
+        <function-ref name="nextHop" ref="0x2b6107915e30" scoped=""/>
+        <function-ref name="noRoute" ref="0x2b6107914020" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

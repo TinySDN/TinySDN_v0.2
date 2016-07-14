@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Interface: SerialPacketInfo</title>
+  </head>
+  <body>
+    <h2>Interface: SerialPacketInfo</h2>
+    <b>interface SerialPacketInfo</b><p>
+ Accessor methods used by a serial dispatcher to communicate with various
+ message_t link formats over a serial port.
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Philip Levis
+ 
+      </dd>
+      <dd>
+        Ben Greenstein
+ 
+      </dd>
+      <dt><b>Date:</b>
+      <dd>
+        August 7 2005
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Commands</div><div id=funcsig><span id=funcnameshort>command uint8_t <a href="#dataLinkLength">dataLinkLength</a>(message_t *msg, uint8_t upperLen)
+      </span><menu>
+ Get the size of the datalink packet embedded in the message_t, in bytes.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command uint8_t <a href="#offset">offset</a>()
+      </span><menu>
+ Get the offset into a message_t where the header information begins.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command uint8_t <a href="#upperLength">upperLength</a>(message_t *msg, uint8_t dataLinkLen)
+      </span><menu>
+ Get the size of the payload (in bytes) given the size of the datalink
+ packet (dataLinkLen) embedded in the message_t.
+      </menu>
+    </div><p><div id=heading>Commands - Details</div>
+    <a name="dataLinkLength"></a>
+    <h4>dataLinkLength
+    </h4>
+    <span id=funcnameshort>command uint8_t <b>dataLinkLength</b>(message_t *msg, uint8_t upperLen)
+    </span>
+    <p>
+    <menu>
+      
+ Get the size of the datalink packet embedded in the message_t, in bytes. 
+ This is the sum of the payload (upperLen) and the size of the link header.
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>msg</code> -  A pointer to the message_t to interrogate. (unused)
+ 
+        </dd>
+        <dd>
+          <code>upperLen</code> -  The size of the payload.
+ 
+        </dd>
+        <dt><b>Returns:</b>
+        <dd>
+          Returns the size of the datalink packet.
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="offset"></a>
+    <h4>offset
+    </h4>
+    <span id=funcnameshort>command uint8_t <b>offset</b>()
+    </span>
+    <p>
+    <menu>
+      
+ Get the offset into a message_t where the header information begins.
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          Returns the offset.
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="upperLength"></a>
+    <h4>upperLength
+    </h4>
+    <span id=funcnameshort>command uint8_t <b>upperLength</b>(message_t *msg, uint8_t dataLinkLen)
+    </span>
+    <p>
+    <menu>
+      
+ Get the size of the payload (in bytes) given the size of the datalink
+ packet (dataLinkLen) embedded in the message_t.
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>msg</code> -  A pointer to the message_t to interrogate. (unused)
+ 
+        </dd>
+        <dd>
+          <code>dataLinkLength</code> -  The size of the datalink packet.
+ 
+        </dd>
+        <dt><b>Returns:</b>
+        <dd>
+          Returns the size of the payload.
+
+        </dd>
+      </dl>
+    </menu>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: CC2420PacketC</title>
+  </head>
+  <body>
+    <h2>Component: CC2420PacketC
+    </h2>
+    <b>configuration CC2420PacketC</b>
+    <p>
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Jonathan Hui &lt;jhui@archrock.com&gt;
+ 
+      </dd>
+      <dd>
+        David Moss
+ 
+      </dd>
+      <dd>
+        Chad Metcalf
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/PacketAcknowledgements.html">PacketAcknowledgements</a> as <b>Acks</b></div><div id=funcsig>interface <a href="../ihtml/CC2420Packet.html">CC2420Packet</a></div><div id=funcsig>interface <a href="../ihtml/CC2420PacketBody.html">CC2420PacketBody</a></div><div id=funcsig>interface <a href="../ihtml/LinkPacketMetadata.html">LinkPacketMetadata</a></div><div id=funcsig>interface <a href="../ihtml/PacketTimeStamp.html">PacketTimeStamp</a>&lt;T32khz, uint32_t&gt; as <b>PacketTimeStamp32khz</b></div><div id=funcsig>interface <a href="../ihtml/PacketTimeStamp.html">PacketTimeStamp</a>&lt;TMilli, uint32_t&gt; as <b>PacketTimeStampMilli</b></div><div id=funcsig>interface <a href="../ihtml/PacketTimeSyncOffset.html">PacketTimeSyncOffset</a></div><p><div id=heading>Wiring</div><p>
+    <map name="comp">
+      <area shape="rect" id="node2" href="../chtml/CC2420PacketP.html" title="CC2420PacketP" alt="" coords="671,117,797,165">
+
+      <area shape="poly" id="edge1" href="../ihtml/LinkPacketMetadata.html" title="LinkPacketMetadata" alt="" coords="142,49,196,71,258,91,365,112,474,125,658,136,658,142,474,130,365,117,257,96,195,76,140,53">
+
+      <area shape="rect" id="edge1-label" href="../ihtml/LinkPacketMetadata.html" title="LinkPacketMetadata" alt="" coords="257,78,371,93">
+
+      <area shape="rect" id="node9" href="../chtml/CounterToLocalTimeC.html" title="CounterToLocalTimeC" alt="" coords="548,235,719,283">
+
+      <area shape="poly" id="edge9" href="../ihtml/LocalTime.html" title="LocalTime&lt;T32khz&gt;" alt="" coords="676,167,649,191,641,205,637,222,632,220,636,204,645,188,672,163">
+
+      <area shape="rect" id="edge9-label" href="../ihtml/LocalTime.html" title="LocalTime&lt;T32khz&gt;" alt="" coords="647,190,764,205">
+
+      <area shape="rect" id="node11" href="../chtml/HilTimerMilliC.html" title="HilTimerMilliC" alt="" coords="743,229,875,288">
+
+      <area shape="poly" id="edge10" href="../ihtml/LocalTime.html" title="LocalTime&lt;TMilli&gt;" alt="" coords="755,164,772,188,789,216,785,219,767,191,750,167">
+
+      <area shape="rect" id="edge10-label" href="../ihtml/LocalTime.html" title="LocalTime&lt;TMilli&gt;" alt="" coords="779,190,891,205">
+
+      <area shape="poly" id="edge2" href="../ihtml/CC2420Packet.html" title="CC2420Packet" alt="" coords="324,49,367,71,416,91,478,107,542,119,658,133,658,138,541,125,477,113,414,96,364,76,321,53">
+
+      <area shape="rect" id="edge2-label" href="../ihtml/CC2420Packet.html" title="CC2420Packet" alt="" coords="415,78,497,93">
+
+      <area shape="poly" id="edge3" href="../ihtml/PacketTimeStamp.html" title="PacketTimeStamp&lt;T32khz, uint32_t&gt;" alt="" coords="498,53,504,74,515,91,538,104,573,115,658,130,657,135,572,120,536,109,512,95,499,76,493,54">
+
+      <area shape="rect" id="edge3-label" href="../ihtml/PacketTimeStamp.html" title="PacketTimeStamp&lt;T32khz, uint32_t&gt;" alt="" coords="513,78,723,93">
+
+      <area shape="poly" id="edge4" href="../ihtml/CC2420PacketBody.html" title="CC2420PacketBody" alt="" coords="727,54,733,103,728,104,722,54">
+
+      <area shape="rect" id="edge4-label" href="../ihtml/CC2420PacketBody.html" title="CC2420PacketBody" alt="" coords="729,78,843,93">
+
+      <area shape="poly" id="edge5" href="../ihtml/PacketTimeSyncOffset.html" title="PacketTimeSyncOffset" alt="" coords="914,55,849,96,810,114,808,109,847,91,911,50">
+
+      <area shape="rect" id="edge5-label" href="../ihtml/PacketTimeSyncOffset.html" title="PacketTimeSyncOffset" alt="" coords="876,78,1001,93">
+
+      <area shape="poly" id="edge6" href="../ihtml/PacketTimeStamp.html" title="PacketTimeStamp&lt;TMilli, uint32_t&gt;" alt="" coords="1128,53,1071,75,1007,96,906,118,812,133,811,128,905,113,1006,91,1069,70,1126,48">
+
+      <area shape="rect" id="edge6-label" href="../ihtml/PacketTimeStamp.html" title="PacketTimeStamp&lt;TMilli, uint32_t&gt;" alt="" coords="1053,78,1257,93">
+
+      <area shape="poly" id="edge7" href="../ihtml/PacketAcknowledgements.html" title="PacketAcknowledgements" alt="" coords="1350,50,1311,75,1263,96,1176,113,1054,126,812,140,812,135,1053,120,1175,108,1262,91,1308,70,1347,46">
+
+      <area shape="rect" id="edge7-label" href="../ihtml/PacketAcknowledgements.html" title="PacketAcknowledgements" alt="" coords="1299,78,1444,93">
+
+      <area shape="rect" id="node10" href="../chtml/Counter32khz32C.html" title="Counter32khz32C" alt="" coords="559,352,707,411">
+
+      <area shape="poly" id="edge8" href="../ihtml/Counter.html" title="Counter&lt;T32khz, uint32_t&gt;" alt="" coords="636,283,636,338,631,338,631,283">
+
+      <area shape="rect" id="edge8-label" href="../ihtml/Counter.html" title="Counter&lt;T32khz, uint32_t&gt;" alt="" coords="633,313,789,327">
+
+    </map>
+    <img src="CC2420PacketC.png" usemap="#comp" id=imgwiring>
+  </body>
+</html>

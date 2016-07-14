@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?><interfacedef loc="37:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartByte.nc" nicename="UartByte" qname="UartByte">
+      <documentation loc="32:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartByte.nc">
+        <short>
+ </short>
+        <long>
+ @author Jonathan Hui &lt;jhui@archedrock.com&gt;
+ @version $Revision: 1.5 $ $Date: 2008-06-04 03:00:35 $
+</long>
+      </documentation>
+      <function command="" loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartByte.nc" name="send" provided="0" ref="0x2b610726d5b0">
+        <documentation loc="39:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartByte.nc">
+          <short>
+ Send a single uart byte.</short>
+          <long>
+ Send a single uart byte. The call blocks until it is ready to
+ accept another byte for sending.
+
+ @param byte The byte to send.
+ @return SUCCESS if byte was sent, FAIL otherwise.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="UartByte" qname="UartByte"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartByte.nc" name="byte" ref="0x2b610726d330">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="56:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartByte.nc" name="receive" provided="0" ref="0x2b610726c430">
+        <documentation loc="48:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartByte.nc">
+          <short>
+ Receive a single uart byte.</short>
+          <long>
+ Receive a single uart byte. The call blocks until a byte is
+ received.
+
+ @param 'uint8_t* ONE byte' Where to place received byte.
+ @param timeout How long in byte times to wait.
+ @return SUCCESS if a byte was received, FAIL if timed out.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="UartByte" qname="UartByte"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="56:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartByte.nc" name="byte" ref="0x2b610726de20">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </type-pointer>
+          </variable>
+          <variable loc="56:/opt/tinyos-release-tinyos-2_1_2//tos/interfaces/UartByte.nc" name="timeout" ref="0x2b610726c1a0">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>

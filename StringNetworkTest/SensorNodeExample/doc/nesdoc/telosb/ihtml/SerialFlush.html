@@ -1,0 +1,64 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Interface: SerialFlush</title>
+  </head>
+  <body>
+    <h2>Interface: SerialFlush</h2>
+    <b>interface SerialFlush</b><p>
+ A basic interface to flush the serial port.
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Ben Greenstein
+ 
+      </dd>
+      <dd>
+        Philip Levis
+ 
+      </dd>
+      <dt><b>Date:</b>
+      <dd>
+        January 23 2006
+
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Commands</div><div id=funcsig><span id=funcnameshort>command void <a href="#flush">flush</a>()
+      </span><menu> 
+ Request that the serial device signal when no more transmissions
+ are pending (i.e., when the device is idle)
+
+      </menu>
+    </div><p><div id=heading>Events</div><div id=funcsig><span id=funcnameshort>event void <a href="#flushDone">flushDone</a>()
+      </span><menu> 
+ Split phase event to indicate that the serial hardware is now idle.
+      </menu>
+    </div><p><div id=heading>Commands - Details</div>
+    <a name="flush"></a>
+    <h4>flush
+    </h4>
+    <span id=funcnameshort>command void <b>flush</b>()
+    </span>
+    <p>
+    <menu>
+       
+ Request that the serial device signal when no more transmissions
+ are pending (i.e., when the device is idle)
+
+    </menu>
+    <p><div id=heading>Events - Details</div>
+    <a name="flushDone"></a>
+    <h4>flushDone
+    </h4>
+    <span id=funcnameshort>event void <b>flushDone</b>()
+    </span>
+    <p>
+    <menu>
+       
+ Split phase event to indicate that the serial hardware is now idle.
+    </menu>
+  </body>
+</html>

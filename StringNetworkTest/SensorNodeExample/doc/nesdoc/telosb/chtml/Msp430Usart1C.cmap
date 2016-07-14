@@ -1,0 +1,14 @@
+<area shape="rect" id="node2" href="../chtml/Msp430UsartShare1P.html" title="Msp430UsartShare1P" alt="" coords="337,117,508,176">
+<area shape="poly" id="edge1" href="../ihtml/ResourceRequested.html" title="ResourceRequested" alt="" coords="133,49,175,71,222,91,324,121,323,127,220,96,173,75,130,54">
+<area shape="rect" id="edge1-label" href="../ihtml/ResourceRequested.html" title="ResourceRequested" alt="" coords="221,78,329,93">
+<area shape="poly" id="edge6" href="../ihtml/ResourceConfigure.html" title="ResourceConfigure[uint8_t]" alt="" coords="425,176,425,226,420,226,420,176">
+<area shape="rect" id="edge6-label" href="../ihtml/ResourceConfigure.html" title="ResourceConfigure[uint8_t]" alt="" coords="423,201,576,215">
+<area shape="poly" id="edge2" href="../ihtml/HplMsp430UsartInterrupts.html" title="HplMsp430UsartInterrupts" alt="" coords="330,53,335,73,344,92,357,107,353,111,339,95,330,75,325,54">
+<area shape="rect" id="edge2-label" href="../ihtml/HplMsp430UsartInterrupts.html" title="HplMsp430UsartInterrupts" alt="" coords="341,78,489,93">
+<area shape="poly" id="edge3" href="../ihtml/Resource.html" title="Resource" alt="" coords="513,55,491,95,477,110,473,107,487,92,509,52">
+<area shape="rect" id="edge3-label" href="../ihtml/Resource.html" title="Resource" alt="" coords="500,78,551,93">
+<area shape="rect" id="node6" href="../chtml/HplMsp430Usart1C.html" title="HplMsp430Usart1C" alt="" coords="733,117,893,176">
+<area shape="poly" id="edge4" href="../ihtml/HplMsp430Usart.html" title="HplMsp430Usart" alt="" coords="816,54,816,104,811,104,811,54">
+<area shape="rect" id="edge4-label" href="../ihtml/HplMsp430Usart.html" title="HplMsp430Usart" alt="" coords="813,78,909,93">
+<area shape="poly" id="edge5" href="../ihtml/ArbiterInfo.html" title="ArbiterInfo" alt="" coords="625,53,557,96,517,115,514,110,555,91,622,48">
+<area shape="rect" id="edge5-label" href="../ihtml/ArbiterInfo.html" title="ArbiterInfo" alt="" coords="584,78,645,93">

@@ -1,0 +1,101 @@
+<?xml version="1.0" ?><component abstract="" loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430AlarmC.nc" nicename="Msp430AlarmC" qname="Msp430AlarmC" safe="">
+      <documentation loc="34:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430AlarmC.nc">
+        <short>
+ Msp430Alarm is a generic component that wraps the MSP430 HPL timers and
+ compares into a TinyOS Alarm.</short>
+        <long>
+ Msp430Alarm is a generic component that wraps the MSP430 HPL timers and
+ compares into a TinyOS Alarm.
+
+ @author Cory Sharp &lt;cssharp@eecs.berkeley.edu&gt;
+ @see  Please refer to TEP 102 for more information about this component and its
+          intended use.
+</long>
+      </documentation>
+      <parameters>
+        <typedef loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430AlarmC.nc" name="frequency_tag" ref="0x2b61062753b0">
+          <component-ref nicename="Msp430AlarmC" qname="Msp430AlarmC"/>
+          <type-var alignment="U:" size="U:"><typedef-ref name="frequency_tag" ref="0x2b61062753b0" scoped=""/></type-var>
+        </typedef>
+      </parameters>
+      <module/>
+    <specification><interface loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430AlarmC.nc" name="Msp430Compare" provided="0" ref="0x2b610626c660">
+      <component-ref nicename="Msp430AlarmC" qname="Msp430AlarmC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Msp430Compare" ref="0x2b610626c660" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Msp430Compare" qname="Msp430Compare"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getEvent" ref="0x2b610626c9e0" scoped=""/>
+        <function-ref name="setEvent" ref="0x2b610626cb70" scoped=""/>
+        <function-ref name="setEventFromPrev" ref="0x2b610626cd00" scoped=""/>
+        <function-ref name="setEventFromNow" ref="0x2b610626b020" scoped=""/>
+        <function-ref name="fired" ref="0x2b610626b1b0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="47:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430AlarmC.nc" name="Msp430Timer" provided="0" ref="0x2b6106270980">
+      <component-ref nicename="Msp430AlarmC" qname="Msp430AlarmC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Msp430Timer" ref="0x2b6106270980" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Msp430Timer" qname="Msp430Timer"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b6106270d00" scoped=""/>
+        <function-ref name="setClockSource" ref="0x2b610626e020" scoped=""/>
+        <function-ref name="enableEvents" ref="0x2b610626e1b0" scoped=""/>
+        <function-ref name="get" ref="0x2b610626e340" scoped=""/>
+        <function-ref name="disableEvents" ref="0x2b610626e4d0" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b610626e660" scoped=""/>
+        <function-ref name="getMode" ref="0x2b610626e7f0" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b610626e980" scoped=""/>
+        <function-ref name="overflow" ref="0x2b610626eb10" scoped=""/>
+        <function-ref name="setMode" ref="0x2b610626eca0" scoped=""/>
+        <function-ref name="setInputDivider" ref="0x2b610626ee30" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430AlarmC.nc" name="Alarm" provided="1" ref="0x2b61062736a0">
+      <component-ref nicename="Msp430AlarmC" qname="Msp430AlarmC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Alarm" ref="0x2b61062736a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Alarm" qname="Alarm"/>
+        <arguments>
+          <type-var alignment="U:" size="U:"><typedef-ref name="frequency_tag" ref="0x2b61062753b0" scoped=""/></type-var>
+          <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b6106270020" scoped=""/>
+        <function-ref name="fired" ref="0x2b6106271020" scoped=""/>
+        <function-ref name="startAt" ref="0x2b61062719a0" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b61062714e0" scoped=""/>
+        <function-ref name="getAlarm" ref="0x2b61062704e0" scoped=""/>
+        <function-ref name="start" ref="0x2b61062725b0" scoped=""/>
+        <function-ref name="stop" ref="0x2b6106272ac0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430AlarmC.nc" name="Init" provided="1" ref="0x2b6106275c40">
+      <component-ref nicename="Msp430AlarmC" qname="Msp430AlarmC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Init" ref="0x2b6106275c40" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6106273020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="48:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430AlarmC.nc" name="Msp430TimerControl" provided="0" ref="0x2b610626d1e0">
+      <component-ref nicename="Msp430AlarmC" qname="Msp430AlarmC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Msp430TimerControl" ref="0x2b610626d1e0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Msp430TimerControl" qname="Msp430TimerControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setControlAsCapture" ref="0x2b610626d560" scoped=""/>
+        <function-ref name="getControl" ref="0x2b610626d6f0" scoped=""/>
+        <function-ref name="enableEvents" ref="0x2b610626d880" scoped=""/>
+        <function-ref name="areEventsEnabled" ref="0x2b610626da10" scoped=""/>
+        <function-ref name="setControlAsCompare" ref="0x2b610626dba0" scoped=""/>
+        <function-ref name="disableEvents" ref="0x2b610626dd30" scoped=""/>
+        <function-ref name="isInterruptPending" ref="0x2b610626c020" scoped=""/>
+        <function-ref name="clearPendingInterrupt" ref="0x2b610626c1b0" scoped=""/>
+        <function-ref name="setControl" ref="0x2b610626c340" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

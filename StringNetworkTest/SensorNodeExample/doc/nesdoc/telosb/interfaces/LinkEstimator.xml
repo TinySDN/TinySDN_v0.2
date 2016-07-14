@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?><interfacedef loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" nicename="LinkEstimator" qname="LinkEstimator">
+      <documentation loc="42:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc">
+        <short> modified by Bruno Trevizan de Oliveira 
+  </short>
+        <long> modified by Bruno Trevizan de Oliveira 
+  @date   $Date: 2015-08-20 05:14:30 $
+</long>
+      </documentation>
+      <function command="" loc="68:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="txAck" provided="0" ref="0x2b61075b32a0">
+        <interfacedef-ref nicename="LinkEstimator" qname="LinkEstimator"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="68:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="neighbor" ref="0x2b61075b3020">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="61:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="pinNeighbor" provided="0" ref="0x2b61075b6e20">
+        <interfacedef-ref nicename="LinkEstimator" qname="LinkEstimator"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="61:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="neighbor" ref="0x2b61075b6ba0">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="72:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="txNoAck" provided="0" ref="0x2b61075b3c70">
+        <interfacedef-ref nicename="LinkEstimator" qname="LinkEstimator"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="72:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="neighbor" ref="0x2b61075b39f0">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="58:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="insertNeighbor" provided="0" ref="0x2b61075b6430">
+        <interfacedef-ref nicename="LinkEstimator" qname="LinkEstimator"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="58:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="neighbor" ref="0x2b61075b61b0">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function event="" loc="78:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="evicted" provided="0" ref="0x2b61075b1030">
+        <interfacedef-ref nicename="LinkEstimator" qname="LinkEstimator"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="78:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="neighbor" ref="0x2b61075b2d80">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="75:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="clearDLQ" provided="0" ref="0x2b61075b2680">
+        <interfacedef-ref nicename="LinkEstimator" qname="LinkEstimator"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="75:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="neighbor" ref="0x2b61075b2400">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="64:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="unpinNeighbor" provided="0" ref="0x2b61075b4860">
+        <interfacedef-ref nicename="LinkEstimator" qname="LinkEstimator"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="64:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="neighbor" ref="0x2b61075b45e0">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="81:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="getNeighborTable" provided="0" ref="0x2b61075b1b40">
+        <interfacedef-ref nicename="LinkEstimator" qname="LinkEstimator"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:2" size="I:12"><struct-ref name="neighbor_table_entry" ref="0x2b6107577a80"/>
+                <typename><typedef-ref name="neighbor_table_entry_t" ref="0x2b61075757c0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="81:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="neighborTablePointer" ref="0x2b61075b18c0">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:2" size="I:12"><struct-ref name="neighbor_table_entry" ref="0x2b6107577a80"/>
+                <typename><typedef-ref name="neighbor_table_entry_t" ref="0x2b61075757c0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="55:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="getLinkQuality" provided="0" ref="0x2b61075b79d0">
+        <interfacedef-ref nicename="LinkEstimator" qname="LinkEstimator"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="55:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimator.nc" name="neighbor" ref="0x2b61075b7750">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>

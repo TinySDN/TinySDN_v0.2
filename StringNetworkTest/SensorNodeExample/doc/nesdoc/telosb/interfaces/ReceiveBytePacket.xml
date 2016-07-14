@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?><interfacedef loc="48:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/ReceiveBytePacket.nc" nicename="ReceiveBytePacket" qname="ReceiveBytePacket">
+      <documentation loc="34:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/ReceiveBytePacket.nc">
+        <short>
+ This is the data interface that a serial protocol provides and
+ a serial dispatcher uses.</short>
+        <long>
+ This is the data interface that a serial protocol provides and
+ a serial dispatcher uses. The dispatcher expects the following pattern
+ of calls: ((startPacket)+ (byteReceived)* (endPacket)+)*
+ It should ignore any signals that do not follow this pattern.
+ The interface is used to separate the state machine of the wire protocol
+ from the complexities of dispatch.
+
+ @author Philip Levis
+ @author Ben Greenstein
+ @date August 7 2005
+
+</long>
+      </documentation>
+      <function event="" loc="62:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/ReceiveBytePacket.nc" name="startPacket" provided="0" ref="0x2b61071225e0">
+        <documentation loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/ReceiveBytePacket.nc">
+          <short>
+ Signals the upper layer to indicate that reception of a frame has begun.</short>
+          <long>
+ Signals the upper layer to indicate that reception of a frame has begun.
+ Used by the upper layer to prepare for packet reception. If the upper
+ layer does not want to receive a packet (or isn't ready) it may
+ return a non-SUCCESS code  such as EBUSY to the lower layer to discard
+ the frame. The underlying layer may signal endPacket in response to
+ such a discard request.
+ @return Returns an error_t code indicating whether the
+ dispatcher would like to receive a packet (SUCCESS), or not
+ perhaps because it isn't ready (EBUSY).
+</long>
+        </documentation>
+        <interfacedef-ref nicename="ReceiveBytePacket" qname="ReceiveBytePacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function event="" loc="69:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/ReceiveBytePacket.nc" name="byteReceived" provided="0" ref="0x2b61071202a0">
+        <documentation loc="64:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/ReceiveBytePacket.nc">
+          <short>
+ Signals the upper layer that a byte of the encapsulated packet has been
+ received.</short>
+          <long>
+ Signals the upper layer that a byte of the encapsulated packet has been
+ received. Passes this byte as a parameter to the function.
+ @param data A byte of the encapsulated packet that has been received.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="ReceiveBytePacket" qname="ReceiveBytePacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="69:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/ReceiveBytePacket.nc" name="data" ref="0x2b6107120020">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function event="" loc="80:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/ReceiveBytePacket.nc" name="endPacket" provided="0" ref="0x2b6107120d70">
+        <documentation loc="70:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/ReceiveBytePacket.nc">
+          <short>
+ Signalled to indicate that a packet encapsulated withing a serial
+ frame has been received.</short>
+          <long>
+ Signalled to indicate that a packet encapsulated withing a serial
+ frame has been received. SUCCESS should be passed by the lower layer
+ following verification that the packet has been received correctly.
+ A value of error_t indicating an error should be passed when the lower
+ layer's verification test fails or when the lower layer loses sync.
+ @param result An error_t code indicating whether the framer has
+ passed all bytes of an encapsulated packet it receives from
+ serial to the dispatcher (SUCCESS) or not (FAIL).
+</long>
+        </documentation>
+        <interfacedef-ref nicename="ReceiveBytePacket" qname="ReceiveBytePacket"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="80:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/ReceiveBytePacket.nc" name="result" ref="0x2b6107120af0">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>

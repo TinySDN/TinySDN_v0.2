@@ -1,0 +1,51 @@
+<?xml version="1.0" ?><component loc="56:/opt/tinyos-release-tinyos-2_1_2//tos/system/RealMainP.nc" nicename="RealMainP" qname="RealMainP" safe="">
+      <documentation loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/system/RealMainP.nc">
+        <short>
+ RealMain implements the TinyOS boot sequence, as documented in TEP 107.</short>
+        <long>
+ RealMain implements the TinyOS boot sequence, as documented in TEP 107.
+
+ @author Philip Levis
+ @date   January 17 2005
+</long>
+      </documentation>
+      <module/>
+    <specification><interface loc="60:/opt/tinyos-release-tinyos-2_1_2//tos/system/RealMainP.nc" name="SoftwareInit" provided="0" ref="0x2b6105f33dc0">
+      <component-ref nicename="RealMainP" qname="RealMainP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SoftwareInit" ref="0x2b6105f33dc0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105f32180" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="57:/opt/tinyos-release-tinyos-2_1_2//tos/system/RealMainP.nc" name="Boot" provided="1" ref="0x2b6105f1a590">
+      <component-ref nicename="RealMainP" qname="RealMainP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Boot" ref="0x2b6105f1a590" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Boot" qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" ref="0x2b6105f1a910" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="59:/opt/tinyos-release-tinyos-2_1_2//tos/system/RealMainP.nc" name="PlatformInit" provided="0" ref="0x2b6105f336c0">
+      <component-ref nicename="RealMainP" qname="RealMainP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="PlatformInit" ref="0x2b6105f336c0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105f33a40" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="58:/opt/tinyos-release-tinyos-2_1_2//tos/system/RealMainP.nc" name="Scheduler" provided="0" ref="0x2b6105f1ac00">
+      <component-ref nicename="RealMainP" qname="RealMainP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Scheduler" ref="0x2b6105f1ac00" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Scheduler" qname="Scheduler"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105f33020" scoped=""/>
+        <function-ref name="taskLoop" ref="0x2b6105f331b0" scoped=""/>
+        <function-ref name="runNextTask" ref="0x2b6105f33340" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

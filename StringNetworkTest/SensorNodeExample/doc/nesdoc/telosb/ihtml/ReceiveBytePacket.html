@@ -1,0 +1,123 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Interface: ReceiveBytePacket</title>
+  </head>
+  <body>
+    <h2>Interface: ReceiveBytePacket</h2>
+    <b>interface ReceiveBytePacket</b><p>
+ This is the data interface that a serial protocol provides and
+ a serial dispatcher uses. The dispatcher expects the following pattern
+ of calls: ((startPacket)+ (byteReceived)* (endPacket)+)*
+ It should ignore any signals that do not follow this pattern.
+ The interface is used to separate the state machine of the wire protocol
+ from the complexities of dispatch.
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Philip Levis
+ 
+      </dd>
+      <dd>
+        Ben Greenstein
+ 
+      </dd>
+      <dt><b>Date:</b>
+      <dd>
+        August 7 2005
+
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Events</div><div id=funcsig><span id=funcnameshort>event void <a href="#byteReceived">byteReceived</a>(uint8_t data)
+      </span><menu>
+ Signals the upper layer that a byte of the encapsulated packet has been
+ received.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>event void <a href="#endPacket">endPacket</a>(error_t result)
+      </span><menu>
+ Signalled to indicate that a packet encapsulated withing a serial
+ frame has been received.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>event error_t <a href="#startPacket">startPacket</a>()
+      </span><menu>
+ Signals the upper layer to indicate that reception of a frame has begun.
+      </menu>
+    </div><p><div id=heading>Events - Details</div>
+    <a name="byteReceived"></a>
+    <h4>byteReceived
+    </h4>
+    <span id=funcnameshort>event void <b>byteReceived</b>(uint8_t data)
+    </span>
+    <p>
+    <menu>
+      
+ Signals the upper layer that a byte of the encapsulated packet has been
+ received. Passes this byte as a parameter to the function.
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>data</code> -  A byte of the encapsulated packet that has been received.
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="endPacket"></a>
+    <h4>endPacket
+    </h4>
+    <span id=funcnameshort>event void <b>endPacket</b>(error_t result)
+    </span>
+    <p>
+    <menu>
+      
+ Signalled to indicate that a packet encapsulated withing a serial
+ frame has been received. SUCCESS should be passed by the lower layer
+ following verification that the packet has been received correctly.
+ A value of error_t indicating an error should be passed when the lower
+ layer's verification test fails or when the lower layer loses sync.
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>result</code> -  An error_t code indicating whether the framer has
+ passed all bytes of an encapsulated packet it receives from
+ serial to the dispatcher (SUCCESS) or not (FAIL).
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="startPacket"></a>
+    <h4>startPacket
+    </h4>
+    <span id=funcnameshort>event error_t <b>startPacket</b>()
+    </span>
+    <p>
+    <menu>
+      
+ Signals the upper layer to indicate that reception of a frame has begun.
+ Used by the upper layer to prepare for packet reception. If the upper
+ layer does not want to receive a packet (or isn't ready) it may
+ return a non-SUCCESS code  such as EBUSY to the lower layer to discard
+ the frame. The underlying layer may signal endPacket in response to
+ such a discard request.
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          Returns an error_t code indicating whether the
+ dispatcher would like to receive a packet (SUCCESS), or not
+ perhaps because it isn't ready (EBUSY).
+
+        </dd>
+      </dl>
+    </menu>
+  </body>
+</html>

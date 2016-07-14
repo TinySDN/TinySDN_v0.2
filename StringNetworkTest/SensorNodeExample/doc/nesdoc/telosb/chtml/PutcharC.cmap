@@ -1,0 +1,6 @@
+<area shape="rect" id="node1" href="../chtml/MainC.html" title="MainC" alt="" coords="7,5,88,64">
+<area shape="rect" id="node2" href="../chtml/PutcharP.html" title="PutcharP" alt="" coords="9,128,87,176">
+<area shape="poly" id="edge1" href="../ihtml/Init.html" title="Init" alt="" coords="51,64,51,114,45,114,45,64">
+<area shape="rect" id="edge1-label" href="../ihtml/Init.html" title="Init" alt="" coords="48,89,68,103">
+<area shape="poly" id="edge2" href="../ihtml/Putchar.html" title="Putchar" alt="" coords="51,177,51,226,45,226,45,177">
+<area shape="rect" id="edge2-label" href="../ihtml/Putchar.html" title="Putchar" alt="" coords="48,201,89,215">

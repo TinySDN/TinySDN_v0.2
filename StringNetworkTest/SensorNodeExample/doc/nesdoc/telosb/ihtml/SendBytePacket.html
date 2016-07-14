@@ -1,0 +1,156 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Interface: SendBytePacket</title>
+  </head>
+  <body>
+    <h2>Interface: SendBytePacket</h2>
+    <b>interface SendBytePacket</b><p>
+ This is an interface that a serial framing protocol provides and a serial
+ dispatcher uses. The call sequence should be as follows:
+ The dispatcher should call startSend, specifying the first byte to
+ send. The framing protocol can then signal as many nextBytes as it
+ wants/needs, to spool in the bytes. It continues to do so until it receives
+ a sendComplete call, which will almost certainly happen within a nextByte
+ signal (i.e., re-entrant to the framing protocol).
+ This allows the framing protocol to buffer as many bytes as it needs to to meet
+ timing requirements, jitter, etc. 
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Philip Levis
+ 
+      </dd>
+      <dd>
+        Ben Greenstein
+ 
+      </dd>
+      <dt><b>Date:</b>
+      <dd>
+        August 7 2005
+
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Commands</div><div id=funcsig><span id=funcnameshort>command error_t <a href="#completeSend">completeSend</a>()
+      </span><menu>
+ The dispatcher must indicate when the end-of-packet has been reached and does
+ so by calling completeSend.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command error_t <a href="#startSend">startSend</a>(uint8_t first_byte)
+      </span><menu>
+ The dispatcher may initiate a serial transmission by calling this function
+ and passing the first byte to be transmitted.
+      </menu>
+    </div><p><div id=heading>Events</div><div id=funcsig><span id=funcnameshort>event uint8_t <a href="#nextByte">nextByte</a>()
+      </span><menu>
+ Used by the framer to request the next byte to transmit.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>event void <a href="#sendCompleted">sendCompleted</a>(error_t error)
+      </span><menu>
+ The framer signals sendCompleted to indicate that it is done transmitting a
+ packet on the dispatcher's behalf.
+      </menu>
+    </div><p><div id=heading>Commands - Details</div>
+    <a name="completeSend"></a>
+    <h4>completeSend
+    </h4>
+    <span id=funcnameshort>command error_t <b>completeSend</b>()
+    </span>
+    <p>
+    <menu>
+      
+ The dispatcher must indicate when the end-of-packet has been reached and does
+ so by calling completeSend. The function may be called from within the
+ implementation of a nextByte event.
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          Returns an error_t code indicating whether the framer accepts
+ this notification (SUCCESS) or not (FAIL).
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="startSend"></a>
+    <h4>startSend
+    </h4>
+    <span id=funcnameshort>command error_t <b>startSend</b>(uint8_t first_byte)
+    </span>
+    <p>
+    <menu>
+      
+ The dispatcher may initiate a serial transmission by calling this function
+ and passing the first byte to be transmitted.
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>first_byte</code> -  The first byte to be transmitted.
+ 
+        </dd>
+        <dt><b>Returns:</b>
+        <dd>
+          Returns an error_t code indicating either that the framer
+ has the resources available to transmit the frame (SUCCESS) or
+ not (EBUSY).
+
+        </dd>
+      </dl>
+    </menu>
+    <p><div id=heading>Events - Details</div>
+    <a name="nextByte"></a>
+    <h4>nextByte
+    </h4>
+    <span id=funcnameshort>event uint8_t <b>nextByte</b>()
+    </span>
+    <p>
+    <menu>
+      
+ Used by the framer to request the next byte to transmit. The
+ framer may allocate a buffer to pre-spool some or all of a
+ packet; or it may request and transmit a byte at a time. If there
+ are no more bytes to send, the dispatcher must call completeSend
+ before returning from this function.
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          The dispatcher must return the next byte to transmit
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="sendCompleted"></a>
+    <h4>sendCompleted
+    </h4>
+    <span id=funcnameshort>event void <b>sendCompleted</b>(error_t error)
+    </span>
+    <p>
+    <menu>
+      
+ The framer signals sendCompleted to indicate that it is done transmitting a
+ packet on the dispatcher's behalf. A non-SUCCESS error_t code indicates that
+ there was a problem in transmission.
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>error</code> -  The framer indicates whether it has successfully
+ accepted the entirety of the packet from the dispatcher (SUCCESS)
+ or not (FAIL).
+
+        </dd>
+      </dl>
+    </menu>
+  </body>
+</html>

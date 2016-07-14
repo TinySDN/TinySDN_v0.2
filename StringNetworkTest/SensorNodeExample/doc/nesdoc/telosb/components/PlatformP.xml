@@ -1,0 +1,39 @@
+<?xml version="1.0" ?><component loc="3:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformP.nc" nicename="PlatformP" qname="PlatformP" safe="">
+      <module/>
+    <specification><interface loc="6:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformP.nc" name="MoteInit" provided="0" ref="0x2b6105d5f1f0">
+      <component-ref nicename="PlatformP" qname="PlatformP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="MoteInit" ref="0x2b6105d5f1f0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105d5f570" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="4:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformP.nc" name="Init" provided="1" ref="0x2b6105d603a0">
+      <component-ref nicename="PlatformP" qname="PlatformP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Init" ref="0x2b6105d603a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105d60720" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="5:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformP.nc" name="MoteClockInit" provided="0" ref="0x2b6105d60ab0">
+      <component-ref nicename="PlatformP" qname="PlatformP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="MoteClockInit" ref="0x2b6105d60ab0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105d60e30" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="7:/opt/tinyos-release-tinyos-2_1_2//tos/platforms/telosa/PlatformP.nc" name="LedsInit" provided="0" ref="0x2b6105d5f8d0">
+      <component-ref nicename="PlatformP" qname="PlatformP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="LedsInit" ref="0x2b6105d5f8d0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b6105d5fc50" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

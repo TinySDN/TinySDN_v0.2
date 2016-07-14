@@ -1,0 +1,95 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: CtpForwardingEngineP</title>
+  </head>
+  <body>
+    <h2>Component: CtpForwardingEngineP
+    </h2>
+    <b>generic module CtpForwardingEngineP()</b>
+    <p>
+  This component contains the forwarding path of CTP Noe, the
+  standard CTP implementation packaged with TinyOS 2.x. The CTP
+  specification can be found in TEP 123.  The paper entitled
+  "Collection Tree Protocol," by Omprakash Gnawali et al., in SenSys
+  2009, describes the implementation and provides detailed
+  performance results of CTP Noe.</p>
+
+  <p>The CTP ForwardingEngine is responsible for queueing and
+  scheduling outgoing packets. It maintains a pool of forwarding
+  messages and a packet send queue. A ForwardingEngine with a
+  forwarding message pool of size <i>F</i> and <i>C</i>
+  CollectionSenderC clients has a send queue of size <i>F +
+  C</i>. This implementation several configuration constants, which
+  can be found in <code>ForwardingEngine.h</code>.</p>
+
+  <p>Packets in the send queue are sent in FIFO order, with
+  head-of-line blocking. Because this is a tree collection protocol,
+  all packets are going to the same destination, and so the
+  ForwardingEngine does not distinguish packets from one
+  another. Packets from CollectionSenderC clients are sent
+  identically to forwarded packets: only their buffer handling is
+  different.</p>
+
+  <p>If ForwardingEngine is on top of a link layer that supports
+  synchronous acknowledgments, it enables them and retransmits packets
+  when they are not acked. It transmits a packet up to MAX_RETRIES times
+  before giving up and dropping the packet. MAX_RETRIES is typically a
+  large number (e.g., >20), as this implementation assumes there is
+  link layer feedback on failed packets, such that link costs will go
+  up and cause the routing layer to pick a next hop. If the underlying
+  link layer does not support acknowledgments, ForwardingEngine sends
+  a packet only once.</p>
+
+  <p>The ForwardingEngine detects routing loops and tries to correct
+  them. Routing is in terms of a cost gradient, where the collection
+  root has a cost of zero and a node's cost is the cost of its next
+  hop plus the cost of the link to that next hop.  If there are no
+  loops, then this gradient value decreases monotonically along a
+  route. When the ForwardingEngine sends a packet to the next hop,
+  it puts the local gradient value in the packet header. If a node
+  receives a packet to forward whose gradient value is less than its
+  own, then the gradient is not monotonically decreasing and there
+  may be a routing loop. When the ForwardingEngine receives such a
+  packet, it tells the RoutingEngine to advertise its gradient value
+  soon, with the hope that the advertisement will update the node
+  who just sent a packet and break the loop. It also pauses the
+  before the next packet transmission, in hopes of giving the
+  routing layer's packet a priority.</p>
+
+  <p>ForwardingEngine times its packet transmissions. It
+  differentiates between four transmission cases: forwarding,
+  success, ack failure, and loop detection. In each case, the
+  ForwardingEngine waits a randomized period of time before sending
+  the next packet. This approach assumes that the network is
+  operating at low utilization; its goal is to prevent correlated
+  traffic -- such as nodes along a route forwarding packets -- from
+  interfering with itself.</p>
+
+  <p>While this implementation can work on top of a variety of link
+  estimators, it is designed to work with a 4-bit link estimator
+  (4B). Details on 4B can be found in the HotNets paper "Four Bit
+  Link Estimation" by Rodrigo Fonseca et al. The forwarder provides
+  the "ack" bit for each sent packet, telling the estimator whether
+  the packet was acknowledged.</p>
+
+  
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Philip Levis
+  
+      </dd>
+      <dd>
+        Kyle Jamieson
+  
+      </dd>
+      <dt><b>Date:</b>
+      <dd>
+          $Date: 2010-04-11 23:27:30 $
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/CollectionPacket.html">CollectionPacket</a></div><div id=funcsig>interface <a href="../ihtml/CtpCongestion.html">CtpCongestion</a></div><div id=funcsig>interface <a href="../ihtml/CtpPacket.html">CtpPacket</a></div><div id=funcsig>interface <a href="../ihtml/Init.html">Init</a></div><div id=funcsig>interface <a href="../ihtml/Intercept.html">Intercept</a>[collection_id_t]</div><div id=funcsig>interface <a href="../ihtml/Packet.html">Packet</a></div><div id=funcsig>interface <a href="../ihtml/Receive.html">Receive</a>[collection_id_t]</div><div id=funcsig>interface <a href="../ihtml/Send.html">Send</a>[uint8_t]</div><div id=funcsig>interface <a href="../ihtml/Receive.html">Receive</a> as <b>Snoop</b>[collection_id_t]</div><div id=funcsig>interface <a href="../ihtml/StdControl.html">StdControl</a></div><p><div id=heading>Uses</div><div id=funcsig>interface <a href="../ihtml/AMPacket.html">AMPacket</a></div><div id=funcsig>interface <a href="../ihtml/CollectionDebug.html">CollectionDebug</a></div><div id=funcsig>interface <a href="../ihtml/CollectionId.html">CollectionId</a>[uint8_t]</div><div id=funcsig>interface <a href="../ihtml/CtpInfo.html">CtpInfo</a></div><div id=funcsig>interface <a href="../ihtml/Leds.html">Leds</a></div><div id=funcsig>interface <a href="../ihtml/LinkEstimator.html">LinkEstimator</a></div><div id=funcsig>interface <a href="../ihtml/Pool.html">Pool</a>&lt;message_t&gt; as <b>MessagePool</b></div><div id=funcsig>interface <a href="../ihtml/PacketAcknowledgements.html">PacketAcknowledgements</a></div><div id=funcsig>interface <a href="../ihtml/Pool.html">Pool</a>&lt;fe_queue_entry_t&gt; as <b>QEntryPool</b></div><div id=funcsig>interface <a href="../ihtml/SplitControl.html">SplitControl</a> as <b>RadioControl</b></div><div id=funcsig>interface <a href="../ihtml/Random.html">Random</a></div><div id=funcsig>interface <a href="../ihtml/Timer.html">Timer</a>&lt;TMilli&gt; as <b>RetxmitTimer</b></div><div id=funcsig>interface <a href="../ihtml/RootControl.html">RootControl</a></div><div id=funcsig>interface <a href="../ihtml/Queue.html">Queue</a>&lt;fe_queue_entry_t *&gt; as <b>SendQueue</b></div><div id=funcsig>interface <a href="../ihtml/TaskBasic.html">TaskBasic</a> as <b>sendTask</b></div><div id=funcsig>interface <a href="../ihtml/Cache.html">Cache</a>&lt;message_t *&gt; as <b>SentCache</b></div><div id=funcsig>interface <a href="../ihtml/Packet.html">Packet</a> as <b>SubPacket</b></div><div id=funcsig>interface <a href="../ihtml/Receive.html">Receive</a> as <b>SubReceive</b></div><div id=funcsig>interface <a href="../ihtml/AMSend.html">AMSend</a> as <b>SubSend</b></div><div id=funcsig>interface <a href="../ihtml/Receive.html">Receive</a> as <b>SubSnoop</b></div><div id=funcsig>interface <a href="../ihtml/UnicastNameFreeRouting.html">UnicastNameFreeRouting</a></div>
+  </body>
+</html>

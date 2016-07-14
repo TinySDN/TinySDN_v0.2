@@ -1,0 +1,8 @@
+digraph "SerialStartC" {
+  "SerialStartP" [fontsize=12, shape=box, URL="../chtml/SerialStartP.html"];
+  "MainC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/MainC.html"];
+  "SerialStartP" [fontsize=12, shape=box, URL="../chtml/SerialStartP.html"];
+  "SerialActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/SerialActiveMessageC.html"];
+  "SerialStartP" -> "MainC" [label="Boot", URL="../ihtml/Boot.html", fontsize=10];
+  "SerialStartP" -> "SerialActiveMessageC" [label="SplitControl", URL="../ihtml/SplitControl.html", fontsize=10];
+}

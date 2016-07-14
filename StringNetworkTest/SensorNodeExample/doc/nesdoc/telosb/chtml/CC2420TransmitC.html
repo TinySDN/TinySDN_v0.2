@@ -1,0 +1,185 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: CC2420TransmitC</title>
+  </head>
+  <body>
+    <h2>Component: CC2420TransmitC
+    </h2>
+    <b>configuration CC2420TransmitC</b>
+    <p>
+ Implementation of the transmit path for the ChipCon CC2420 radio.
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Jonathan Hui &lt;jhui@archrock.com&gt;
+ 
+      </dd>
+      <dt><b>Version:</b>
+      <dd>
+        $Revision: 1.3 $ $Date: 2009-08-14 20:33:43 $
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/ReceiveIndicator.html">ReceiveIndicator</a> as <b>ByteIndicator</b></div><div id=funcsig>interface <a href="../ihtml/CC2420Transmit.html">CC2420Transmit</a></div><div id=funcsig>interface <a href="../ihtml/ReceiveIndicator.html">ReceiveIndicator</a> as <b>EnergyIndicator</b></div><div id=funcsig>interface <a href="../ihtml/RadioBackoff.html">RadioBackoff</a></div><div id=funcsig>interface <a href="../ihtml/StdControl.html">StdControl</a></div><p><div id=heading>Wiring</div><p>
+    <map name="comp">
+      <area shape="rect" id="node2" href="../chtml/CC2420TransmitP.html" title="CC2420TransmitP" alt="" coords="1337,128,1477,176">
+
+      <area shape="poly" id="edge1" href="../ihtml/RadioBackoff.html" title="RadioBackoff" alt="" coords="1095,53,1147,78,1205,101,1265,119,1324,133,1323,138,1264,124,1204,107,1144,83,1093,58">
+
+      <area shape="rect" id="edge1-label" href="../ihtml/RadioBackoff.html" title="RadioBackoff" alt="" coords="1205,89,1282,103">
+
+      <area shape="rect" id="node8" href="../chtml/AlarmMultiplexC.html" title="AlarmMultiplexC" alt="" coords="3028,240,3173,299">
+
+      <area shape="poly" id="edge8" href="../ihtml/Alarm.html" title="Alarm&lt;T32khz, uint32_t&gt;" alt="" coords="1478,150,1769,150,2180,155,2595,169,2768,181,2898,197,2962,213,3022,233,3020,238,2960,218,2897,203,2767,186,2595,174,2180,160,1769,155,1478,155">
+
+      <area shape="rect" id="edge8-label" href="../ihtml/Alarm.html" title="Alarm&lt;T32khz, uint32_t&gt;" alt="" coords="2959,201,3105,215">
+
+      <area shape="rect" id="node9" href="../chtml/HplCC2420PinsC.html" title="HplCC2420PinsC" alt="" coords="10,240,158,299">
+
+      <area shape="poly" id="edge9" href="../ihtml/GeneralIO.html" title="GeneralIO" alt="" coords="1337,156,1019,156,588,161,378,166,199,175,71,187,32,194,13,202,9,209,8,215,18,230,14,233,3,216,4,207,10,198,30,189,70,182,199,170,378,161,588,155,1019,151,1337,150">
+
+      <area shape="rect" id="edge9-label" href="../ihtml/GeneralIO.html" title="GeneralIO" alt="" coords="11,201,69,215">
+
+      <area shape="poly" id="edge10" href="../ihtml/GeneralIO.html" title="GeneralIO" alt="" coords="1337,156,1039,158,637,165,276,179,156,189,119,195,101,202,92,213,88,227,82,225,88,211,98,198,117,190,155,184,275,173,637,159,1039,153,1337,151">
+
+      <area shape="rect" id="edge10-label" href="../ihtml/GeneralIO.html" title="GeneralIO" alt="" coords="99,201,157,215">
+
+      <area shape="poly" id="edge11" href="../ihtml/GeneralIO.html" title="GeneralIO" alt="" coords="1337,157,731,171,409,185,293,193,224,203,182,217,143,236,141,231,180,212,223,197,292,188,409,179,731,166,1337,152">
+
+      <area shape="rect" id="edge11-label" href="../ihtml/GeneralIO.html" title="GeneralIO" alt="" coords="223,201,281,215">
+
+      <area shape="rect" id="node10" href="../chtml/HplCC2420InterruptsC.html" title="HplCC2420InterruptsC" alt="" coords="183,240,365,299">
+
+      <area shape="poly" id="edge12" href="../ihtml/GpioCapture.html" title="GpioCapture" alt="" coords="1337,157,744,169,445,183,345,192,299,202,289,213,282,228,278,226,285,210,297,198,344,187,444,178,744,164,1337,151">
+
+      <area shape="rect" id="edge12-label" href="../ihtml/GpioCapture.html" title="GpioCapture" alt="" coords="298,201,370,215">
+
+      <area shape="rect" id="node11" href="../chtml/CC2420SpiC.html" title="CC2420SpiC\n(Spi)" alt="" coords="1124,240,1242,299">
+
+      <area shape="poly" id="edge13" href="../ihtml/Resource.html" title="Resource" alt="" coords="1337,158,1222,162,1091,170,980,183,942,192,923,202,920,210,928,219,973,235,1041,249,1111,258,1110,263,1040,254,972,241,925,223,915,211,919,198,940,187,979,178,1091,165,1221,157,1337,152">
+
+      <area shape="rect" id="edge13-label" href="../ihtml/Resource.html" title="Resource" alt="" coords="921,201,971,215">
+
+      <area shape="poly" id="edge14" href="../ihtml/ChipSpiResource.html" title="ChipSpiResource" alt="" coords="1337,159,1137,174,1049,186,1019,194,1004,202,996,215,997,225,1005,234,1019,242,1062,254,1111,261,1110,266,1060,259,1017,247,1002,238,992,227,991,213,1000,198,1017,189,1047,181,1136,168,1337,154">
+
+      <area shape="rect" id="edge14-label" href="../ihtml/ChipSpiResource.html" title="ChipSpiResource" alt="" coords="1002,201,1098,215">
+
+      <area shape="poly" id="edge15" href="../ihtml/CC2420Strobe.html" title="CC2420Strobe" alt="" coords="1337,158,1278,162,1216,170,1163,183,1143,192,1131,202,1127,215,1133,229,1128,231,1121,215,1126,198,1141,187,1161,178,1215,165,1277,157,1337,152">
+
+      <area shape="rect" id="edge15-label" href="../ihtml/CC2420Strobe.html" title="CC2420Strobe" alt="" coords="1129,201,1210,215">
+
+      <area shape="poly" id="edge16" href="../ihtml/CC2420Strobe.html" title="CC2420Strobe" alt="" coords="1338,166,1289,180,1242,202,1211,231,1207,227,1239,198,1287,175,1336,161">
+
+      <area shape="rect" id="edge16-label" href="../ihtml/CC2420Strobe.html" title="CC2420Strobe" alt="" coords="1241,201,1322,215">
+
+      <area shape="poly" id="edge17" href="../ihtml/CC2420Strobe.html" title="CC2420Strobe" alt="" coords="1382,178,1323,218,1256,248,1254,243,1321,214,1379,174">
+
+      <area shape="rect" id="edge17-label" href="../ihtml/CC2420Strobe.html" title="CC2420Strobe" alt="" coords="1347,201,1429,215">
+
+      <area shape="poly" id="edge18" href="../ihtml/CC2420Strobe.html" title="CC2420Strobe" alt="" coords="1431,175,1440,196,1441,207,1436,218,1424,228,1407,236,1362,250,1257,266,1256,260,1361,245,1405,231,1421,223,1432,214,1436,206,1435,197,1426,178">
+
+      <area shape="rect" id="edge18-label" href="../ihtml/CC2420Strobe.html" title="CC2420Strobe" alt="" coords="1439,201,1521,215">
+
+      <area shape="poly" id="edge19" href="../ihtml/CC2420Register.html" title="CC2420Register" alt="" coords="1478,164,1504,173,1525,184,1535,199,1534,208,1528,218,1510,232,1483,243,1412,258,1332,267,1256,270,1256,265,1331,262,1412,253,1481,238,1507,227,1524,214,1529,207,1529,200,1521,188,1502,178,1477,169">
+
+      <area shape="rect" id="edge19-label" href="../ihtml/CC2420Register.html" title="CC2420Register" alt="" coords="1533,201,1625,215">
+
+      <area shape="poly" id="edge20" href="../ihtml/CC2420Fifo.html" title="CC2420Fifo" alt="" coords="1478,150,1542,153,1602,163,1625,171,1639,183,1643,199,1632,218,1613,228,1579,237,1479,251,1256,267,1256,262,1479,246,1578,232,1611,223,1628,214,1637,198,1635,186,1622,176,1601,168,1542,158,1477,155">
+
+      <area shape="rect" id="edge20-label" href="../ihtml/CC2420Fifo.html" title="CC2420Fifo" alt="" coords="1639,201,1709,215">
+
+      <area shape="poly" id="edge21" href="../ihtml/CC2420Ram.html" title="CC2420Ram" alt="" coords="1478,154,1562,161,1646,172,1681,180,1707,190,1720,202,1720,210,1716,218,1692,230,1650,240,1526,255,1382,264,1256,269,1256,264,1382,259,1525,249,1649,235,1690,225,1712,214,1715,209,1715,204,1704,194,1679,185,1645,178,1561,166,1477,159">
+
+      <area shape="rect" id="edge21-label" href="../ihtml/CC2420Ram.html" title="CC2420Ram" alt="" coords="1719,201,1791,215">
+
+      <area shape="poly" id="edge22" href="../ihtml/CC2420Register.html" title="CC2420Register" alt="" coords="1477,151,1586,155,1700,165,1748,173,1784,184,1803,198,1804,208,1798,218,1770,232,1719,243,1571,258,1401,266,1256,270,1256,265,1401,261,1571,253,1718,238,1769,227,1795,214,1799,207,1798,201,1782,189,1747,178,1700,171,1586,161,1477,157">
+
+      <area shape="rect" id="edge22-label" href="../ihtml/CC2420Register.html" title="CC2420Register" alt="" coords="1803,201,1895,215">
+
+      <area shape="poly" id="edge23" href="../ihtml/CC2420Register.html" title="CC2420Register" alt="" coords="1478,152,1595,156,1727,165,1841,178,1881,187,1903,198,1907,208,1903,218,1889,227,1868,234,1806,246,1724,256,1627,262,1424,269,1256,271,1256,266,1424,264,1627,257,1723,250,1806,241,1867,229,1887,222,1899,214,1902,208,1899,202,1879,192,1840,183,1727,170,1594,162,1478,158">
+
+      <area shape="rect" id="edge23-label" href="../ihtml/CC2420Register.html" title="CC2420Register" alt="" coords="1905,201,1997,215">
+
+      <area shape="poly" id="edge24" href="../ihtml/CC2420Register.html" title="CC2420Register" alt="" coords="1337,157,1096,160,785,167,510,181,420,191,392,196,380,202,377,208,380,214,393,223,417,231,487,244,582,254,692,260,923,266,1110,266,1110,272,923,271,692,265,581,259,486,249,415,236,391,228,376,218,372,208,376,198,391,191,419,186,510,176,785,162,1096,154,1337,151">
+
+      <area shape="rect" id="edge24-label" href="../ihtml/CC2420Register.html" title="CC2420Register" alt="" coords="378,201,470,215">
+
+      <area shape="poly" id="edge25" href="../ihtml/CC2420Strobe.html" title="CC2420Strobe" alt="" coords="1337,157,852,170,614,183,537,192,502,202,500,208,503,214,514,221,532,228,590,240,758,255,950,263,1111,265,1111,271,950,268,758,261,589,245,531,233,511,226,499,218,494,208,499,198,536,187,614,178,852,164,1337,152">
+
+      <area shape="rect" id="edge25-label" href="../ihtml/CC2420Strobe.html" title="CC2420Strobe" alt="" coords="501,201,582,215">
+
+      <area shape="poly" id="edge26" href="../ihtml/CC2420Ram.html" title="CC2420Ram" alt="" coords="1337,158,913,172,710,185,644,193,614,202,612,208,615,214,638,226,684,236,819,251,975,260,1110,264,1110,269,975,265,819,256,683,241,637,231,611,218,606,208,611,198,642,188,709,180,913,167,1337,152">
+
+      <area shape="rect" id="edge26-label" href="../ihtml/CC2420Ram.html" title="CC2420Ram" alt="" coords="613,201,685,215">
+
+      <area shape="poly" id="edge27" href="../ihtml/CC2420Ram.html" title="CC2420Ram" alt="" coords="1337,155,1175,156,979,162,807,176,748,188,728,194,717,202,712,211,713,219,720,226,734,233,778,245,838,253,980,263,1111,266,1111,271,980,268,838,259,777,250,732,238,717,230,708,221,706,210,713,198,726,190,746,183,806,171,979,157,1175,151,1337,150">
+
+      <area shape="rect" id="edge27-label" href="../ihtml/CC2420Ram.html" title="CC2420Ram" alt="" coords="715,201,787,215">
+
+      <area shape="poly" id="edge28" href="../ihtml/CC2420Ram.html" title="CC2420Ram" alt="" coords="1337,157,1203,160,1047,167,912,181,866,190,842,202,839,208,839,213,852,224,881,234,920,243,1016,255,1111,262,1110,267,1016,260,919,248,879,240,850,229,834,216,834,207,839,198,865,185,911,175,1047,162,1203,154,1337,151">
+
+      <area shape="rect" id="edge28-label" href="../ihtml/CC2420Ram.html" title="CC2420Ram" alt="" coords="841,201,913,215">
+
+      <area shape="rect" id="node12" href="../chtml/CC2420ReceiveC.html" title="CC2420ReceiveC" alt="" coords="2071,240,2219,299">
+
+      <area shape="poly" id="edge29" href="../ihtml/CC2420Receive.html" title="CC2420Receive" alt="" coords="1478,153,1754,167,1898,180,2003,197,2046,212,2087,231,2085,236,2044,217,2001,203,1898,186,1754,173,1477,158">
+
+      <area shape="rect" id="edge29-label" href="../ihtml/CC2420Receive.html" title="CC2420Receive" alt="" coords="2047,201,2138,215">
+
+      <area shape="rect" id="node13" href="../chtml/CC2420PacketC.html" title="CC2420PacketC" alt="" coords="2383,240,2522,299">
+
+      <area shape="poly" id="edge30" href="../ihtml/CC2420Packet.html" title="CC2420Packet" alt="" coords="1478,152,1769,163,1956,176,2144,197,2263,219,2370,243,2369,249,2262,224,2143,203,1955,181,1769,168,1478,157">
+
+      <area shape="rect" id="edge30-label" href="../ihtml/CC2420Packet.html" title="CC2420Packet" alt="" coords="2230,201,2313,215">
+
+      <area shape="poly" id="edge31" href="../ihtml/CC2420PacketBody.html" title="CC2420PacketBody" alt="" coords="1478,151,1665,152,1908,158,2146,172,2244,183,2319,197,2360,212,2398,231,2395,236,2358,217,2317,203,2244,189,2146,178,1908,164,1665,157,1477,156">
+
+      <area shape="rect" id="edge31-label" href="../ihtml/CC2420PacketBody.html" title="CC2420PacketBody" alt="" coords="2361,201,2474,215">
+
+      <area shape="poly" id="edge32" href="../ihtml/PacketTimeStamp.html" title="PacketTimeStamp&lt;T32khz, uint32_t&gt;" alt="" coords="1477,151,1727,154,2053,161,2341,175,2436,185,2466,191,2481,198,2488,213,2485,228,2480,227,2482,213,2477,202,2464,196,2435,190,2341,180,2053,167,1727,159,1477,156">
+
+      <area shape="rect" id="edge32-label" href="../ihtml/PacketTimeStamp.html" title="PacketTimeStamp&lt;T32khz, uint32_t&gt;" alt="" coords="2485,201,2694,215">
+
+      <area shape="poly" id="edge33" href="../ihtml/PacketTimeSyncOffset.html" title="PacketTimeSyncOffset" alt="" coords="1477,151,1773,152,2171,157,2363,163,2528,171,2646,183,2682,190,2701,198,2714,218,2711,235,2696,247,2672,256,2608,267,2536,271,2536,266,2607,262,2671,251,2693,243,2706,232,2708,219,2698,202,2681,195,2645,188,2527,177,2363,168,2171,163,1773,157,1477,156">
+
+      <area shape="rect" id="edge33-label" href="../ihtml/PacketTimeSyncOffset.html" title="PacketTimeSyncOffset" alt="" coords="2709,201,2834,215">
+
+      <area shape="rect" id="node14" href="../chtml/LedsC.html" title="LedsC" alt="" coords="2879,240,2961,299">
+
+      <area shape="poly" id="edge34" href="../ihtml/Leds.html" title="Leds" alt="" coords="1478,150,1786,150,2212,155,2424,161,2611,169,2755,181,2806,189,2840,198,2866,211,2888,228,2884,233,2863,215,2838,202,2805,194,2755,187,2610,175,2423,166,2212,160,1786,156,1478,156">
+
+      <area shape="rect" id="edge34-label" href="../ihtml/Leds.html" title="Leds" alt="" coords="2866,201,2893,215">
+
+      <area shape="poly" id="edge2" href="../ihtml/ReceiveIndicator.html" title="ReceiveIndicator" alt="" coords="1251,55,1310,102,1342,120,1339,124,1307,106,1247,60">
+
+      <area shape="rect" id="edge2-label" href="../ihtml/ReceiveIndicator.html" title="ReceiveIndicator" alt="" coords="1309,89,1402,103">
+
+      <area shape="poly" id="edge3" href="../ihtml/CC2420Transmit.html" title="CC2420Transmit" alt="" coords="1410,59,1410,114,1405,114,1405,59">
+
+      <area shape="rect" id="edge3-label" href="../ihtml/CC2420Transmit.html" title="CC2420Transmit" alt="" coords="1407,89,1502,103">
+
+      <area shape="poly" id="edge4" href="../ihtml/StdControl.html" title="StdControl" alt="" coords="1555,59,1534,83,1509,106,1479,124,1477,120,1506,102,1530,80,1551,56">
+
+      <area shape="rect" id="edge4-label" href="../ihtml/StdControl.html" title="StdControl" alt="" coords="1525,89,1586,103">
+
+      <area shape="poly" id="edge5" href="../ihtml/ReceiveIndicator.html" title="ReceiveIndicator" alt="" coords="1686,58,1642,83,1592,106,1542,124,1492,137,1490,132,1540,118,1590,102,1640,78,1683,54">
+
+      <area shape="rect" id="edge5-label" href="../ihtml/ReceiveIndicator.html" title="ReceiveIndicator" alt="" coords="1627,89,1721,103">
+
+      <area shape="rect" id="node7" href="../chtml/MainC.html" title="MainC" alt="" coords="2463,5,2545,64">
+
+      <area shape="poly" id="edge7" href="../ihtml/Init.html" title="Init" alt="" coords="2464,43,1491,145,1490,139,2463,38">
+
+      <area shape="rect" id="edge7-label" href="../ihtml/Init.html" title="Init" alt="" coords="1990,89,2010,103">
+
+      <area shape="poly" id="edge6" href="../ihtml/Init.html" title="Init" alt="" coords="2546,38,2677,56,2849,89,2934,111,3011,136,3072,165,3095,181,3112,198,3118,212,3119,226,3113,226,3113,213,3108,202,3092,185,3069,170,3009,141,2933,116,2847,94,2676,62,2545,43">
+
+      <area shape="rect" id="edge6-label" href="../ihtml/Init.html" title="Init" alt="" coords="3082,145,3102,159">
+
+    </map>
+    <img src="CC2420TransmitC.png" usemap="#comp" id=imgwiring>
+  </body>
+</html>

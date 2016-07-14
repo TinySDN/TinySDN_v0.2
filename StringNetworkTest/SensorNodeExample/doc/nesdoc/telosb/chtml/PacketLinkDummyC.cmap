@@ -1,0 +1,8 @@
+<area shape="poly" id="edge1" href="../ihtml/Send.html" title="Send" alt="" coords="56,54,56,104,51,104,51,54">
+<area shape="rect" id="edge1-label" href="../ihtml/Send.html" title="Send" alt="" coords="53,78,81,93">
+<area shape="rect" id="node4" href="../chtml/PacketLinkDummyP.html" title="PacketLinkDummyP" alt="" coords="125,117,279,165">
+<area shape="poly" id="edge2" href="../ihtml/PacketLink.html" title="PacketLink" alt="" coords="205,54,205,104,200,104,200,54">
+<area shape="rect" id="edge2-label" href="../ihtml/PacketLink.html" title="PacketLink" alt="" coords="203,78,265,93">
+<area shape="rect" id="node5" href="../chtml/CC2420RadioC.html" title="CC2420RadioC" alt="" coords="135,229,271,288">
+<area shape="poly" id="edge3" href="../ihtml/PacketAcknowledgements.html" title="PacketAcknowledgements" alt="" coords="205,166,205,216,200,216,200,166">
+<area shape="rect" id="edge3-label" href="../ihtml/PacketAcknowledgements.html" title="PacketAcknowledgements" alt="" coords="203,190,348,205">

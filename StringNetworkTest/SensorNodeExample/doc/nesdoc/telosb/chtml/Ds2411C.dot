@@ -1,0 +1,17 @@
+digraph "Ds2411C" {
+  n0x2b6106be4c70 [shape=ellipse, style=filled, label="ReadId48", fontsize=12];
+  "Ds2411P" [fontsize=12, shape=box, URL="../chtml/Ds2411P.html"];
+  "Ds2411C.Gpio" [fontsize=12, shape=box, style=dashed, label="Msp430GpioC\n(Gpio)", URL="../chtml/Msp430GpioC.html"];
+  "HplMsp430GeneralIOC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/HplMsp430GeneralIOC.html"];
+  "Ds2411P" [fontsize=12, shape=box, URL="../chtml/Ds2411P.html"];
+  "OneWireMasterC" [fontsize=12, shape=box, URL="../chtml/OneWireMasterC.html"];
+  "OneWireMasterC" [fontsize=12, shape=box, URL="../chtml/OneWireMasterC.html"];
+  "Ds2411C.Gpio" [fontsize=12, shape=box, style=dashed, label="Msp430GpioC\n(Gpio)", URL="../chtml/Msp430GpioC.html"];
+  "OneWireMasterC" [fontsize=12, shape=box, URL="../chtml/OneWireMasterC.html"];
+  "BusyWaitMicroC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/BusyWaitMicroC.html"];
+  "n0x2b6106be4c70" -> "Ds2411P" [label="ReadId48", URL="../ihtml/ReadId48.html", fontsize=10];
+  "Ds2411C.Gpio" -> "HplMsp430GeneralIOC" [label="HplMsp430GeneralIO", URL="../ihtml/HplMsp430GeneralIO.html", fontsize=10];
+  "Ds2411P" -> "OneWireMasterC" [label="OneWireStream", URL="../ihtml/OneWireStream.html", fontsize=10];
+  "OneWireMasterC" -> "Ds2411C.Gpio" [label="GeneralIO", URL="../ihtml/GeneralIO.html", fontsize=10];
+  "OneWireMasterC" -> "BusyWaitMicroC" [label="BusyWait<TMicro, uint16_t>", URL="../ihtml/BusyWait.html", fontsize=10];
+}

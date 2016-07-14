@@ -1,0 +1,11 @@
+digraph "HplCC2420SpiC" {
+  n0x2b61067cde30 [shape=ellipse, style=filled, label="SpiPacket", fontsize=12];
+  "HplCC2420SpiC.SpiC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="Msp430Spi0C\n(SpiC)", URL="../chtml/Msp430Spi0C.html"];
+  n0x2b61067cd7c0 [shape=ellipse, style=filled, label="SpiByte", fontsize=12];
+  "HplCC2420SpiC.SpiC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="Msp430Spi0C\n(SpiC)", URL="../chtml/Msp430Spi0C.html"];
+  n0x2b61067d0b00 [shape=ellipse, style=filled, label="Resource", fontsize=12];
+  "HplCC2420SpiC.SpiC" [fontsize=12, shape=box,peripheries=2, style=dashed, label="Msp430Spi0C\n(SpiC)", URL="../chtml/Msp430Spi0C.html"];
+  "n0x2b61067cde30" -> "HplCC2420SpiC.SpiC" [label="SpiPacket", URL="../ihtml/SpiPacket.html", fontsize=10];
+  "n0x2b61067cd7c0" -> "HplCC2420SpiC.SpiC" [label="SpiByte", URL="../ihtml/SpiByte.html", fontsize=10];
+  "n0x2b61067d0b00" -> "HplCC2420SpiC.SpiC" [label="Resource", URL="../ihtml/Resource.html", fontsize=10];
+}

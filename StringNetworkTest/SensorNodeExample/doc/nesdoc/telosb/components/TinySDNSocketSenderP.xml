@@ -1,0 +1,278 @@
+<?xml version="1.0" ?><component abstract="" loc="34:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderP.nc" nicename="TinySDNSocketSenderP" qname="TinySDNSocketSenderP">
+      <parameters>
+        <constant loc="35:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderP.nc" name="collectid" ref="0x2b6107b7d490">
+          <component-ref nicename="TinySDNSocketSenderP" qname="TinySDNSocketSenderP"/>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="tinysdnsocket_id_t" ref="0x2b6105f59830"/></typename>
+          </type-int>
+        </constant>
+        <constant loc="35:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderP.nc" name="clientid" ref="0x2b6107b7d800">
+          <component-ref nicename="TinySDNSocketSenderP" qname="TinySDNSocketSenderP"/>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+          </type-int>
+        </constant>
+        <constant loc="35:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderP.nc" name="controllercollectid" ref="0x2b6107b7dc40">
+          <component-ref nicename="TinySDNSocketSenderP" qname="TinySDNSocketSenderP"/>
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="tinysdnsocket_id_t" ref="0x2b6105f59830"/></typename>
+          </type-int>
+        </constant>
+      </parameters>
+      <configuration/>
+      <wiring>
+        <wire loc="48:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderP.nc">
+          <from><interface-ref name="Packet" ref="0x2b6107b79de0" scoped=""/></from>
+          <to><interface-ref name="Packet" ref="0x2b61074f4650" scoped=""/></to>
+        </wire>
+        <wire loc="47:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderP.nc">
+          <from><interface-ref name="Send" ref="0x2b6107b79190" scoped=""/></from>
+          <to><interface-ref name="Send" ref="0x2b61074f7020" scoped=""/>
+          <arguments>
+            <value cst="U:">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderP.nc">
+          <from><interface-ref name="TinySDNSocketId" ref="0x2b61074d9e80" scoped=""/>
+          <arguments>
+            <value cst="U:">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </value>
+          </arguments>
+          </from>
+          <to><interface-ref name="TinySDNSocketId" ref="0x2b6107c12cc0" scoped=""/></to>
+        </wire>
+        <wire loc="50:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderP.nc">
+          <from><interface-ref name="CollectionId" ref="0x2b61074d5dc0" scoped=""/>
+          <arguments>
+            <value cst="U:">
+              <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+                <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+              </type-int>
+            </value>
+          </arguments>
+          </from>
+          <to><interface-ref name="CollectionId" ref="0x2b6107c0e4f0" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="38:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderP.nc" name="Packet" provided="1" ref="0x2b6107b79de0">
+      <component-ref nicename="TinySDNSocketSenderP" qname="TinySDNSocketSenderP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Packet" ref="0x2b6107b79de0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b6107b78180" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b6107b78310" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6107b784a0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b6107b78630" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b6107b787c0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="37:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketSenderP.nc" name="Send" provided="1" ref="0x2b6107b79190">
+      <component-ref nicename="TinySDNSocketSenderP" qname="TinySDNSocketSenderP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Send" ref="0x2b6107b79190" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMSend" qname="AMSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b6107b79510" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6107b796a0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b6107b79830" scoped=""/>
+        <function-ref name="cancel" ref="0x2b6107b799c0" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b6107b79b50" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="53:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc" name="Packet" provided="1" ref="0x2b61074f4650">
+      <component-ref nicename="TinySDNSocketC" qname="TinySDNSocketC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Packet" ref="0x2b61074f4650" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b61074f49d0" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b61074f4b60" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b61074f4cf0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b61074f4e80" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b61074f3030" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/CollectionIdP.nc" name="CollectionId" provided="1" ref="0x2b6107c0e4f0">
+      <component-ref nicename="TinySDNSocketSenderP.CollectionIdP" qname="TinySDNSocketSenderP.CollectionIdP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CollectionId" ref="0x2b6107c0e4f0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CollectionId" qname="CollectionId"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fetch" ref="0x2b6107c0e870" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="59:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc" name="TinySDNSocketId" provided="0" ref="0x2b61074d9e80">
+      <component-ref nicename="TinySDNSocketC" qname="TinySDNSocketC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="TinySDNSocketId" ref="0x2b61074d9e80" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="TinySDNSocketId" qname="TinySDNSocketId"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="fetch" ref="0x2b61074db220" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketIdP.nc" name="TinySDNSocketId" provided="1" ref="0x2b6107c12cc0">
+      <component-ref nicename="TinySDNSocketSenderP.TinySDNSocketIdP" qname="TinySDNSocketSenderP.TinySDNSocketIdP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="TinySDNSocketId" ref="0x2b6107c12cc0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="TinySDNSocketId" qname="TinySDNSocketId"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="fetch" ref="0x2b6107c110a0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="48:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc" name="Send" provided="1" ref="0x2b61074f7020">
+      <component-ref nicename="TinySDNSocketC" qname="TinySDNSocketC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Send" ref="0x2b61074f7020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMSend" qname="AMSend"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b61074f73a0" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b61074f7530" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b61074f76c0" scoped=""/>
+        <function-ref name="cancel" ref="0x2b61074f7850" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b61074f79e0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="60:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc" name="CollectionId" provided="0" ref="0x2b61074d5dc0">
+      <component-ref nicename="TinySDNSocketC" qname="TinySDNSocketC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CollectionId" ref="0x2b61074d5dc0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CollectionId" qname="CollectionId"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="fetch" ref="0x2b61074d8180" scoped=""/>
+      </interface-functions>
+    </interface><component loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc" nicename="TinySDNSocketC" qname="TinySDNSocketC">
+      <documentation loc="34:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+        <short>
+ A data collection service that uses a tree routing protocol
+ to deliver data to collection roots, following TEP 119.</short>
+        <long>
+ A data collection service that uses a tree routing protocol
+ to deliver data to collection roots, following TEP 119.
+
+ @author Rodrigo Fonseca
+ @author Omprakash Gnawali
+ @author Kyle Jamieson
+ @author Philip Levis
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="72:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="Intercept" ref="0x2b61074f4040" scoped=""/></from>
+          <to><interface-ref name="Intercept" ref="0x2b61074c0db0" scoped=""/></to>
+        </wire>
+        <wire loc="69:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="Send" ref="0x2b61074f7020" scoped=""/></from>
+          <to><interface-ref name="Send" ref="0x2b61074c21d0" scoped=""/></to>
+        </wire>
+        <wire loc="71:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="Snoop" ref="0x2b61074f6e70" scoped=""/></from>
+          <to><interface-ref name="Snoop" ref="0x2b61074c01d0" scoped=""/></to>
+        </wire>
+        <wire loc="74:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="Packet" ref="0x2b61074f4650" scoped=""/></from>
+          <to><interface-ref name="Packet" ref="0x2b61074bf410" scoped=""/></to>
+        </wire>
+        <wire loc="75:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="TinySDNSocketPacket" ref="0x2b61074f3340" scoped=""/></from>
+          <to><interface-ref name="TinySDNSocketPacket" ref="0x2b61074be180" scoped=""/></to>
+        </wire>
+        <wire loc="70:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="Receive" ref="0x2b61074f6280" scoped=""/></from>
+          <to><interface-ref name="Receive" ref="0x2b61074c1460" scoped=""/></to>
+        </wire>
+        <wire loc="76:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="TinySdnPacket" ref="0x2b61074dc910" scoped=""/></from>
+          <to><interface-ref name="TinySdnPacket" ref="0x2b61074bd020" scoped=""/></to>
+        </wire>
+        <wire loc="68:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="StdControl" ref="0x2b61074f9250" scoped=""/></from>
+          <to><interface-ref name="StdControl" ref="0x2b61074c3370" scoped=""/></to>
+        </wire>
+        <wire loc="78:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="TinySDNSocketId" ref="0x2b6107538d70" scoped=""/></from>
+          <to><interface-ref name="TinySDNSocketId" ref="0x2b61074d9e80" scoped=""/></to>
+        </wire>
+        <wire loc="79:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="TinySDNSocketDebug" ref="0x2b6107534080" scoped=""/></from>
+          <to><interface-ref name="TinySDNSocketDebug" ref="0x2b61074cd2c0" scoped=""/></to>
+        </wire>
+        <wire loc="80:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/TinySDNSocketC.nc">
+          <from><interface-ref name="CollectionId" ref="0x2b61075379b0" scoped=""/></from>
+          <to><interface-ref name="CollectionId" ref="0x2b61074d5dc0" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component abstract="" loc="45(TinySDNSocketSenderP.CollectionIdP):/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/CollectionIdP.nc" nicename="TinySDNSocketSenderP.CollectionIdP" qname="TinySDNSocketSenderP.CollectionIdP">
+      <documentation loc="35:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/CollectionIdP.nc">
+        <short>
+  Interface for fetching the collection ID associated with a
+  collection sender instance.</short>
+        <long>
+  Interface for fetching the collection ID associated with a
+  collection sender instance.
+
+  @author Kyle Jamieson
+  @date   $Date: 2006-12-12 18:23:28 $
+</long>
+      </documentation>
+      <instance>
+        <component-ref nicename="CollectionIdP" qname="CollectionIdP"/>
+        <arguments>
+          <value cst="U:">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="tinysdnsocket_id_t" ref="0x2b6105f59830"/></typename>
+            </type-int>
+          </value>
+        </arguments>
+      </instance>
+      <module/>
+    </component><component abstract="" loc="45(TinySDNSocketSenderP.TinySDNSocketIdP):/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketIdP.nc" nicename="TinySDNSocketSenderP.TinySDNSocketIdP" qname="TinySDNSocketSenderP.TinySDNSocketIdP">
+      <documentation loc="35:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketIdP.nc">
+        <short>
+  Interface for fetching the collection ID associated with a
+  collection sender instance.</short>
+        <long>
+  Interface for fetching the collection ID associated with a
+  collection sender instance.
+
+  @author Kyle Jamieson
+  @date   $Date: 2006-12-12 18:23:28 $
+</long>
+      </documentation>
+      <instance>
+        <component-ref nicename="TinySDNSocketIdP" qname="TinySDNSocketIdP"/>
+        <arguments>
+          <value cst="U:">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="tinysdnsocket_id_t" ref="0x2b6105f59830"/></typename>
+            </type-int>
+          </value>
+        </arguments>
+      </instance>
+      <module/>
+    </component></referenced></component>

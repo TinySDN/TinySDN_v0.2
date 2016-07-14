@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: CC2420SpiWireC</title>
+  </head>
+  <body>
+    <h2>Component: CC2420SpiWireC
+    </h2>
+    <b>configuration CC2420SpiWireC</b>
+    <p>
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Jonathan Hui &lt;jhui@archrock.com&gt;
+ 
+      </dd>
+      <dt><b>Version:</b>
+      <dd>
+        $Revision: 1.1 $ $Date: 2007-07-04 00:37:16 $
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/ChipSpiResource.html">ChipSpiResource</a></div><div id=funcsig>interface <a href="../ihtml/CC2420Fifo.html">CC2420Fifo</a> as <b>Fifo</b>[uint8_t]</div><div id=funcsig>interface <a href="../ihtml/CC2420Ram.html">CC2420Ram</a> as <b>Ram</b>[uint16_t]</div><div id=funcsig>interface <a href="../ihtml/CC2420Register.html">CC2420Register</a> as <b>Reg</b>[uint8_t]</div><div id=funcsig>interface <a href="../ihtml/Resource.html">Resource</a>[uint8_t]</div><div id=funcsig>interface <a href="../ihtml/CC2420Strobe.html">CC2420Strobe</a> as <b>Strobe</b>[uint8_t]</div><p><div id=heading>Wiring</div><p>
+    <map name="comp">
+      <area shape="rect" id="node2" href="../chtml/CC2420SpiP.html" title="CC2420SpiP" alt="" coords="348,117,455,165">
+
+      <area shape="poly" id="edge1" href="../ihtml/CC2420Fifo.html" title="CC2420Fifo[uint8_t]" alt="" coords="52,51,65,73,84,91,128,108,194,120,334,134,334,139,193,125,127,113,81,96,61,76,48,54">
+
+      <area shape="rect" id="edge1-label" href="../ihtml/CC2420Fifo.html" title="CC2420Fifo[uint8_t]" alt="" coords="83,78,200,93">
+
+      <area shape="rect" id="node8" href="../chtml/StateC.html" title="StateC\n(WorkingStateC)" alt="" coords="179,229,319,288">
+
+      <area shape="poly" id="edge7" href="../ihtml/State.html" title="State" alt="" coords="349,158,316,172,287,191,267,218,263,215,283,187,314,167,347,153">
+
+      <area shape="rect" id="edge7-label" href="../ihtml/State.html" title="State" alt="" coords="285,190,313,205">
+
+      <area shape="rect" id="node9" href="../chtml/HplCC2420SpiC.html" title="HplCC2420SpiC" alt="" coords="343,229,485,288">
+
+      <area shape="poly" id="edge8" href="../ihtml/Resource.html" title="Resource" alt="" coords="350,164,325,182,321,193,324,204,336,219,331,222,319,207,315,192,321,179,346,160">
+
+      <area shape="rect" id="edge8-label" href="../ihtml/Resource.html" title="Resource" alt="" coords="321,190,372,205">
+
+      <area shape="poly" id="edge9" href="../ihtml/SpiByte.html" title="SpiByte" alt="" coords="403,165,405,205,407,215,402,216,400,206,398,166">
+
+      <area shape="rect" id="edge9-label" href="../ihtml/SpiByte.html" title="SpiByte" alt="" coords="403,190,448,205">
+
+      <area shape="poly" id="edge10" href="../ihtml/SpiPacket.html" title="SpiPacket" alt="" coords="433,164,450,188,453,203,449,218,444,217,448,203,446,190,429,167">
+
+      <area shape="rect" id="edge10-label" href="../ihtml/SpiPacket.html" title="SpiPacket" alt="" coords="451,190,505,205">
+
+      <area shape="rect" id="node10" href="../chtml/LedsC.html" title="LedsC" alt="" coords="521,229,603,288">
+
+      <area shape="poly" id="edge11" href="../ihtml/Leds.html" title="Leds" alt="" coords="456,157,485,170,512,187,540,216,536,220,509,191,482,175,454,162">
+
+      <area shape="rect" id="edge11-label" href="../ihtml/Leds.html" title="Leds" alt="" coords="527,190,553,205">
+
+      <area shape="poly" id="edge2" href="../ihtml/ChipSpiResource.html" title="ChipSpiResource" alt="" coords="195,52,205,73,220,91,247,108,276,120,335,134,334,139,274,125,244,113,217,95,201,76,191,55">
+
+      <area shape="rect" id="edge2-label" href="../ihtml/ChipSpiResource.html" title="ChipSpiResource" alt="" coords="219,78,315,93">
+
+      <area shape="poly" id="edge3" href="../ihtml/CC2420Ram.html" title="CC2420Ram[uint16_t]" alt="" coords="324,53,322,73,326,92,339,108,335,111,322,95,316,73,319,53">
+
+      <area shape="rect" id="edge3-label" href="../ihtml/CC2420Ram.html" title="CC2420Ram[uint16_t]" alt="" coords="324,78,451,93">
+
+      <area shape="poly" id="edge4" href="../ihtml/CC2420Register.html" title="CC2420Register[uint8_t]" alt="" coords="474,54,453,95,441,109,437,106,448,92,469,52">
+
+      <area shape="rect" id="edge4-label" href="../ihtml/CC2420Register.html" title="CC2420Register[uint8_t]" alt="" coords="460,78,600,93">
+
+      <area shape="poly" id="edge5" href="../ihtml/Resource.html" title="Resource[uint8_t]" alt="" coords="642,55,627,76,607,95,574,113,538,126,469,139,468,134,537,121,572,108,604,91,623,73,638,52">
+
+      <area shape="rect" id="edge5-label" href="../ihtml/Resource.html" title="Resource[uint8_t]" alt="" coords="623,78,721,93">
+
+      <area shape="poly" id="edge6" href="../ihtml/CC2420Strobe.html" title="CC2420Strobe[uint8_t]" alt="" coords="770,54,752,76,728,96,680,112,613,124,469,139,469,133,612,119,679,107,725,91,748,73,765,51">
+
+      <area shape="rect" id="edge6-label" href="../ihtml/CC2420Strobe.html" title="CC2420Strobe[uint8_t]" alt="" coords="747,78,876,93">
+
+    </map>
+    <img src="CC2420SpiWireC.png" usemap="#comp" id=imgwiring>
+  </body>
+</html>

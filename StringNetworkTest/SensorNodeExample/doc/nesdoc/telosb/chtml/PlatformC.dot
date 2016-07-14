@@ -1,0 +1,11 @@
+digraph "PlatformC" {
+  n0x2b6105d63190 [shape=ellipse, style=filled, label="Init", fontsize=12];
+  "PlatformP" [fontsize=12, shape=box, URL="../chtml/PlatformP.html"];
+  "PlatformP" [fontsize=12, shape=box, URL="../chtml/PlatformP.html"];
+  "MoteClockC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/MoteClockC.html"];
+  "PlatformP" [fontsize=12, shape=box, URL="../chtml/PlatformP.html"];
+  "MotePlatformC" [fontsize=12, shape=box, URL="../chtml/MotePlatformC.html"];
+  "n0x2b6105d63190" -> "PlatformP" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+  "PlatformP" -> "MoteClockC" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+  "PlatformP" -> "MotePlatformC" [label="Init", URL="../ihtml/Init.html", fontsize=10];
+}

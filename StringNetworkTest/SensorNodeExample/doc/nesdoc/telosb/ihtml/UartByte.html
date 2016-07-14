@@ -1,0 +1,89 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Interface: UartByte</title>
+  </head>
+  <body>
+    <h2>Interface: UartByte</h2>
+    <b>interface UartByte</b><p>
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Jonathan Hui &lt;jhui@archedrock.com&gt;
+ 
+      </dd>
+      <dt><b>Version:</b>
+      <dd>
+        $Revision: 1.5 $ $Date: 2008-06-04 03:00:35 $
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Commands</div><div id=funcsig><span id=funcnameshort>command error_t <a href="#receive">receive</a>(uint8_t *byte, uint8_t timeout)
+      </span><menu>
+ Receive a single uart byte.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command error_t <a href="#send">send</a>(uint8_t byte)
+      </span><menu>
+ Send a single uart byte.
+      </menu>
+    </div><p><div id=heading>Commands - Details</div>
+    <a name="receive"></a>
+    <h4>receive
+    </h4>
+    <span id=funcnameshort>command error_t <b>receive</b>(uint8_t *byte, uint8_t timeout)
+    </span>
+    <p>
+    <menu>
+      
+ Receive a single uart byte. The call blocks until a byte is
+ received.
+
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          'uint8_t* ONE byte' Where to place received byte.
+ 
+        </dd>
+        <dd>
+          <code>timeout</code> -  How long in byte times to wait.
+ 
+        </dd>
+        <dt><b>Returns:</b>
+        <dd>
+          SUCCESS if a byte was received, FAIL if timed out.
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="send"></a>
+    <h4>send
+    </h4>
+    <span id=funcnameshort>command error_t <b>send</b>(uint8_t byte)
+    </span>
+    <p>
+    <menu>
+      
+ Send a single uart byte. The call blocks until it is ready to
+ accept another byte for sending.
+
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>byte</code> -  The byte to send.
+ 
+        </dd>
+        <dt><b>Returns:</b>
+        <dd>
+          SUCCESS if byte was sent, FAIL otherwise.
+
+        </dd>
+      </dl>
+    </menu>
+  </body>
+</html>

@@ -1,0 +1,151 @@
+<?xml version="1.0" ?><component loc="39:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/BusyWaitMicroC.nc" nicename="BusyWaitMicroC" qname="BusyWaitMicroC">
+      <documentation loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/BusyWaitMicroC.nc">
+        <short>
+ </short>
+        <long>
+ @author Cory Sharp &lt;cssharp@eecs.berkeley.edu&gt;
+ @see  Please refer to TEP 102 for more information about this component and its
+          intended use.
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/BusyWaitMicroC.nc">
+          <from><interface-ref name="BusyWait" ref="0x2b6106bfe440" scoped=""/></from>
+          <to><interface-ref name="BusyWait" ref="0x2b6106bf9060" scoped=""/></to>
+        </wire>
+        <wire loc="50:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/BusyWaitMicroC.nc">
+          <from><interface-ref name="Counter" ref="0x2b6106c46560" scoped=""/></from>
+          <to><interface-ref name="Msp430CounterMicro" ref="0x2b6106c42ad0" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="41:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/BusyWaitMicroC.nc" name="BusyWait" provided="1" ref="0x2b6106bfe440">
+      <component-ref nicename="BusyWaitMicroC" qname="BusyWaitMicroC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="BusyWait" ref="0x2b6106bfe440" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="BusyWait" qname="BusyWait"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f4f5c0"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b6105f4f930"/></typename>
+          </type-tag>
+          <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="wait" ref="0x2b6106bfd3d0" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="43:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430CounterMicroC.nc" name="Msp430CounterMicro" provided="1" ref="0x2b6106c42ad0">
+      <component-ref nicename="Msp430CounterMicroC" qname="Msp430CounterMicroC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Msp430CounterMicro" ref="0x2b6106c42ad0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Counter" qname="Counter"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f4f5c0"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b6105f4f930"/></typename>
+          </type-tag>
+          <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b6106c3f970" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b6106c3d340" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b6106c3fe30" scoped=""/>
+        <function-ref name="overflow" ref="0x2b6106c3d800" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="54:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/BusyWaitCounterC.nc" name="Counter" provided="0" ref="0x2b6106c46560">
+      <component-ref nicename="BusyWaitMicroC.BusyWaitCounterC" qname="BusyWaitMicroC.BusyWaitCounterC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Counter" ref="0x2b6106c46560" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Counter" qname="Counter"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f4f5c0"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b6105f4f930"/></typename>
+          </type-tag>
+          <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="get" ref="0x2b6106c443d0" scoped=""/>
+        <function-ref name="clearOverflow" ref="0x2b6106c44d50" scoped=""/>
+        <function-ref name="isOverflowPending" ref="0x2b6106c44890" scoped=""/>
+        <function-ref name="overflow" ref="0x2b6106c43260" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="53:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/BusyWaitCounterC.nc" name="BusyWait" provided="1" ref="0x2b6106bf9060">
+      <component-ref nicename="BusyWaitMicroC.BusyWaitCounterC" qname="BusyWaitMicroC.BusyWaitCounterC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="BusyWait" ref="0x2b6106bf9060" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="BusyWait" qname="BusyWait"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f4f5c0"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b6105f4f930"/></typename>
+          </type-tag>
+          <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="wait" ref="0x2b6106bf9e70" scoped=""/>
+      </interface-functions>
+    </interface><component loc="41:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430CounterMicroC.nc" nicename="Msp430CounterMicroC" qname="Msp430CounterMicroC">
+      <documentation loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430CounterMicroC.nc">
+        <short>
+ Msp430Counter32khC provides the standard 32khz counter for the MSP430.</short>
+        <long>
+ Msp430Counter32khC provides the standard 32khz counter for the MSP430.
+
+ @author Cory Sharp &lt;cssharp@eecs.berkeley.edu&gt;
+ @see  Please refer to TEP 102 for more information about this component and its
+          intended use.
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430CounterMicroC.nc">
+          <from><interface-ref name="Msp430CounterMicro" ref="0x2b6106c42ad0" scoped=""/></from>
+          <to><interface-ref name="Counter" ref="0x2b6106c3b340" scoped=""/></to>
+        </wire>
+        <wire loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/timer/Msp430CounterMicroC.nc">
+          <from><interface-ref name="Msp430Timer" ref="0x2b6106c38450" scoped=""/></from>
+          <to><interface-ref name="TimerA" ref="0x2b6105dd07b0" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component><component loc="51(BusyWaitMicroC.BusyWaitCounterC):/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/BusyWaitCounterC.nc" nicename="BusyWaitMicroC.BusyWaitCounterC" qname="BusyWaitMicroC.BusyWaitCounterC">
+      <documentation loc="36:/opt/tinyos-release-tinyos-2_1_2//tos/lib/timer/BusyWaitCounterC.nc">
+        <short>
+ BusyWaitCounterC uses a Counter to implement the BusyWait interface
+ (block until a specified amount of time elapses).</short>
+        <long>
+ BusyWaitCounterC uses a Counter to implement the BusyWait interface
+ (block until a specified amount of time elapses). See TEP102 for more
+ details.
+
+ &lt;p&gt;See TEP102 for more details.
+
+ @param precision_tag A type indicating the precision of the BusyWait
+   interface.
+ @param size_type An integer type representing time values for the
+   BusyWait interface.
+
+ @author Cory Sharp &lt;cssharp@eecs.berkeley.edu&gt;
+</long>
+      </documentation>
+      <instance number="0">
+        <component-ref nicename="BusyWaitCounterC" qname="BusyWaitCounterC"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f4f5c0"/>
+            <typename><typedef-ref name="TMicro" ref="0x2b6105f4f930"/></typename>
+          </type-tag>
+          <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+            <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+          </type-int>
+        </arguments>
+      </instance>
+      <module/>
+    </component></referenced></component>

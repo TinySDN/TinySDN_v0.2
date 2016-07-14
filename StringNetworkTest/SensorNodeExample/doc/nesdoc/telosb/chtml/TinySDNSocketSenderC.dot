@@ -1,0 +1,8 @@
+digraph "TinySDNSocketSenderC" {
+  n0x2b6107b7f440 [shape=ellipse, style=filled, label="Packet", fontsize=12];
+  "TinySDNSocketSenderC.TinySDNSocketSenderP" [fontsize=12, shape=box,peripheries=2, style=dashed, label="TinySDNSocketSenderP", URL="../chtml/TinySDNSocketSenderP.html"];
+  n0x2b6107b806e0 [shape=ellipse, style=filled, label="Send", fontsize=12];
+  "TinySDNSocketSenderC.TinySDNSocketSenderP" [fontsize=12, shape=box,peripheries=2, style=dashed, label="TinySDNSocketSenderP", URL="../chtml/TinySDNSocketSenderP.html"];
+  "n0x2b6107b7f440" -> "TinySDNSocketSenderC.TinySDNSocketSenderP" [label="Packet", URL="../ihtml/Packet.html", fontsize=10];
+  "n0x2b6107b806e0" -> "TinySDNSocketSenderC.TinySDNSocketSenderP" [label="AMSend", URL="../ihtml/AMSend.html", fontsize=10];
+}

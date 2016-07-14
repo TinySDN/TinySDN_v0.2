@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Component: AMSenderC</title>
+  </head>
+  <body>
+    <h2>Component: AMSenderC
+    </h2>
+    <b>generic configuration AMSenderC(am_id_t AMId)</b>
+    <p>
+ The virtualized active message send abstraction. Each instantiation
+ of AMSenderC has its own queue of depth one. Therefore, it does not
+ have to contend with other AMSenderC instantiations for queue space.
+ The underlying implementation schedules the packets in these queues
+ using some form of fair-share queueing.
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Philip Levis
+ 
+      </dd>
+      <dt><b>Date:</b>
+      <dd>
+          Jan 16 2006
+ 
+      </dd>
+      <dt><b>See:</b>
+      <dd>
+           TEP 116: Packet Protocols
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Provides</div><div id=funcsig>interface <a href="../ihtml/PacketAcknowledgements.html">PacketAcknowledgements</a> as <b>Acks</b></div><div id=funcsig>interface <a href="../ihtml/AMPacket.html">AMPacket</a></div><div id=funcsig>interface <a href="../ihtml/AMSend.html">AMSend</a></div><div id=funcsig>interface <a href="../ihtml/Packet.html">Packet</a></div><p><div id=heading>Wiring</div><p>
+    <map name="comp">
+      <area shape="rect" id="node2" href="../chtml/DirectAMSenderC.html" title="DirectAMSenderC\n(SenderC)" alt="" coords="147,117,300,176">
+
+      <area shape="poly" id="edge1" href="../ihtml/AMSend.html" title="AMSend" alt="" coords="79,48,138,91,164,108,161,112,134,96,76,52">
+
+      <area shape="rect" id="edge1-label" href="../ihtml/AMSend.html" title="AMSend" alt="" coords="136,78,185,93">
+
+      <area shape="poly" id="edge2" href="../ihtml/Packet.html" title="Packet" alt="" coords="179,52,206,104,201,106,174,54">
+
+      <area shape="rect" id="edge2-label" href="../ihtml/Packet.html" title="Packet" alt="" coords="197,78,235,93">
+
+      <area shape="poly" id="edge3" href="../ihtml/AMPacket.html" title="AMPacket" alt="" coords="275,55,248,106,243,104,270,52">
+
+      <area shape="rect" id="edge3-label" href="../ihtml/AMPacket.html" title="AMPacket" alt="" coords="260,78,319,93">
+
+      <area shape="poly" id="edge4" href="../ihtml/PacketAcknowledgements.html" title="PacketAcknowledgements" alt="" coords="381,52,326,96,297,113,294,108,322,91,378,47">
+
+      <area shape="rect" id="edge4-label" href="../ihtml/PacketAcknowledgements.html" title="PacketAcknowledgements" alt="" coords="347,78,492,93">
+
+    </map>
+    <img src="AMSenderC.png" usemap="#comp" id=imgwiring>
+  </body>
+</html>

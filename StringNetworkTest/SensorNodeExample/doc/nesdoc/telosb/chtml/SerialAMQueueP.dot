@@ -1,0 +1,14 @@
+digraph "SerialAMQueueP" {
+  n0x2b610703fd00 [shape=ellipse, style=filled, label="Send", fontsize=12];
+  "SerialAMQueueP.AMQueueImplP" [fontsize=12, shape=box, style=dashed, label="AMQueueImplP", URL="../chtml/AMQueueImplP.html"];
+  "SerialAMQueueP.AMQueueImplP" [fontsize=12, shape=box, style=dashed, label="AMQueueImplP", URL="../chtml/AMQueueImplP.html"];
+  "SerialActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/SerialActiveMessageC.html"];
+  "SerialAMQueueP.AMQueueImplP" [fontsize=12, shape=box, style=dashed, label="AMQueueImplP", URL="../chtml/AMQueueImplP.html"];
+  "SerialActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/SerialActiveMessageC.html"];
+  "SerialAMQueueP.AMQueueImplP" [fontsize=12, shape=box, style=dashed, label="AMQueueImplP", URL="../chtml/AMQueueImplP.html"];
+  "SerialActiveMessageC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/SerialActiveMessageC.html"];
+  "n0x2b610703fd00" -> "SerialAMQueueP.AMQueueImplP" [label="Send[uint8_t]", style=bold, URL="../ihtml/Send.html", fontsize=10];
+  "SerialAMQueueP.AMQueueImplP" -> "SerialActiveMessageC" [label="AMSend[am_id_t]", style=bold, URL="../ihtml/AMSend.html", fontsize=10];
+  "SerialAMQueueP.AMQueueImplP" -> "SerialActiveMessageC" [label="AMPacket", URL="../ihtml/AMPacket.html", fontsize=10];
+  "SerialAMQueueP.AMQueueImplP" -> "SerialActiveMessageC" [label="Packet", URL="../ihtml/Packet.html", fontsize=10];
+}

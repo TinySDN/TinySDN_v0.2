@@ -1,0 +1,124 @@
+<?xml version="1.0" ?><component loc="12:SDNEnabledSensorNodeTestC.nc" nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC">
+      <documentation loc="33:/opt/tinyos-release-tinyos-2_1_2//tos/lib/printf/printf.h">
+        <short>
+
+ </short>
+        <long>
+
+ @author Kevin Klues (klueska@cs.wustl.edu)
+ @version $Revision: 1.17 $
+ @date $Date: 2010-06-29 22:07:50 $
+</long>
+      </documentation>
+      <module/>
+    <specification><interface loc="15:SDNEnabledSensorNodeTestC.nc" name="Boot" provided="0" ref="0x2b6105f4a020">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Boot" ref="0x2b6105f4a020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Boot" qname="Boot"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="booted" ref="0x2b6105f4a3a0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="22:SDNEnabledSensorNodeTestC.nc" name="TinySDNSocketPacket" provided="0" ref="0x2b6105f538a0">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="TinySDNSocketPacket" ref="0x2b6105f538a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="TinySDNSocketPacket" qname="TinySDNSocketPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="setSequenceNumber" ref="0x2b6105f53c20" scoped=""/>
+        <function-ref name="setSocketID" ref="0x2b6105f53db0" scoped=""/>
+        <function-ref name="setOrigin" ref="0x2b6105f39020" scoped=""/>
+        <function-ref name="getSocketID" ref="0x2b6105f391b0" scoped=""/>
+        <function-ref name="getOrigin" ref="0x2b6105f39340" scoped=""/>
+        <function-ref name="getSequenceNumber" ref="0x2b6105f394d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="16:SDNEnabledSensorNodeTestC.nc" name="RadioControl" provided="0" ref="0x2b6105f45990">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="RadioControl" ref="0x2b6105f45990" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="SplitControl" qname="SplitControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="startDone" ref="0x2b6105f45d10" scoped=""/>
+        <function-ref name="stopDone" ref="0x2b6105f49020" scoped=""/>
+        <function-ref name="start" ref="0x2b6105f491b0" scoped=""/>
+        <function-ref name="stop" ref="0x2b6105f49340" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="20:SDNEnabledSensorNodeTestC.nc" name="Send" provided="0" ref="0x2b6105f5f630">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Send" ref="0x2b6105f5f630" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMSend" qname="AMSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b6105f5f9b0" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6105f5fb40" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b6105f5fcd0" scoped=""/>
+        <function-ref name="cancel" ref="0x2b6105f5fe60" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b6105f44020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="17:SDNEnabledSensorNodeTestC.nc" name="RoutingControl" provided="0" ref="0x2b6105f48020">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="RoutingControl" ref="0x2b6105f48020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="StdControl" qname="StdControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="start" ref="0x2b6105f483a0" scoped=""/>
+        <function-ref name="stop" ref="0x2b6105f48530" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="21:SDNEnabledSensorNodeTestC.nc" name="Receive" provided="0" ref="0x2b6105f5bdf0">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Receive" ref="0x2b6105f5bdf0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Receive" qname="Receive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b6105f411c0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="26:SDNEnabledSensorNodeTestC.nc" name="Leds" provided="0" ref="0x2b6105f860d0">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Leds" ref="0x2b6105f860d0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Leds" qname="Leds"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="led0Off" ref="0x2b6105f86450" scoped=""/>
+        <function-ref name="led0Toggle" ref="0x2b6105f865e0" scoped=""/>
+        <function-ref name="led1On" ref="0x2b6105f86770" scoped=""/>
+        <function-ref name="led1Toggle" ref="0x2b6105f86900" scoped=""/>
+        <function-ref name="led2Toggle" ref="0x2b6105f86a90" scoped=""/>
+        <function-ref name="get" ref="0x2b6105f86c20" scoped=""/>
+        <function-ref name="led1Off" ref="0x2b6105f86db0" scoped=""/>
+        <function-ref name="led2Off" ref="0x2b6105f694d0" scoped=""/>
+        <function-ref name="set" ref="0x2b6105f69020" scoped=""/>
+        <function-ref name="led0On" ref="0x2b6105f691b0" scoped=""/>
+        <function-ref name="led2On" ref="0x2b6105f69340" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="25:SDNEnabledSensorNodeTestC.nc" name="Timer" provided="0" ref="0x2b6105f5c1e0">
+      <component-ref nicename="SDNEnabledSensorNodeTestC" qname="SDNEnabledSensorNodeTestC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Timer" ref="0x2b6105f5c1e0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Timer" qname="Timer"/>
+        <arguments>
+          <type-tag alignment="I:2" size="I:2"><struct-ref ref="0x2b6105f515c0"/>
+            <typename><typedef-ref name="TMilli" ref="0x2b6105f51930"/></typename>
+          </type-tag>
+        </arguments>
+      </instance>
+      <interface-functions>
+        <function-ref name="getNow" ref="0x2b6105f6b630" scoped=""/>
+        <function-ref name="fired" ref="0x2b6105f52c30" scoped=""/>
+        <function-ref name="startPeriodicAt" ref="0x2b6105f6d9d0" scoped=""/>
+        <function-ref name="isOneShot" ref="0x2b6105f6d550" scoped=""/>
+        <function-ref name="getdt" ref="0x2b6105f6a020" scoped=""/>
+        <function-ref name="gett0" ref="0x2b6105f6bab0" scoped=""/>
+        <function-ref name="isRunning" ref="0x2b6105f6d0d0" scoped=""/>
+        <function-ref name="startPeriodic" ref="0x2b6105f5cdd0" scoped=""/>
+        <function-ref name="startOneShotAt" ref="0x2b6105f6b020" scoped=""/>
+        <function-ref name="startOneShot" ref="0x2b6105f522e0" scoped=""/>
+        <function-ref name="stop" ref="0x2b6105f527b0" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

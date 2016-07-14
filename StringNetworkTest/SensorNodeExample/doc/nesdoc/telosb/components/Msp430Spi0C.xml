@@ -1,0 +1,357 @@
+<?xml version="1.0" ?><component abstract="" loc="79:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc" nicename="Msp430Spi0C" qname="Msp430Spi0C">
+      <parameters>
+      </parameters>
+      <configuration/>
+      <wiring>
+        <wire loc="114:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc">
+          <from><interface-ref name="ResourceRequested" ref="0x2b61068554d0" scoped=""/></from>
+          <to><interface-ref name="ResourceRequested" ref="0x2b6106ae9a50" scoped=""/></to>
+        </wire>
+        <wire loc="110:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc">
+          <from><interface-ref name="SpiPacket" ref="0x2b6106857310" scoped=""/></from>
+          <to><interface-ref name="SpiPacket" ref="0x2b6106845510" scoped=""/>
+          <arguments>
+            <value cst="U:">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="106:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc">
+          <from><interface-ref name="SpiByte" ref="0x2b6106855cc0" scoped=""/></from>
+          <to><interface-ref name="SpiByte" ref="0x2b6106848dd0" scoped=""/></to>
+        </wire>
+        <wire loc="105:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc">
+          <from><interface-ref name="Resource" ref="0x2b610685ada0" scoped=""/></from>
+          <to><interface-ref name="Resource" ref="0x2b610684fa30" scoped=""/>
+          <arguments>
+            <value cst="U:">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="108:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc">
+          <from><interface-ref name="FastSpiByte" ref="0x2b6106850680" scoped=""/></from>
+          <to><interface-ref name="FastSpiByte" ref="0x2b6106847480" scoped=""/></to>
+        </wire>
+        <wire loc="111:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc">
+          <from><interface-ref name="Msp430SpiConfigure" ref="0x2b6106842600" scoped=""/>
+          <arguments>
+            <value cst="U:">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </from>
+          <to><interface-ref name="Msp430SpiConfigure" ref="0x2b610684e9b0" scoped=""/></to>
+        </wire>
+        <wire loc="115:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc">
+          <from><interface-ref name="ResourceConfigure" ref="0x2b6106b34020" scoped=""/></from>
+          <to><interface-ref name="ResourceConfigure" ref="0x2b61068485e0" scoped=""/>
+          <arguments>
+            <value cst="U:">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </to>
+        </wire>
+        <wire loc="116:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc">
+          <from><interface-ref name="UsartResource" ref="0x2b6106844370" scoped=""/>
+          <arguments>
+            <value cst="U:">
+              <type-int alignment="I:2" cname="int" size="I:2"/>
+            </value>
+          </arguments>
+          </from>
+          <to><interface-ref name="Resource" ref="0x2b6106aead80" scoped=""/></to>
+        </wire>
+        <wire loc="117:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc">
+          <from><interface-ref name="UsartInterrupts" ref="0x2b610683e6a0" scoped=""/></from>
+          <to><interface-ref name="HplMsp430UsartInterrupts" ref="0x2b6106ae3440" scoped=""/></to>
+        </wire>
+      </wiring>
+    <specification><interface loc="82:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc" name="ResourceRequested" provided="1" ref="0x2b61068554d0">
+      <component-ref nicename="Msp430Spi0C" qname="Msp430Spi0C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ResourceRequested" ref="0x2b61068554d0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ResourceRequested" qname="ResourceRequested"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="requested" ref="0x2b6106855850" scoped=""/>
+        <function-ref name="immediateRequested" ref="0x2b61068559e0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="87:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc" name="SpiPacket" provided="1" ref="0x2b6106857310">
+      <component-ref nicename="Msp430Spi0C" qname="Msp430Spi0C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SpiPacket" ref="0x2b6106857310" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="SpiPacket" qname="SpiPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b6106857690" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b6106857820" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="89:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc" name="Msp430SpiConfigure" provided="0" ref="0x2b610684e9b0">
+      <component-ref nicename="Msp430Spi0C" qname="Msp430Spi0C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Msp430SpiConfigure" ref="0x2b610684e9b0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Msp430SpiConfigure" qname="Msp430SpiConfigure"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="getConfig" ref="0x2b610684ed30" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="83:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc" name="SpiByte" provided="1" ref="0x2b6106855cc0">
+      <component-ref nicename="Msp430Spi0C" qname="Msp430Spi0C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SpiByte" ref="0x2b6106855cc0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="SpiByte" qname="SpiByte"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="write" ref="0x2b61068580a0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="81:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc" name="Resource" provided="1" ref="0x2b610685ada0">
+      <component-ref nicename="Msp430Spi0C" qname="Msp430Spi0C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Resource" ref="0x2b610685ada0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Resource" qname="Resource"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="release" ref="0x2b6106859180" scoped=""/>
+        <function-ref name="immediateRequest" ref="0x2b6106859310" scoped=""/>
+        <function-ref name="request" ref="0x2b61068594a0" scoped=""/>
+        <function-ref name="granted" ref="0x2b6106859630" scoped=""/>
+        <function-ref name="isOwner" ref="0x2b61068597c0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="85:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Spi0C.nc" name="FastSpiByte" provided="1" ref="0x2b6106850680">
+      <component-ref nicename="Msp430Spi0C" qname="Msp430Spi0C"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="FastSpiByte" ref="0x2b6106850680" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="FastSpiByte" qname="FastSpiByte"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="splitWrite" ref="0x2b6106850a00" scoped=""/>
+        <function-ref name="splitReadWrite" ref="0x2b6106850b90" scoped=""/>
+        <function-ref name="splitRead" ref="0x2b6106850d20" scoped=""/>
+        <function-ref name="write" ref="0x2b6106857020" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced><interface loc="41:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Usart0C.nc" name="Resource" provided="1" ref="0x2b6106aead80">
+      <component-ref nicename="Msp430Spi0C.UsartC" qname="Msp430Spi0C.UsartC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Resource" ref="0x2b6106aead80" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Resource" qname="Resource"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="release" ref="0x2b6106ae9180" scoped=""/>
+        <function-ref name="immediateRequest" ref="0x2b6106ae9310" scoped=""/>
+        <function-ref name="request" ref="0x2b6106ae94a0" scoped=""/>
+        <function-ref name="granted" ref="0x2b6106ae9630" scoped=""/>
+        <function-ref name="isOwner" ref="0x2b6106ae97c0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="75:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc" name="SpiByte" provided="1" ref="0x2b6106848dd0">
+      <component-ref nicename="Msp430SpiNoDma0P" qname="Msp430SpiNoDma0P"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SpiByte" ref="0x2b6106848dd0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="SpiByte" qname="SpiByte"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="write" ref="0x2b6106847180" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Usart0C.nc" name="ResourceConfigure" provided="0" ref="0x2b6106b34020">
+      <component-ref nicename="Msp430Spi0C.UsartC" qname="Msp430Spi0C.UsartC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ResourceConfigure" ref="0x2b6106b34020" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ResourceConfigure" qname="ResourceConfigure"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="unconfigure" ref="0x2b6106b343a0" scoped=""/>
+        <function-ref name="configure" ref="0x2b6106b34530" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="77:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc" name="SpiPacket" provided="1" ref="0x2b6106845510">
+      <component-ref nicename="Msp430SpiNoDma0P" qname="Msp430SpiNoDma0P"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SpiPacket" ref="0x2b6106845510" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="SpiPacket" qname="SpiPacket"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b6106845890" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b6106845a20" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="45:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Usart0C.nc" name="HplMsp430UsartInterrupts" provided="1" ref="0x2b6106ae3440">
+      <component-ref nicename="Msp430Spi0C.UsartC" qname="Msp430Spi0C.UsartC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="HplMsp430UsartInterrupts" ref="0x2b6106ae3440" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="HplMsp430UsartInterrupts" qname="HplMsp430UsartInterrupts"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="rxDone" ref="0x2b6106ae37c0" scoped=""/>
+        <function-ref name="txDone" ref="0x2b6106ae3950" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="76:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc" name="FastSpiByte" provided="1" ref="0x2b6106847480">
+      <component-ref nicename="Msp430SpiNoDma0P" qname="Msp430SpiNoDma0P"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="FastSpiByte" ref="0x2b6106847480" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="FastSpiByte" qname="FastSpiByte"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="splitWrite" ref="0x2b6106847800" scoped=""/>
+        <function-ref name="splitReadWrite" ref="0x2b6106847990" scoped=""/>
+        <function-ref name="splitRead" ref="0x2b6106847b20" scoped=""/>
+        <function-ref name="write" ref="0x2b6106847cb0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="80:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc" name="Msp430SpiConfigure" provided="0" ref="0x2b6106842600">
+      <component-ref nicename="Msp430SpiNoDma0P" qname="Msp430SpiNoDma0P"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Msp430SpiConfigure" ref="0x2b6106842600" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Msp430SpiConfigure" qname="Msp430SpiConfigure"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="getConfig" ref="0x2b6106842980" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="73:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc" name="Resource" provided="1" ref="0x2b610684fa30">
+      <component-ref nicename="Msp430SpiNoDma0P" qname="Msp430SpiNoDma0P"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Resource" ref="0x2b610684fa30" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Resource" qname="Resource"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="release" ref="0x2b610684fdb0" scoped=""/>
+        <function-ref name="immediateRequest" ref="0x2b610684a020" scoped=""/>
+        <function-ref name="request" ref="0x2b610684a1b0" scoped=""/>
+        <function-ref name="granted" ref="0x2b610684a340" scoped=""/>
+        <function-ref name="isOwner" ref="0x2b610684a4d0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="81:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc" name="UsartInterrupts" provided="0" ref="0x2b610683e6a0">
+      <component-ref nicename="Msp430SpiNoDma0P" qname="Msp430SpiNoDma0P"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="UsartInterrupts" ref="0x2b610683e6a0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="HplMsp430UsartInterrupts" qname="HplMsp430UsartInterrupts"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="rxDone" ref="0x2b610683ea20" scoped=""/>
+        <function-ref name="txDone" ref="0x2b610683ebb0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="42:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Usart0C.nc" name="ResourceRequested" provided="1" ref="0x2b6106ae9a50">
+      <component-ref nicename="Msp430Spi0C.UsartC" qname="Msp430Spi0C.UsartC"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ResourceRequested" ref="0x2b6106ae9a50" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ResourceRequested" qname="ResourceRequested"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="requested" ref="0x2b6106ae9dd0" scoped=""/>
+        <function-ref name="immediateRequested" ref="0x2b6106ae8020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="79:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc" name="UsartResource" provided="0" ref="0x2b6106844370">
+      <component-ref nicename="Msp430SpiNoDma0P" qname="Msp430SpiNoDma0P"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="UsartResource" ref="0x2b6106844370" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Resource" qname="Resource"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="release" ref="0x2b61068446f0" scoped=""/>
+        <function-ref name="immediateRequest" ref="0x2b6106844880" scoped=""/>
+        <function-ref name="request" ref="0x2b6106844a10" scoped=""/>
+        <function-ref name="granted" ref="0x2b6106844ba0" scoped=""/>
+        <function-ref name="isOwner" ref="0x2b6106844d30" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="74:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc" name="ResourceConfigure" provided="1" ref="0x2b61068485e0">
+      <component-ref nicename="Msp430SpiNoDma0P" qname="Msp430SpiNoDma0P"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="ResourceConfigure" ref="0x2b61068485e0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="ResourceConfigure" qname="ResourceConfigure"/>
+      </instance>
+      <interface-parameters>
+        <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+          <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+        </type-int>
+      </interface-parameters>
+      <interface-functions>
+        <function-ref name="unconfigure" ref="0x2b6106848960" scoped=""/>
+        <function-ref name="configure" ref="0x2b6106848af0" scoped=""/>
+      </interface-functions>
+    </interface><component abstract="" loc="39(Msp430Spi0C.UsartC):/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Usart0C.nc" nicename="Msp430Spi0C.UsartC" qname="Msp430Spi0C.UsartC">
+      <documentation loc="32:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430Usart0C.nc">
+        <short>
+ Provides an interface for USART0 on the MSP430.</short>
+        <long>
+ Provides an interface for USART0 on the MSP430.
+
+ @author Jonathan Hui &lt;jhui@archedrock.com&gt;
+ @version $Revision: 1.5 $ $Date: 2008-05-21 22:11:57 $
+</long>
+      </documentation>
+      <instance>
+        <component-ref nicename="Msp430Usart0C" qname="Msp430Usart0C"/>
+      </instance>
+      <configuration/>
+    </component><component loc="71:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc" nicename="Msp430SpiNoDma0P" qname="Msp430SpiNoDma0P">
+      <documentation loc="66:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc">
+        <short>
+ </short>
+        <long>
+ @author Jonathan Hui &lt;jhui@archedrock.com&gt;
+ @version $Revision: 1.6 $ $Date: 2010-06-29 22:07:45 $
+</long>
+      </documentation>
+      <configuration/>
+      <wiring>
+        <wire loc="89:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc">
+          <from><interface-ref name="ResourceConfigure" ref="0x2b61068485e0" scoped=""/></from>
+          <to><interface-ref name="ResourceConfigure" ref="0x2b61068b1c40" scoped=""/></to>
+        </wire>
+        <wire loc="93:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc">
+          <from><interface-ref name="SpiPacket" ref="0x2b6106845510" scoped=""/></from>
+          <to><interface-ref name="SpiPacket" ref="0x2b61068af700" scoped=""/></to>
+        </wire>
+        <wire loc="91:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc">
+          <from><interface-ref name="SpiByte" ref="0x2b6106848dd0" scoped=""/></from>
+          <to><interface-ref name="SpiByte" ref="0x2b61068b0440" scoped=""/></to>
+        </wire>
+        <wire loc="88:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc">
+          <from><interface-ref name="Resource" ref="0x2b610684fa30" scoped=""/></from>
+          <to><interface-ref name="Resource" ref="0x2b61068b2e80" scoped=""/></to>
+        </wire>
+        <wire loc="92:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc">
+          <from><interface-ref name="FastSpiByte" ref="0x2b6106847480" scoped=""/></from>
+          <to><interface-ref name="FastSpiByte" ref="0x2b61068b0a50" scoped=""/></to>
+        </wire>
+        <wire loc="90:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc">
+          <from><interface-ref name="Msp430SpiConfigure" ref="0x2b61068aee00" scoped=""/></from>
+          <to><interface-ref name="Msp430SpiConfigure" ref="0x2b6106842600" scoped=""/></to>
+        </wire>
+        <wire loc="94:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc">
+          <from><interface-ref name="UsartResource" ref="0x2b61068ae060" scoped=""/></from>
+          <to><interface-ref name="UsartResource" ref="0x2b6106844370" scoped=""/></to>
+        </wire>
+        <wire loc="95:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc">
+          <from><interface-ref name="UsartInterrupts" ref="0x2b61068f6de0" scoped=""/></from>
+          <to><interface-ref name="UsartInterrupts" ref="0x2b610683e6a0" scoped=""/></to>
+        </wire>
+        <wire loc="98:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc">
+          <from><interface-ref name="Usart" ref="0x2b61068ad490" scoped=""/></from>
+          <to><interface-ref name="HplMsp430Usart" ref="0x2b61068ed870" scoped=""/></to>
+        </wire>
+        <wire loc="101:/opt/tinyos-release-tinyos-2_1_2//tos/chips/msp430/usart/Msp430SpiNoDma0P.nc">
+          <from><interface-ref name="Leds" ref="0x2b61068f55a0" scoped=""/></from>
+          <to><interface-ref name="Leds" ref="0x2b6105f285b0" scoped=""/></to>
+        </wire>
+      </wiring>
+    </component></referenced></component>

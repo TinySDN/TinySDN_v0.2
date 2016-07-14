@@ -1,0 +1,196 @@
+<html>
+  <head>
+    <LINK rel="stylesheet" href="nesdoc.css" type="text/css" media="screen"><title>Interface: SerialFrameComm</title>
+  </head>
+  <body>
+    <h2>Interface: SerialFrameComm</h2>
+    <b>interface SerialFrameComm</b><p>
+
+ This interface sits between a serial byte encoding component and a
+ framing/packetizing component. It is to be used with framing protocols
+ that place delimiters between frames. This interface separates the tasks
+ of interpreting and coding delimiters and escape bytes from the rest of
+ the wire protocol.
+
+ 
+    <p>
+    <dl>
+      <dt><b>Author:</b>
+      <dd>
+        Philip Levis
+ 
+      </dd>
+      <dd>
+        Ben Greenstein
+ 
+      </dd>
+      <dt><b>Date:</b>
+      <dd>
+          August 7 2005
+
+      </dd>
+    </dl>
+    <p><p><div id=heading>Commands</div><div id=funcsig><span id=funcnameshort>command error_t <a href="#putData">putData</a>(uint8_t data)
+      </span><menu>
+  Used by the upper layer to request that a byte of data be sent
+  over serial.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command error_t <a href="#putDelimiter">putDelimiter</a>()
+      </span><menu>
+ Used by the upper layer to request that an interframe delimiter
+ be sent.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#resetReceive">resetReceive</a>()
+      </span><menu>
+ Requests that any underlying state associated with receive-side
+ frame or escaping be reset.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>command void <a href="#resetSend">resetSend</a>()
+      </span><menu>
+ Requests that any underlying state associated with send-side frame
+ delimiting or escaping be reset.
+      </menu>
+    </div><p><div id=heading>Events</div><div id=funcsig><span id=funcnameshort>event void <a href="#dataReceived">dataReceived</a>(uint8_t data)
+      </span><menu>
+ Signals the upper layer that a byte of data has been received
+ from the serial connection.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>event void <a href="#delimiterReceived">delimiterReceived</a>()
+      </span><menu>
+ Signals the upper layer that an inter-frame delimiter has been 
+ received from the serial connection.
+      </menu>
+    </div><div id=funcsig><span id=funcnameshort>event void <a href="#putDone">putDone</a>()
+      </span><menu>
+ Split-phase event to signal when the lower layer has finished writing
+ the last request (either putDelimiter or putData) to serial.
+      </menu>
+    </div><p><div id=heading>Commands - Details</div>
+    <a name="putData"></a>
+    <h4>putData
+    </h4>
+    <span id=funcnameshort>command error_t <b>putData</b>(uint8_t data)
+    </span>
+    <p>
+    <menu>
+      
+  Used by the upper layer to request that a byte of data be sent
+  over serial.
+  
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>data</code> -  The byte to be sent
+  
+        </dd>
+        <dt><b>Returns:</b>
+        <dd>
+          Returns an error_t code that indicates if the lower layer
+  has accepted the byte for sending (SUCCESS) or not (FAIL).
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="putDelimiter"></a>
+    <h4>putDelimiter
+    </h4>
+    <span id=funcnameshort>command error_t <b>putDelimiter</b>()
+    </span>
+    <p>
+    <menu>
+      
+ Used by the upper layer to request that an interframe delimiter
+ be sent. The lower layer is responsible for the determining the
+ actual byte(s) that must be sent to delimit the frame.
+ 
+      <p>
+      <dl>
+        <dt><b>Returns:</b>
+        <dd>
+          Returns a error_t code that indicates if the lower layer
+ was able to put an interframe delimiter to serial (SUCCESS) or
+ not (FAIL).
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="resetReceive"></a>
+    <h4>resetReceive
+    </h4>
+    <span id=funcnameshort>command void <b>resetReceive</b>()
+    </span>
+    <p>
+    <menu>
+      
+ Requests that any underlying state associated with receive-side
+ frame or escaping be reset. Used to initialize the lower layer's
+ receive path and/or cancel a frame mid-reception when sync is lost.
+
+    </menu>
+    <hr>
+    <a name="resetSend"></a>
+    <h4>resetSend
+    </h4>
+    <span id=funcnameshort>command void <b>resetSend</b>()
+    </span>
+    <p>
+    <menu>
+      
+ Requests that any underlying state associated with send-side frame
+ delimiting or escaping be reset. Used to initialize the lower
+ layer's send path and/or cancel a frame mid-transmission.
+
+    </menu>
+    <p><div id=heading>Events - Details</div>
+    <a name="dataReceived"></a>
+    <h4>dataReceived
+    </h4>
+    <span id=funcnameshort>event void <b>dataReceived</b>(uint8_t data)
+    </span>
+    <p>
+    <menu>
+      
+ Signals the upper layer that a byte of data has been received
+ from the serial connection. It passes this byte as a function
+ parameter.  
+ 
+      <p>
+      <dl>
+        <dt><b>Parameters:</b>
+        <dd>
+          <code>data</code> -  The byte of data that has been received
+ from the serial connection
+
+        </dd>
+      </dl>
+    </menu>
+    <hr>
+    <a name="delimiterReceived"></a>
+    <h4>delimiterReceived
+    </h4>
+    <span id=funcnameshort>event void <b>delimiterReceived</b>()
+    </span>
+    <p>
+    <menu>
+      
+ Signals the upper layer that an inter-frame delimiter has been 
+ received from the serial connection.
+
+    </menu>
+    <hr>
+    <a name="putDone"></a>
+    <h4>putDone
+    </h4>
+    <span id=funcnameshort>event void <b>putDone</b>()
+    </span>
+    <p>
+    <menu>
+      
+ Split-phase event to signal when the lower layer has finished writing
+ the last request (either putDelimiter or putData) to serial.
+    </menu>
+  </body>
+</html>

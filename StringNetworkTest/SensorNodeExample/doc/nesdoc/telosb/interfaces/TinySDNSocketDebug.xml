@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?><interfacedef loc="59:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" nicename="TinySDNSocketDebug" qname="TinySDNSocketDebug">
+      <documentation loc="35:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc">
+        <short> 
+  The CollectionDebug is an interface for sending debugging events to
+  a logging infrastructure.</short>
+        <long> 
+  The CollectionDebug is an interface for sending debugging events to
+  a logging infrastructure. An implementer can choose to send the event
+  information to different destinations. Primary examples can include:
+  &lt;ul&gt;
+    &lt;li&gt; logging to the UART, in case of a testbed of network-connected
+         nodes;
+    &lt;li&gt; logging to flash, if the logs are to be retrieved later
+    &lt;li&gt; logging to the standard output, in the case of TOSSIM.
+  &lt;/ul&gt;
+  
+  The interface does not specify in what format the log is to be produced,
+  or if other information, like timestamps, should be added, and this is
+  up to the implementer.
+ 
+  Some commands are generic, like Event, EventSimple, and EventDbg, while others
+  are for more specific events related to collection, like EventRoute and EventMsg.
+
+ @author Rodrigo Fonseca
+ @author Kyle Jamieson
+ @date   $Date: 2010-06-29 22:07:47 $
+</long>
+      </documentation>
+      <function command="" loc="61:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="logEvent" provided="0" ref="0x2b61074d34d0">
+        <interfacedef-ref nicename="TinySDNSocketDebug" qname="TinySDNSocketDebug"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="61:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="type" ref="0x2b61074d3250">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="73:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="logEventMsg" provided="0" ref="0x2b61074cfad0">
+        <interfacedef-ref nicename="TinySDNSocketDebug" qname="TinySDNSocketDebug"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="73:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="type" ref="0x2b61074d1e00">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="73:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="msg" ref="0x2b61074cf170">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="73:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="origin" ref="0x2b61074cf4d0">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="73:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="node" ref="0x2b61074cf820">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="64:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="logEventSimple" provided="0" ref="0x2b61074d22b0">
+        <interfacedef-ref nicename="TinySDNSocketDebug" qname="TinySDNSocketDebug"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="64:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="type" ref="0x2b61074d3c20">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="64:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="arg" ref="0x2b61074d2020">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="79:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="logEventRoute" provided="0" ref="0x2b61074cd020">
+        <interfacedef-ref nicename="TinySDNSocketDebug" qname="TinySDNSocketDebug"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="79:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="type" ref="0x2b61074ce250">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="79:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="parent" ref="0x2b61074ce5b0">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="am_addr_t" ref="0x2b6105d485b0"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="79:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="hopcount" ref="0x2b61074ce920">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="79:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="metric" ref="0x2b61074cec80">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="67:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="logEventDbg" provided="0" ref="0x2b61074d16d0">
+        <interfacedef-ref nicename="TinySDNSocketDebug" qname="TinySDNSocketDebug"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="error_t" ref="0x2b610586f980"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="67:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="type" ref="0x2b61074d29e0">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="67:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="arg1" ref="0x2b61074d2d30">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="67:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="arg2" ref="0x2b61074d10d0">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </variable>
+          <variable loc="67:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDNSocketDebug.nc" name="arg3" ref="0x2b61074d1420">
+            <type-int alignment="I:2" cname="unsigned int" size="I:2" unsigned="">
+              <typename><typedef-ref name="uint16_t" ref="0x2b6104f08520"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>

@@ -1,0 +1,8 @@
+digraph "BusyWaitMicroC" {
+  n0x2b6106bfe440 [shape=ellipse, style=filled, label="BusyWait", fontsize=12];
+  "BusyWaitMicroC.BusyWaitCounterC" [fontsize=12, shape=box, style=dashed, label="BusyWaitCounterC", URL="../chtml/BusyWaitCounterC.html"];
+  "BusyWaitMicroC.BusyWaitCounterC" [fontsize=12, shape=box, style=dashed, label="BusyWaitCounterC", URL="../chtml/BusyWaitCounterC.html"];
+  "Msp430CounterMicroC" [fontsize=12, shape=box,peripheries=2, URL="../chtml/Msp430CounterMicroC.html"];
+  "n0x2b6106bfe440" -> "BusyWaitMicroC.BusyWaitCounterC" [label="BusyWait<TMicro, uint16_t>", URL="../ihtml/BusyWait.html", fontsize=10];
+  "BusyWaitMicroC.BusyWaitCounterC" -> "Msp430CounterMicroC" [label="Counter<TMicro, uint16_t>", URL="../ihtml/Counter.html", fontsize=10];
+}

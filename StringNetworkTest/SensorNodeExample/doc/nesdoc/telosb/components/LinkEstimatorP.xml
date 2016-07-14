@@ -1,0 +1,163 @@
+<?xml version="1.0" ?><component loc="46:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" nicename="LinkEstimatorP" qname="LinkEstimatorP">
+      <documentation loc="40:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc">
+        <short> modified by Bruno Trevizan de Oliveira
+  </short>
+        <long> modified by Bruno Trevizan de Oliveira
+  @date   $Date: 2015-08-20 05:14:30 $
+</long>
+      </documentation>
+      <module/>
+    <specification><interface loc="61:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" name="SubReceive" provided="0" ref="0x2b61077c2a30">
+      <component-ref nicename="LinkEstimatorP" qname="LinkEstimatorP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SubReceive" ref="0x2b61077c2a30" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Receive" qname="Receive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b61077c2db0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="51:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" name="LinkEstimator" provided="1" ref="0x2b61077cc920">
+      <component-ref nicename="LinkEstimatorP" qname="LinkEstimatorP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="LinkEstimator" ref="0x2b61077cc920" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="LinkEstimator" qname="LinkEstimator"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="txAck" ref="0x2b61077ccca0" scoped=""/>
+        <function-ref name="pinNeighbor" ref="0x2b61077cce30" scoped=""/>
+        <function-ref name="txNoAck" ref="0x2b61077cb020" scoped=""/>
+        <function-ref name="insertNeighbor" ref="0x2b61077cb1b0" scoped=""/>
+        <function-ref name="evicted" ref="0x2b61077cb340" scoped=""/>
+        <function-ref name="clearDLQ" ref="0x2b61077cb4d0" scoped=""/>
+        <function-ref name="unpinNeighbor" ref="0x2b61077cb660" scoped=""/>
+        <function-ref name="getNeighborTable" ref="0x2b61077cb7f0" scoped=""/>
+        <function-ref name="getLinkQuality" ref="0x2b61077cb980" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="53:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" name="Packet" provided="1" ref="0x2b61077ca2b0">
+      <component-ref nicename="LinkEstimatorP" qname="LinkEstimatorP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Packet" ref="0x2b61077ca2b0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b61077ca630" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b61077ca7c0" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b61077ca950" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b61077caae0" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b61077cac70" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="58:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" name="AMSend" provided="0" ref="0x2b61077c3780">
+      <component-ref nicename="LinkEstimatorP" qname="LinkEstimatorP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="AMSend" ref="0x2b61077c3780" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMSend" qname="AMSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b61077c3b00" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b61077c3c90" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b61077c3e20" scoped=""/>
+        <function-ref name="cancel" ref="0x2b61077c7020" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b61077c71b0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="49:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" name="Send" provided="1" ref="0x2b6107745530">
+      <component-ref nicename="LinkEstimatorP" qname="LinkEstimatorP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Send" ref="0x2b6107745530" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMSend" qname="AMSend"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="send" ref="0x2b61077458b0" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b6107745a40" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b6107745bd0" scoped=""/>
+        <function-ref name="cancel" ref="0x2b6107745d60" scoped=""/>
+        <function-ref name="sendDone" ref="0x2b61077cc020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="63:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" name="Random" provided="0" ref="0x2b61077c1790">
+      <component-ref nicename="LinkEstimatorP" qname="LinkEstimatorP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Random" ref="0x2b61077c1790" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Random" qname="Random"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="rand16" ref="0x2b61077c1c10" scoped=""/>
+        <function-ref name="rand32" ref="0x2b61077c1da0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="60:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" name="SubPacket" provided="0" ref="0x2b61077c5cb0">
+      <component-ref nicename="LinkEstimatorP" qname="LinkEstimatorP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SubPacket" ref="0x2b61077c5cb0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Packet" qname="Packet"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="clear" ref="0x2b61077c20a0" scoped=""/>
+        <function-ref name="payloadLength" ref="0x2b61077c2230" scoped=""/>
+        <function-ref name="getPayload" ref="0x2b61077c23c0" scoped=""/>
+        <function-ref name="maxPayloadLength" ref="0x2b61077c2550" scoped=""/>
+        <function-ref name="setPayloadLength" ref="0x2b61077c26e0" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="52:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" name="Init" provided="1" ref="0x2b61077cbc00">
+      <component-ref nicename="LinkEstimatorP" qname="LinkEstimatorP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Init" ref="0x2b61077cbc00" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Init" qname="Init"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="init" ref="0x2b61077ca020" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="59:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" name="SubAMPacket" provided="0" ref="0x2b61077c7510">
+      <component-ref nicename="LinkEstimatorP" qname="LinkEstimatorP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="SubAMPacket" ref="0x2b61077c7510" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="AMPacket" qname="AMPacket"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="group" ref="0x2b61077c7890" scoped=""/>
+        <function-ref name="source" ref="0x2b61077c7a20" scoped=""/>
+        <function-ref name="address" ref="0x2b61077c7bb0" scoped=""/>
+        <function-ref name="destination" ref="0x2b61077c7d40" scoped=""/>
+        <function-ref name="setSource" ref="0x2b61077c5020" scoped=""/>
+        <function-ref name="setDestination" ref="0x2b61077c51b0" scoped=""/>
+        <function-ref name="type" ref="0x2b61077c5340" scoped=""/>
+        <function-ref name="setType" ref="0x2b61077c54d0" scoped=""/>
+        <function-ref name="isForMe" ref="0x2b61077c5660" scoped=""/>
+        <function-ref name="setGroup" ref="0x2b61077c57f0" scoped=""/>
+        <function-ref name="localGroup" ref="0x2b61077c5980" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="50:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" name="Receive" provided="1" ref="0x2b61077cc2c0">
+      <component-ref nicename="LinkEstimatorP" qname="LinkEstimatorP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="Receive" ref="0x2b61077cc2c0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="Receive" qname="Receive"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="receive" ref="0x2b61077cc640" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="54:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" name="CompareBit" provided="1" ref="0x2b61077c30f0">
+      <component-ref nicename="LinkEstimatorP" qname="LinkEstimatorP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="CompareBit" ref="0x2b61077c30f0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="CompareBit" qname="CompareBit"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="shouldInsert" ref="0x2b61077c3470" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="48:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" name="StdControl" provided="1" ref="0x2b6107748ca0">
+      <component-ref nicename="LinkEstimatorP" qname="LinkEstimatorP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="StdControl" ref="0x2b6107748ca0" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="StdControl" qname="StdControl"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="start" ref="0x2b61077450a0" scoped=""/>
+        <function-ref name="stop" ref="0x2b6107745230" scoped=""/>
+      </interface-functions>
+    </interface><interface loc="62:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/LinkEstimatorP.nc" name="LinkPacketMetadata" provided="0" ref="0x2b61077c1180">
+      <component-ref nicename="LinkEstimatorP" qname="LinkEstimatorP"/>
+      <type-interface alignment="I:2" size="I:2"><interface-ref name="LinkPacketMetadata" ref="0x2b61077c1180" scoped=""/></type-interface>
+      <instance>
+        <interfacedef-ref nicename="LinkPacketMetadata" qname="LinkPacketMetadata"/>
+      </instance>
+      <interface-functions>
+        <function-ref name="highChannelQuality" ref="0x2b61077c1500" scoped=""/>
+      </interface-functions>
+    </interface></specification><referenced/></component>

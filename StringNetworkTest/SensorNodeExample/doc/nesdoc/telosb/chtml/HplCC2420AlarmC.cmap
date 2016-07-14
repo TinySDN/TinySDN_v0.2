@@ -1,0 +1,5 @@
+<area shape="rect" id="node2" href="../chtml/Alarm32khz32C.html" title="Alarm32khz32C" alt="" coords="37,117,176,176">
+<area shape="poly" id="edge1" href="../ihtml/Init.html" title="Init" alt="" coords="56,51,86,104,81,106,51,54">
+<area shape="rect" id="edge1-label" href="../ihtml/Init.html" title="Init" alt="" coords="76,78,96,93">
+<area shape="poly" id="edge2" href="../ihtml/Alarm.html" title="Alarm&lt;T32khz, uint32_t&gt;" alt="" coords="162,55,132,107,128,104,158,52">
+<area shape="rect" id="edge2-label" href="../ihtml/Alarm.html" title="Alarm&lt;T32khz, uint32_t&gt;" alt="" coords="145,78,291,93">

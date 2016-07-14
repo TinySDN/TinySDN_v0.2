@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><interfacedef loc="1:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpCongestion.nc" nicename="CtpCongestion" qname="CtpCongestion">
+      <function command="" loc="7:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpCongestion.nc" name="isCongested" provided="0" ref="0x2b6107564490">
+        <interfacedef-ref nicename="CtpCongestion" qname="CtpCongestion"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="bool" ref="0x2b610586b090"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="14:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpCongestion.nc" name="setClientCongested" provided="0" ref="0x2b6107564e50">
+        <interfacedef-ref nicename="CtpCongestion" qname="CtpCongestion"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-void alignment="I:1" size="I:1"/>
+          <function-parameters>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="bool" ref="0x2b610586b090"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="14:/opt/tinyos-release-tinyos-2_1_2//tos/lib/net/TinySDN/CtpCongestion.nc" name="congested" ref="0x2b6107564bd0">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="bool" ref="0x2b610586b090"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>

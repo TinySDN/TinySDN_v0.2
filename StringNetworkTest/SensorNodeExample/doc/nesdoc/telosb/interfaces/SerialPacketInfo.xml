@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?><interfacedef loc="10:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialPacketInfo.nc" nicename="SerialPacketInfo" qname="SerialPacketInfo">
+      <documentation loc="1:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialPacketInfo.nc">
+        <short>
+ Accessor methods used by a serial dispatcher to communicate with various
+ message_t link formats over a serial port.</short>
+        <long>
+ Accessor methods used by a serial dispatcher to communicate with various
+ message_t link formats over a serial port.
+
+ @author Philip Levis
+ @author Ben Greenstein
+ @date August 7 2005
+</long>
+      </documentation>
+      <function command="" loc="31:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialPacketInfo.nc" name="upperLength" provided="0" ref="0x2b610712e630">
+        <documentation loc="24:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialPacketInfo.nc">
+          <short>
+ Get the size of the payload (in bytes) given the size of the datalink
+ packet (dataLinkLen) embedded in the message_t.</short>
+          <long>
+ Get the size of the payload (in bytes) given the size of the datalink
+ packet (dataLinkLen) embedded in the message_t.
+ @param msg A pointer to the message_t to interrogate. (unused)
+ @param dataLinkLength The size of the datalink packet.
+ @return Returns the size of the payload.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="SerialPacketInfo" qname="SerialPacketInfo"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="31:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialPacketInfo.nc" name="msg" ref="0x2b610712e020">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="31:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialPacketInfo.nc" name="dataLinkLen" ref="0x2b610712e3a0">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+      <function command="" loc="15:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialPacketInfo.nc" name="offset" provided="0" ref="0x2b6107130670">
+        <documentation loc="11:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialPacketInfo.nc">
+          <short>
+ Get the offset into a message_t where the header information begins.</short>
+          <long>
+ Get the offset into a message_t where the header information begins.
+ @return Returns the offset.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="SerialPacketInfo" qname="SerialPacketInfo"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+          </type-int>
+          <function-parameters>
+          </function-parameters>
+        </type-function>
+        <parameters>
+        </parameters>
+      </function>
+      <function command="" loc="23:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialPacketInfo.nc" name="dataLinkLength" provided="0" ref="0x2b610712f620">
+        <documentation loc="16:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialPacketInfo.nc">
+          <short>
+ Get the size of the datalink packet embedded in the message_t, in bytes.</short>
+          <long>
+ Get the size of the datalink packet embedded in the message_t, in bytes. 
+ This is the sum of the payload (upperLen) and the size of the link header.
+ @param msg A pointer to the message_t to interrogate. (unused)
+ @param upperLen The size of the payload.
+ @return Returns the size of the datalink packet.
+</long>
+        </documentation>
+        <interfacedef-ref nicename="SerialPacketInfo" qname="SerialPacketInfo"/>
+        <type-function alignment="I:1" size="I:1">
+          <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+            <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+          </type-int>
+          <function-parameters>
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </function-parameters>
+        </type-function>
+        <parameters>
+          <variable loc="23:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialPacketInfo.nc" name="msg" ref="0x2b610712f020">
+            <type-pointer alignment="I:2" size="I:2">
+              <type-tag alignment="I:1" size="I:152"><nx_struct-ref name="message_t" ref="0x2b6105d580c0"/>
+                <typename><typedef-ref name="message_t" ref="0x2b6105d576f0"/></typename>
+              </type-tag>
+            </type-pointer>
+          </variable>
+          <variable loc="23:/opt/tinyos-release-tinyos-2_1_2//tos/lib/serial/SerialPacketInfo.nc" name="upperLen" ref="0x2b610712f390">
+            <type-int alignment="I:1" cname="unsigned char" size="I:1" unsigned="">
+              <typename><typedef-ref name="uint8_t" ref="0x2b6104f08160"/></typename>
+            </type-int>
+          </variable>
+        </parameters>
+      </function>
+    </interfacedef>
