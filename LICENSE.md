@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2013 Universidade de São Paulo and Bruno Trevizan de Oliveira
+ * Copyright (c) 2016 Universidade de São Paulo
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -33,7 +33,5 @@
  */
 
  /*
-  * Code description
-  *
   * Author: Bruno Trevizan de Oliveira
 */
